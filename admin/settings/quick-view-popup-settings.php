@@ -78,9 +78,9 @@ class WC_QV_Popup_Settings extends WC_QV_Admin_UI
 		$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Quick View Pop Up successfully saved.', 'wooquickview' ),
-				'error_message'		=> __( 'Error: Quick View Pop Up can not save.', 'wooquickview' ),
-				'reset_message'		=> __( 'Quick View Pop Up successfully reseted.', 'wooquickview' ),
+				'success_message'	=> __( 'Quick View Pop Up successfully saved.', 'woocommerce-products-quick-view' ),
+				'error_message'		=> __( 'Error: Quick View Pop Up can not save.', 'woocommerce-products-quick-view' ),
+				'reset_message'		=> __( 'Quick View Pop Up successfully reseted.', 'woocommerce-products-quick-view' ),
 			);
 
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -134,7 +134,7 @@ class WC_QV_Popup_Settings extends WC_QV_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'quick-view-popup-settings',
-			'label'				=> __( 'Quick View Pop Up', 'wooquickview' ),
+			'label'				=> __( 'Quick View Pop Up', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_popup_settings_form',
 		);
 		
@@ -177,7 +177,7 @@ class WC_QV_Popup_Settings extends WC_QV_Admin_UI
   		// Define settings
      	$this->form_fields = array(
      		array(
-				'name' => __( 'Quick View Pop Up', 'wooquickview' ),
+				'name' => __( 'Quick View Pop Up', 'woocommerce-products-quick-view' ),
 				'type' => 'heading',
 				'class'=> 'quick_view_ultimate_container',
 				'id'		=> 'quick_view_popup_tool_box',
@@ -185,7 +185,7 @@ class WC_QV_Popup_Settings extends WC_QV_Admin_UI
 				'is_box'	=> true,
            	),
            	array(
-				'name' 		=> __( "Pop Up Tool", 'wooquickview' ),
+				'name' 		=> __( "Pop Up Tool", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_popup_tool',
 				'class'		=> 'quick_view_ultimate_popup_tool',
 				'type' 		=> 'onoff_radio',
@@ -193,19 +193,19 @@ class WC_QV_Popup_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'prettyphoto',
-						'text'				=> __( 'PrettyPhoto', 'wooquickview' ) . ' ' . __( '(recommended)', 'wooquickview') ,
+						'text'				=> __( 'PrettyPhoto', 'woocommerce-products-quick-view' ) . ' ' . __( '(recommended)', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
 					array(
 						'val' 				=> 'colorbox',
-						'text' 				=> __( 'ColorBox', 'wooquickview' ) ,
+						'text' 				=> __( 'ColorBox', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
 					array(
 						'val' 				=> 'fancybox',
-						'text' 				=> __( 'FancyBox', 'wooquickview' ) . ' - ' . __( 'Depreciated! Do not use. Will be removed in future version', 'wooquickview') ,
+						'text' 				=> __( 'FancyBox', 'woocommerce-products-quick-view' ) . ' - ' . __( 'Depreciated! Do not use. Will be removed in future version', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					)

@@ -60,8 +60,8 @@ class WC_QV_Admin_Page extends WC_QV_Admin_UI
 		$page_data = array(
 			'type'				=> 'submenu',
 			'parent_slug'		=> 'woocommerce',
-			'page_title'		=> __( 'Quick View', 'wooquickview' ),
-			'menu_title'		=> __( 'Quick View', 'wooquickview' ),
+			'page_title'		=> __( 'Quick View', 'woocommerce-products-quick-view' ),
+			'menu_title'		=> __( 'Quick View', 'woocommerce-products-quick-view' ),
 			'capability'		=> 'manage_options',
 			'menu_slug'			=> $this->menu_slug,
 			'function'			=> 'wc_qv_admin_page_show',

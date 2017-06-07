@@ -75,7 +75,7 @@ class WC_QV_Admin_Button_Style_Tab extends WC_QV_Admin_UI
 		
 		$tab_data = array( 
 			'name'				=> 'quick-view-button',
-			'label'				=> __( 'Button', 'wooquickview' ),
+			'label'				=> __( 'Button', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_admin_button_style_tab_manager',
 		);
 		

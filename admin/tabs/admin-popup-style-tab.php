@@ -75,7 +75,7 @@ class WC_QV_Admin_Popup_Style_Tab extends WC_QV_Admin_UI
 		
 		$tab_data = array( 
 			'name'				=> 'quick-view-popup',
-			'label'				=> __( 'Pop Up', 'wooquickview' ),
+			'label'				=> __( 'Pop Up', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_admin_popup_style_tab_manager',
 		);
 		

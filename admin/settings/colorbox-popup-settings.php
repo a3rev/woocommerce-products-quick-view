@@ -41,14 +41,14 @@ class WC_QV_ColorBox_Popup_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-            	'name' 		=> __( 'Colour Box Pop Up', 'wooquickview' ),
+            	'name' 		=> __( 'Colour Box Pop Up', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'quick_view_colorbox_popup_container',
                 'id'		=> 'quick_view_colorbox_popup_box',
 				'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Pop-up Maximum Width', 'wooquickview' ),
+				'name' 		=> __( 'Pop-up Maximum Width', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_colorbox_popup_width',
 				'desc'		=> 'px',
 				'type' 		=> 'slider',
@@ -58,7 +58,7 @@ class WC_QV_ColorBox_Popup_Settings
 				'increment'	=> 10
 			),
 			array(  
-				'name' 		=> __( 'Pop-up Maximum Height', 'wooquickview' ),
+				'name' 		=> __( 'Pop-up Maximum Height', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_colorbox_popup_height',
 				'desc'		=> 'px',
 				'type' 		=> 'slider',
@@ -68,50 +68,50 @@ class WC_QV_ColorBox_Popup_Settings
 				'increment'	=> 10
 			),
 			array(  
-				'name' 		=> __( "Fix Position on Scroll", 'wooquickview' ),
+				'name' 		=> __( "Fix Position on Scroll", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_colorbox_center_on_scroll',
 				'type' 		=> 'onoff_radio',
 				'default'	=> 'true',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'true',
-						'text'				=> __( 'Pop-up stays centered in screen while page scrolls behind it.', 'wooquickview' ) ,
+						'text'				=> __( 'Pop-up stays centered in screen while page scrolls behind it.', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
 					
 					array(
 						'val' 				=> 'false',
-						'text' 				=> __( 'Pop-up scrolls up and down with the page.', 'wooquickview' ) ,
+						'text' 				=> __( 'Pop-up scrolls up and down with the page.', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					) 
 				),
 			),
 			array(  
-				'name' 		=> __( 'Open & Close Transition Effect', 'wooquickview' ),
-				'desc' 		=> __( "Choose a pop-up opening & closing effect. Default - None", 'wooquickview' ),
+				'name' 		=> __( 'Open & Close Transition Effect', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( "Choose a pop-up opening & closing effect. Default - None", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_colorbox_transition',
 				'css' 		=> 'width:80px;',
 				'type' 		=> 'select',
 				'default'	=> 'none',
 				'options'	=> array(
-						'none'			=> __( 'None', 'wooquickview' ) ,	
-						'fade'			=> __( 'Fade', 'wooquickview' ) ,	
-						'elastic'		=> __( 'Elastic', 'wooquickview' ) ,
+						'none'			=> __( 'None', 'woocommerce-products-quick-view' ) ,	
+						'fade'			=> __( 'Fade', 'woocommerce-products-quick-view' ) ,	
+						'elastic'		=> __( 'Elastic', 'woocommerce-products-quick-view' ) ,
 					),
 			),
 			array(  
-				'name' 		=> __( 'Opening & Closing Speed', 'wooquickview' ),
-				'desc' 		=> __( 'Milliseconds when open and close popup', 'wooquickview' ),
+				'name' 		=> __( 'Opening & Closing Speed', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Milliseconds when open and close popup', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_colorbox_speed',
 				'type' 		=> 'text',
 				'css' 		=> 'width:40px;',
 				'default'	=> '300'
 			),
 			array(  
-				'name' 		=> __( 'Background Overlay Colour', 'wooquickview' ),
-				'desc' 		=> __('Select a colour or empty for no colour.', 'wooquickview'). ' ' . __('Default', 'wooquickview'). ' [default_value]',
+				'name' 		=> __( 'Background Overlay Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __('Select a colour or empty for no colour.', 'woocommerce-products-quick-view' ). ' ' . __('Default', 'woocommerce-products-quick-view' ). ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_colorbox_overlay_color',
 				'type' 		=> 'bg_color',
 				'default'	=> array( 'enable' => 1, 'color' => '#666666' )

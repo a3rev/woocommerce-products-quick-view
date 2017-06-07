@@ -1,19 +1,19 @@
 === WooCommerce Products Quick View ===
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
-Requires at least: 4.1
-Tested up to: 4.7.4
-Stable tag: 1.6.1
+Requires at least: 4.5
+Tested up to: 4.8.0
+Stable tag: 1.7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Add Quick View feature to all grid view products on shop, category, tag pages. Opens full product page content, add to cart without leaving the page
 
-== Description ==
+== DESCRIPTION ==
 
 WooCommerce Products Quick View gives your customers a true supermarket shopping experience. In a supermarket shoppers browse products on the shelves, picking up the ones they are interested up, reading all the relevant information and either adding the item to their cart or putting it back on the shelf and continuing to browser. You can now give your customer exactly the same experience with WooCommerce Products Quick View.
 
-While browsing products anywhere in your store - shop page / category pages / tag pages they see a products that interests them - instead of clicking 'More Details' and going to another page to view all the product information and images they click Quick View and see it all in a pop-up right there on their screen. This is the sequence
+While browsing products anywhere in your store - shop page / category pages / tag pages they see a product that interests them - instead of clicking 'More Details' and going to another page to view all the product information and images they click Quick View and see it all in a pop-up right there on their screen. This is the sequence
 
 * See something of interest - Pick it up from the shelf (Open the product in the pop-up)
 * View all the products information and make a buying decision
@@ -22,7 +22,7 @@ While browsing products anywhere in your store - shop page / category pages / ta
 
 It is quick easy and incredibly convenient for your customers and will create more sales.
 
-= Quick View Features =
+= QUICK VIEW FEATURES =
 
 * Works on any theme.
 * 2 choices of Quick pop-ups opens - full page content in pop-up or Custom pop-up.
@@ -32,7 +32,7 @@ It is quick easy and incredibly convenient for your customers and will create mo
 * Show Quick View on hover over image or show as button or linked text under the image.
 * Mobile device optimized - all tablets and phones
 
-= Show Quick View under the Image =
+= BUTTON DISPLAY OPTIONS =
 
 * Option to show Quick View as a Button or Hyper linked text under the product image.
 * When placed under the image Quick View is visible all of the time.
@@ -41,7 +41,7 @@ It is quick easy and incredibly convenient for your customers and will create mo
 * a3rev Hyperlink text creator - Simple point click settings to create an eye catching clickable link.
 * Quick View button has 3 Positional settings Top, Center or bottom of the image.
 
-= Advanced Pop-up Controls =
+= ADVANCED POP UP CONTROLS =
 
 * Select pop-up open and close transition effect.
 * Set pop-up opening / closing speed.
@@ -49,32 +49,34 @@ It is quick easy and incredibly convenient for your customers and will create mo
 * Fix pop-up or allow it to scroll with the screen content
 * Same day priority Pro License support and auto updates from the a3API.
 
-= Mobile Responsive Quick View Pop-up =
+= MORE FEATURES =
 
 * Fancybox pop-up tool - can't be blocked by browser pop-up settings.
 * Pop-up opens in 0.300 of a second and closes instantly.
 * SEO tracking - Your analytics tracking code e.g. Google records every view.
 * Add to Cart , View Cart all work within the pop-up.
 
-= Localization =
+= PREMIUM VERSION =
 
-* English (default) - always included.
-*.po file (wooquickview.po) in languages folder for translations.
-* If you do a translation for your site please send it to us for inclusion in the plugin language folder. We'll acknowledge your work here. [Go here](https://a3rev.com/contact-us-page/) to send your translation files to us.
+There is a Premium version of this plugin that offers more advanced features if required.
 
-= Plugin Resources =
+* [WooCommerce Quick View Ultimate](http://a3rev.com/shop/woocommerce-quick-view-ultimate/)
 
-[PRO Version](http://a3rev.com/shop/woocommerce-quick-view-ultimate/) |
-[Documentation](http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/) |
+= CONTRIBUTE =
+
+When you download WooCommerce Products Quick View, you join our the a3rev Software community. Regardless of if you are a WordPress beginner or experienced developer if you are interested in contributing to the future development of this plugin head over to the WooCommerce Products Quick View[GitHub Repository](https://github.com/a3rev/woocommerce-products-quick-view) to find out how you can contribute.
+
+Want to add a new language to WooCommerce Products Quick View! You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/woocommerce-products-quick-view)
+
 
 == Installation ==
 
 = Minimum Requirements =
 
-* WordPress 4.1
-* WooCommerce v2.1 and later.
-* PHP version 5.4.0 or greater
-* MySQL version 5.4 or greater
+* WordPress 4.5
+* WooCommerce v2.6 and later.
+* PHP version 5.5 or greater
+* MySQL version 5.5 or greater
 
 = Automatic installation =
 
@@ -113,6 +115,14 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.7.0 - 2017/06/07 =
+* Feature - Launched WooCommerce Products Quick View public Github Repository
+* Tweak - Tested for compatibility with WordPress major version 4.8.0
+* Tweak - tested for compatibility with WooCommerce version 3.0.7
+* Tweak - WordPress Translation activation. Add text domain declaration in file header
+* Tweak - Include bootstrap modal script into plugin framework
+* Tweak - Update a3rev plugin framework to latest version
 
 = 1.6.1 - 2017/04/25 =
 * Tweak - Tested for full compatibility with WooCommerce version 3.0.4
@@ -351,6 +361,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.7.0 =
+Feature Update. 3 code tweaks for compatibility with WordPress major version 4.8.0 and WooCommerce version 3.0.7 plus launch of public Github repo for source code
 
 = 1.6.1 =
 Maintenance Update. 5 major code tweaks and 1 bug fix for compatibility with WooCommerce version 3.0.4 and backwards and WordPress 4.7.4

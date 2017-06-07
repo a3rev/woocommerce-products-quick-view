@@ -204,8 +204,8 @@ class WC_Quick_View_Template_Gallery_Class
 
 			$popup_gallery     = 'deactivate';
 			$hide_thumb_1image = $quick_view_template_gallery_style_settings['hide_thumb_1image'];
-			$start_label       = __('START SLIDESHOW', 'wooquickview');
-			$stop_label        = __('STOP SLIDESHOW', 'wooquickview');
+			$start_label       = __('START SLIDESHOW', 'woocommerce-products-quick-view' );
+			$stop_label        = __('STOP SLIDESHOW', 'woocommerce-products-quick-view' );
 
 			if ( 'yes' == $global_stop_scroll_1image && count( $dgallery_ids ) <= 1 ) {
 				$enable_scroll            = 'false';
@@ -218,7 +218,7 @@ class WC_Quick_View_Template_Gallery_Class
 				$display_back_and_forward = 'false';
 			}
 
-			$zoom_label = __('ZOOM +', 'wooquickview');
+			$zoom_label = __('ZOOM +', 'woocommerce-products-quick-view' );
 			if ( 'deactivate' == $popup_gallery ) {
 				$zoom_label     = '';
 				$lightbox_class = '';

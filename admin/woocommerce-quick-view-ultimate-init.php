@@ -14,8 +14,8 @@ function wc_quick_view_ultimate_install(){
 	global $wc_qv_less;
 	$wc_qv_less->plugin_build_sass();
 
-	update_option('wc_quick_view_ultimate_version', '1.6.1');
-	update_option('wc_quick_view_lite_version', '1.6.1');
+	update_option('wc_quick_view_ultimate_version', '1.6.2');
+	update_option('wc_quick_view_lite_version', '1.7.0');
 	update_option('wc_quick_view_ultimate_plugin', 'wc_quick_view_ultimate');
 
 	delete_metadata( 'user', 0, $wc_qv_admin_init->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
@@ -31,7 +31,8 @@ function quick_view_ultimate_init() {
 		wp_redirect( admin_url( 'admin.php?page=wc-quick-view', 'relative' ) );
 		exit;
 	}
-	load_plugin_textdomain( 'wooquickview', false, WC_QUICK_VIEW_ULTIMATE_FOLDER.'/languages' );
+
+	quick_view_ultimate_plugin_textdomain();
 }
 
 global $wc_quick_view_ultimate;
@@ -103,8 +104,8 @@ function wc_quick_view_lite_upgrade_plugin () {
 		$wc_qv_less->plugin_build_sass();
 	}
 
-	update_option('wc_quick_view_ultimate_version', '1.6.1');
-	update_option('wc_quick_view_lite_version', '1.6.1');
+	update_option('wc_quick_view_ultimate_version', '1.6.2');
+	update_option('wc_quick_view_lite_version', '1.7.0');
 
 }
 

@@ -40,14 +40,14 @@ class WC_QV_Fancybox_Popup_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-            	'name' 		=> __( 'Fancy Box Pop Up', 'wooquickview' ),
+            	'name' 		=> __( 'Fancy Box Pop Up', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'quick_view_fancybox_popup_container',
                 'id'		=> 'quick_view_fancybox_popup_box',
 				'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Pop-up Maximum Width', 'wooquickview' ),
+				'name' 		=> __( 'Pop-up Maximum Width', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_popup_width',
 				'desc'		=> 'px',
 				'type' 		=> 'slider',
@@ -57,7 +57,7 @@ class WC_QV_Fancybox_Popup_Settings
 				'increment'	=> 10
 			),
 			array(  
-				'name' 		=> __( 'Pop-up Maximum Height', 'wooquickview' ),
+				'name' 		=> __( 'Pop-up Maximum Height', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_popup_height',
 				'desc'		=> 'px',
 				'type' 		=> 'slider',
@@ -67,71 +67,71 @@ class WC_QV_Fancybox_Popup_Settings
 				'increment'	=> 10
 			),
 			array(  
-				'name' 		=> __( "Fix Position on Scroll", 'wooquickview' ),
+				'name' 		=> __( "Fix Position on Scroll", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_center_on_scroll',
 				'type' 		=> 'onoff_radio',
 				'default'	=> 'true',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'true',
-						'text'				=> __( 'Pop-up stays centered in screen while page scrolls behind it.', 'wooquickview' ) ,
+						'text'				=> __( 'Pop-up stays centered in screen while page scrolls behind it.', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
 					
 					array(
 						'val' 				=> 'false',
-						'text' 				=> __( 'Pop-up scrolls up and down with the page.', 'wooquickview' ) ,
+						'text' 				=> __( 'Pop-up scrolls up and down with the page.', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					) 
 				),
 			),
 			array(  
-				'name' 		=> __( 'Open Transition Effect', 'wooquickview' ),
-				'desc' 		=> __( "Choose a pop-up opening effect. Default - None.", 'wooquickview' ),
+				'name' 		=> __( 'Open Transition Effect', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( "Choose a pop-up opening effect. Default - None.", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_transition_in',
 				'css' 		=> 'width:80px;',
 				'type' 		=> 'select',
 				'default'	=> 'none',
 				'options'	=> array(
-						'none'			=> __( 'None', 'wooquickview' ) ,	
-						'fade'			=> __( 'Fade', 'wooquickview' ) ,	
-						'elastic'		=> __( 'Elastic', 'wooquickview' ) ,
+						'none'			=> __( 'None', 'woocommerce-products-quick-view' ) ,	
+						'fade'			=> __( 'Fade', 'woocommerce-products-quick-view' ) ,	
+						'elastic'		=> __( 'Elastic', 'woocommerce-products-quick-view' ) ,
 					),
 			),
 			array(  
-				'name' 		=> __( 'Close Transistion Effect', 'wooquickview' ),
-				'desc' 		=> __( "Choose a pop-up closing effect. Default - None.", 'wooquickview' ),
+				'name' 		=> __( 'Close Transistion Effect', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( "Choose a pop-up closing effect. Default - None.", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_transition_out',
 				'css' 		=> 'width:80px;',
 				'type' 		=> 'select',
 				'default'	=> 'none',
 				'options'	=> array(
-						'none'			=> __( 'None', 'wooquickview' ) ,	
-						'fade'			=> __( 'Fade', 'wooquickview' ) ,	
-						'elastic'		=> __( 'Elastic', 'wooquickview' ) ,
+						'none'			=> __( 'None', 'woocommerce-products-quick-view' ) ,	
+						'fade'			=> __( 'Fade', 'woocommerce-products-quick-view' ) ,	
+						'elastic'		=> __( 'Elastic', 'woocommerce-products-quick-view' ) ,
 					),
 			),
 			array(  
-				'name' 		=> __( 'Opening Speed', 'wooquickview' ),
-				'desc' 		=> __( 'Milliseconds when open popup', 'wooquickview' ),
+				'name' 		=> __( 'Opening Speed', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Milliseconds when open popup', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_speed_in',
 				'type' 		=> 'text',
 				'css' 		=> 'width:40px;',
 				'default'	=> '300'
 			),
 			array(  
-				'name' 		=> __( 'Closing Speed', 'wooquickview' ),
-				'desc' 		=> __( 'Milliseconds when close popup', 'wooquickview' ),
+				'name' 		=> __( 'Closing Speed', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Milliseconds when close popup', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_fancybox_speed_out',
 				'type' 		=> 'text',
 				'css' 		=> 'width:40px;',
 				'default'	=> '0'
 			),
 			array(  
-				'name' 		=> __( 'Background Overlay Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Select a colour or empty for no colour.', 'wooquickview' ). ' ' . __( 'Default', 'wooquickview' ). ' [default_value]',
+				'name' 		=> __( 'Background Overlay Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Select a colour or empty for no colour.', 'woocommerce-products-quick-view' ). ' ' . __( 'Default', 'woocommerce-products-quick-view' ). ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_fancybox_overlay_color',
 				'type' 		=> 'bg_color',
 				'default'	=> array( 'enable' => 1, 'color' => '#666666' )

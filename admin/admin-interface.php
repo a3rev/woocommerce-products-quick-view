@@ -59,6 +59,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 		
 		if ( is_admin() && isset( $_REQUEST['page'] ) && in_array( $_REQUEST['page'], $admin_pages ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_script_load' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'register_modal_scripts' ), 0 );
 			do_action( $this->plugin_name . '_init_scripts' );
 
 			add_action( 'admin_print_scripts', array( $this, 'admin_localize_printed_scripts' ), 5 );
@@ -82,6 +83,13 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	public function register_fontawesome_style() {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		wp_register_style( 'font-awesome-styles', $this->admin_plugin_url() . '/assets/css/font-awesome' . $suffix . '.css', array(), '4.5.0', 'all' );
+	}
+
+	public function register_modal_scripts() {
+		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		wp_register_style( 'bootstrap-modal', $this->admin_plugin_url() . '/assets/css/modal' . $suffix . '.css', array(), '4.0.0', 'all' );
+		wp_register_script( 'bootstrap-util', $this->admin_plugin_url() . '/assets/js/bootstrap/util' . $suffix . '.js', array( 'jquery' ), '4.0.0', false );
+		wp_register_script( 'bootstrap-modal', $this->admin_plugin_url() . '/assets/js/bootstrap/modal' . $suffix . '.js', array( 'jquery', 'bootstrap-util' ), '4.0.0', false );
 	}
 	
 	/*-----------------------------------------------------------------------------------*/
@@ -175,7 +183,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					$version_message = $this->get_version_message();
 					$has_new_version = 1;
 					if ( '' == trim( $version_message ) ) {
-						$version_message = __( 'Great! You have the latest version installed.', 'wooquickview' );
+						$version_message = __( 'Great! You have the latest version installed.', 'woocommerce-products-quick-view' );
 						$has_new_version = 0;
 					} else {
 						delete_option('quick_view_lite_clean_on_deletion');
@@ -240,7 +248,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	/* get_success_message */
 	/*-----------------------------------------------------------------------------------*/
 	public function get_success_message( $message = '' ) {
-		if ( trim( $message ) == '' ) $message = __( 'Settings successfully saved.' , 'wooquickview' ); 
+		if ( trim( $message ) == '' ) $message = __( 'Settings successfully saved.' , 'woocommerce-products-quick-view' ); 
 		return '<div class="updated" id=""><p>' . $message . '</p></div>';
 	}
 	
@@ -248,7 +256,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	/* get_error_message */
 	/*-----------------------------------------------------------------------------------*/
 	public function get_error_message( $message = '' ) {
-		if ( trim( $message ) == '' ) $message = __( 'Error: Settings can not save.' , 'wooquickview' ); 
+		if ( trim( $message ) == '' ) $message = __( 'Error: Settings can not save.' , 'woocommerce-products-quick-view' ); 
 		return '<div class="error" id=""><p>' . $message . '</p></div>';
 	}
 	
@@ -256,7 +264,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	/* get_reset_message */
 	/*-----------------------------------------------------------------------------------*/
 	public function get_reset_message( $message = '' ) {
-		if ( trim( $message ) == '' ) $message = __( 'Settings successfully reseted.' , 'wooquickview' ); 
+		if ( trim( $message ) == '' ) $message = __( 'Settings successfully reseted.' , 'woocommerce-products-quick-view' ); 
 		return '<div class="updated" id=""><p>' . $message . '</p></div>';
 	}
 	
@@ -277,12 +285,12 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 	public function get_font_weights() {
 		$font_weights = array (
-			'300'				=> __( 'Thin', 'wooquickview' ),
-			'300 italic'		=> __( 'Thin/Italic', 'wooquickview' ),
-			'normal'			=> __( 'Normal', 'wooquickview' ),
-			'italic'			=> __( 'Italic', 'wooquickview' ),
-			'bold'				=> __( 'Bold', 'wooquickview' ),
-			'bold italic'		=> __( 'Bold/Italic', 'wooquickview' ),
+			'300'				=> __( 'Thin', 'woocommerce-products-quick-view' ),
+			'300 italic'		=> __( 'Thin/Italic', 'woocommerce-products-quick-view' ),
+			'normal'			=> __( 'Normal', 'woocommerce-products-quick-view' ),
+			'italic'			=> __( 'Italic', 'woocommerce-products-quick-view' ),
+			'bold'				=> __( 'Bold', 'woocommerce-products-quick-view' ),
+			'bold italic'		=> __( 'Bold/Italic', 'woocommerce-products-quick-view' ),
 		);
 		return apply_filters( $this->plugin_name . '_font_weights', $font_weights );
 	}
@@ -292,14 +300,14 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 	public function get_border_styles() {
 		$border_styles = array (
-			'solid'				=> __( 'Solid', 'wooquickview' ),
-			'double'			=> __( 'Double', 'wooquickview' ),
-			'dashed'			=> __( 'Dashed', 'wooquickview' ),
-			'dotted'			=> __( 'Dotted', 'wooquickview' ),
-			'groove'			=> __( 'Groove', 'wooquickview' ),
-			'ridge'				=> __( 'Ridge', 'wooquickview' ),
-			'inset'				=> __( 'Inset', 'wooquickview' ),
-			'outset'			=> __( 'Outset', 'wooquickview' ),
+			'solid'				=> __( 'Solid', 'woocommerce-products-quick-view' ),
+			'double'			=> __( 'Double', 'woocommerce-products-quick-view' ),
+			'dashed'			=> __( 'Dashed', 'woocommerce-products-quick-view' ),
+			'dotted'			=> __( 'Dotted', 'woocommerce-products-quick-view' ),
+			'groove'			=> __( 'Groove', 'woocommerce-products-quick-view' ),
+			'ridge'				=> __( 'Ridge', 'woocommerce-products-quick-view' ),
+			'inset'				=> __( 'Inset', 'woocommerce-products-quick-view' ),
+			'outset'			=> __( 'Outset', 'woocommerce-products-quick-view' ),
 		);
 		return apply_filters( $this->plugin_name . '_border_styles', $border_styles );
 	}
@@ -317,7 +325,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 		
 		foreach ( $options as $value ) {
 			if ( ! isset( $value['type'] ) ) continue;
-			if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
+			if ( in_array( $value['type'], array( 'row', 'column', 'heading', 'ajax_submit', 'ajax_multi_submit' ) ) ) continue;
 			if ( ! isset( $value['id'] ) || trim( $value['id'] ) == '' ) continue;
 			if ( ! isset( $value['default'] ) ) $value['default'] = '';
 			
@@ -417,7 +425,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 		// Get settings for option value is stored as a record or it's spearate option
 		foreach ( $options as $value ) {
 			if ( ! isset( $value['type'] ) ) continue;
-			if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
+			if ( in_array( $value['type'], array( 'row', 'column', 'heading', 'ajax_submit', 'ajax_multi_submit' ) ) ) continue;
 			if ( ! isset( $value['id'] ) || trim( $value['id'] ) == '' ) continue;
 			if ( ! isset( $value['default'] ) ) $value['default'] = '';
 			
@@ -493,7 +501,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				
 				foreach ( $options as $value ) {
 					if ( ! isset( $value['type'] ) ) continue;
-					if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
+					if ( in_array( $value['type'], array( 'row', 'column', 'heading', 'ajax_submit', 'ajax_multi_submit' ) ) ) continue;
 					if ( ! isset( $value['id'] ) || trim( $value['id'] ) == '' ) continue;
 					if ( ! isset( $value['default'] ) ) $value['default'] = '';
 					if ( ! isset( $value['free_version'] ) ) $value['free_version'] = false;
@@ -543,7 +551,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 		// Get settings for option value is stored as a record or it's spearate option
 		foreach ( $options as $value ) {
 			if ( ! isset( $value['type'] ) ) continue;
-			if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
+			if ( in_array( $value['type'], array( 'row', 'column', 'heading', 'ajax_submit', 'ajax_multi_submit' ) ) ) continue;
 
 			// Save for global settings of plugin framework
 			switch ( $value['type'] ) {
@@ -864,7 +872,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				if ( $free_version ) {
 					foreach ( $options as $value ) {
 						if ( ! isset( $value['type'] ) ) continue;
-						if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
+						if ( in_array( $value['type'], array( 'row', 'column', 'heading', 'ajax_submit', 'ajax_multi_submit' ) ) ) continue;
 						if ( ! isset( $value['id'] ) || trim( $value['id'] ) == '' ) continue;
 						
 						switch ( $value['type'] ) {
@@ -908,7 +916,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 		// Update settings default for option value is stored as a record or it's spearate option
 		foreach ( $options as $value ) {
 			if ( ! isset( $value['type'] ) ) continue;
-			if ( in_array( $value['type'], array( 'heading' ) ) ) continue;
+			if ( in_array( $value['type'], array( 'row', 'column', 'heading', 'ajax_submit', 'ajax_multi_submit' ) ) ) continue;
 			if ( ! isset( $value['id'] ) || trim( $value['id'] ) == '' ) continue;
 			if ( ! isset( $value['default'] ) ) $value['default'] = '';
 			if ( ! isset( $value['free_version'] ) ) $value['free_version'] = false;
@@ -1103,7 +1111,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	 * @return void
 	 * ========================================================================
 	 * Option Array Structure :
-	 * type					=> heading | google_api_key | onoff_toggle_box | text | email | number | password | color | bg_color | textarea | select | multiselect | radio | onoff_radio | checkbox | onoff_checkbox 
+	 * type					=> row | column | heading | ajax_submit | ajax_multi_submit | google_api_key | onoff_toggle_box | text | email | number | password | color | bg_color | textarea | select | multiselect | radio | onoff_radio | checkbox | onoff_checkbox 
 	 *						   | switcher_checkbox | image_size | single_select_page | typography | border | border_styles | border_corner | box_shadow 
 	 *						   | slider | upload | wp_editor | array_textfields | 
 	 *
@@ -1179,6 +1187,51 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 	 *
 	 * strip_methods		=> true | false : apply for upload type only
 	 *
+	 * submit_data 			=> array : apply for ajax_submit only
+	 *						   ---------------- example ---------------------
+	 * 							array(
+	 *								'ajax_url'  => admin_url( 'admin-ajax.php', 'relative' ),
+	 *								'ajax_type' => 'POST',
+	 *								'data'      => array(
+	 *									'action'   => 'action_name',
+	 *								),
+	 *							),
+	 * button_name      	=> text : apply for ajax_submit, ajax_multi_submit only
+	 * progressing_text     => text : apply for ajax_submit, ajax_multi_submit only
+	 * completed_text      	=> text : apply for ajax_submit, ajax_multi_submit only
+	 * successed_text      	=> text : apply for ajax_submit, ajax_multi_submit only
+	 *
+	 * statistic_column     => number : apply for ajax_multi_submit only
+	 * resubmit      		=> true | false : apply for ajax_multi_submit only
+	 *
+	 * multi_submit			=> array : apply for ajax_multi_submit only
+	 *						   ---------------- example ---------------------
+	 * 							array(
+	 *								array(
+	 *									'item_id'          => 'item_ajax_id',
+	 *									'item_name'        => 'Item Ajax Name',
+	 *									'current_items'    => 20,
+	 *									'total_items'      => 20,
+	 *									'progressing_text' => 'Processing,
+	 *									'completed_text'   => 'Completed',
+	 *									'submit_data'      => array(
+	 *										'ajax_url'  => admin_url( 'admin-ajax.php', 'relative' ),
+	 *										'ajax_type' => 'POST',
+	 *										'data'      => array(
+	 *											'action'   => 'action_name',
+	 *										)
+	 *									),
+	 *									'show_statistic'       => true,
+	 *									'statistic_customizer' => array(
+	 *										'current_color' => '#96587d',
+	 *									),
+	 *								),
+	 * 								array(
+	 * 									...
+	 * 								),
+	 *								...
+	 *							)
+	 *
 	 */
 	 
 	public function admin_forms( $options, $form_key, $option_name = '', $form_messages = array() ) {
@@ -1229,7 +1282,11 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 		<div class="a3rev_panel_container" style="visibility:hidden; height:0; overflow:hidden;" >
         <form action="" method="post">
 		<?php do_action( $this->plugin_name . '-' . trim( $form_key ) . '_settings_start' ); ?>
+		<div class="a3rev_panel_row"> <!-- Open Panel Row -->
 		<?php
+		$had_first_row = false;
+		$had_first_column = false;
+		$closed_panel_inner = false;
 		$count_heading = 0;
 		$end_heading_id = false;
 		$header_box_opening = false;
@@ -1281,7 +1338,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				$description = $tip = '';
 			}
 	
-			if ( $description && in_array( $value['type'], array( 'manual_check_version', 'textarea', 'radio', 'onoff_radio', 'typography', 'border', 'border_styles', 'border_corner', 'box_shadow', 'array_textfields', 'wp_editor', 'upload' ) ) ) {
+			if ( $description && in_array( $value['type'], array( 'manual_check_version', 'ajax_submit', 'ajax_multi_submit', 'textarea', 'radio', 'onoff_radio', 'typography', 'border', 'border_styles', 'array_textfields', 'wp_editor', 'upload' ) ) ) {
 				$description = '<div class="desc" style="margin-bottom:5px;">' . $description . '</div>';
 			} elseif ( $description ) {
 				$description = '<span class="description" style="margin-left:5px;">' . $description . '</span>';
@@ -1430,8 +1487,111 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				$id_attribute		= esc_attr( $option_name ) . '_' . $id_attribute;
 			}
 
+			// Update id attribute if current element is child of array
+			if ( $child_key != false ) {
+				$id_attribute .= '_' . $child_key;
+			}
+
 			// Switch based on type
 			switch( $value['type'] ) {
+
+				// Row
+				case 'row':
+
+					if ( $end_heading_id !== false && ! $closed_panel_inner ) {
+						if ( trim( $end_heading_id ) != '' ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $end_heading_id ) . '_end' );
+						echo '</table>' . "\n\n";
+						echo '</div>' . "\n\n";
+						if ( trim( $end_heading_id ) != '' ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $end_heading_id ) . '_after' );
+
+						$closed_panel_inner = true;
+					}
+
+					if ( $header_sub_box_opening ) {
+						$header_sub_box_opening = false;
+
+						// close box inside
+						echo '</div>' . "\n\n";
+
+						// close panel box
+						echo '</div>' . "\n\n";
+					}
+
+					if ( $header_box_opening ) {
+						$header_box_opening = false;
+
+						// close box inside
+						echo '</div>' . "\n\n";
+
+						// close panel box
+						echo '</div>' . "\n\n";
+					}
+
+					if ( $had_first_column ) {
+						// close panel column
+						echo '</div>' . "\n\n";
+					}
+
+					if ( $had_first_row ) {
+						// close panel row
+						echo '</div>' . "\n\n";
+
+						// open panel column
+						echo '<div class="a3rev_panel_row">' . "\n\n";
+					}
+
+					$had_first_column = false;
+					$had_first_row    = true;
+
+				break;
+
+				// Column
+				case 'column':
+
+					if ( $end_heading_id !== false && ! $closed_panel_inner ) {
+						if ( trim( $end_heading_id ) != '' ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $end_heading_id ) . '_end' );
+						echo '</table>' . "\n\n";
+						echo '</div>' . "\n\n";
+						if ( trim( $end_heading_id ) != '' ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $end_heading_id ) . '_after' );
+
+						$closed_panel_inner = true;
+					}
+
+					if ( $header_sub_box_opening ) {
+						$header_sub_box_opening = false;
+
+						// close box inside
+						echo '</div>' . "\n\n";
+
+						// close panel box
+						echo '</div>' . "\n\n";
+					}
+
+					if ( $header_box_opening ) {
+						$header_box_opening = false;
+
+						// close box inside
+						echo '</div>' . "\n\n";
+
+						// close panel box
+						echo '</div>' . "\n\n";
+					}
+
+					if ( $had_first_column ) {
+						// close panel column
+						echo '</div>' . "\n\n";
+
+						// open panel column
+						echo '<div class="a3rev_panel_column">' . "\n\n";
+					} else {
+						// open panel column
+						echo '<div class="a3rev_panel_column">' . "\n\n";
+					}
+
+					$had_first_column = true;
+					$had_first_row    = true;
+
+				break;
 
 				// Heading
 				case 'heading':
@@ -1447,7 +1607,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					}
 
 					$count_heading++;
-					if ( $count_heading > 1 )  {
+					if ( $count_heading > 1 && ! $closed_panel_inner )  {
 						if ( trim( $end_heading_id ) != '' ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $end_heading_id ) . '_end' );
 						echo '</table>' . "\n\n";
 						echo '</div>' . "\n\n";
@@ -1518,11 +1678,20 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 							}
 						}
 
+						$box_handle_class = '';
+						if ( isset( $value['is_active'] ) && true == $value['is_active'] ) {
+							$box_handle_class .= 'box_active';
+						}
+
+						if ( isset( $_GET['box_open'] ) && $_GET['box_open'] == $value['id'] ) {
+							$opened_class = 'box_open';
+						}
+
 						// open panel box
 						echo '<div id="'. esc_attr( $value['id'] ) . '" class="a3rev_panel_box '. esc_attr( $value['class'] ) .'" style="'. esc_attr( $value['css'] ) .'">' . "\n\n";
 
 						// open box handle
-						echo '<div data-form-key="'. esc_attr( trim( $form_key ) ) .'" data-box-id="'. esc_attr( $heading_box_id ) .'" class="a3rev_panel_box_handle" >' . "\n\n";
+						echo '<div data-form-key="'. esc_attr( trim( $form_key ) ) .'" data-box-id="'. esc_attr( $heading_box_id ) .'" class="a3rev_panel_box_handle ' . $box_handle_class .'" >' . "\n\n";
 
 						echo ( ! empty( $value['name'] ) ) ? '<h3 class="a3-plugin-ui-panel-box '. $toggle_box_class . ' ' . $opened_class . '">'. esc_html( $value['name'] ) .' '. $view_doc .'</h3>' : '';
 
@@ -1559,6 +1728,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 						echo '</div>' . "\n\n";
 					}
 
+					$closed_panel_inner = false;
+
 					echo '<table class="form-table">' . "\n\n";
 
 					if ( ! empty( $value['id'] ) ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $value['id'] ) . '_start' );
@@ -1569,13 +1740,13 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 
 					$google_api_key        = $this->settings_get_option( $this->google_api_key_option );
 					$google_api_key_enable = $this->settings_get_option( $this->google_api_key_option . '_enable', 0 );
-					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'wooquickview' );
-					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'wooquickview' );
+					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'woocommerce-products-quick-view' );
+					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'woocommerce-products-quick-view' );
 
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
                         	<?php echo $tip; ?>
-							<label for="<?php echo $this->google_api_key_option; ?>"><?php echo __( 'Google Fonts API', 'wooquickview' ); ?></label>
+							<label for="<?php echo $this->google_api_key_option; ?>"><?php echo __( 'Google Fonts API', 'woocommerce-products-quick-view' ); ?></label>
 						</th>
 						<td class="forminp forminp-onoff_checkbox forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<input
@@ -1587,11 +1758,11 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 type="checkbox"
 								value="1"
 								<?php checked( $google_api_key_enable, 1 ); ?>
-								/> <span class="description" style="margin-left:5px;"><?php echo __( 'ON to connect to Google Fonts API and have auto font updates direct from Google.', 'wooquickview' ); ?></span>
+								/> <span class="description" style="margin-left:5px;"><?php echo __( 'ON to connect to Google Fonts API and have auto font updates direct from Google.', 'woocommerce-products-quick-view' ); ?></span>
 
 							<div>&nbsp;</div>
 							<div class="a3rev-ui-google-api-key-container" style="<?php if( 1 != $google_api_key_enable ) { echo 'display: none;'; } ?>">
-								<div class="a3rev-ui-google-api-key-description"><?php echo sprintf( __( "Enter your existing Google Fonts API Key below. Don't have a key? Visit <a href='%s' target='_blank'>Google Developer API</a> to create a key", 'wooquickview' ), 'https://developers.google.com/fonts/docs/developer_api#APIKey' ); ?></div>
+								<div class="a3rev-ui-google-api-key-description"><?php echo sprintf( __( "Enter your existing Google Fonts API Key below. Don't have a key? Visit <a href='%s' target='_blank'>Google Developer API</a> to create a key", 'woocommerce-products-quick-view' ), 'https://developers.google.com/fonts/docs/developer_api#APIKey' ); ?></div>
 								<div class="a3rev-ui-google-api-key-inside 
 									<?php
 									if ( $wc_qv_fonts_face->is_valid_google_api_key() ) {
@@ -1608,11 +1779,11 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 										style="<?php echo esc_attr( $value['css'] ); ?>"
 										value="<?php echo esc_attr( $google_api_key ); ?>"
 										class="a3rev-ui-text a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?> <?php echo esc_attr( $value['class'] ); ?>"
-		                                placeholder="<?php echo __( 'Google Fonts API Key', 'wooquickview' ); ?>"
+		                                placeholder="<?php echo __( 'Google Fonts API Key', 'woocommerce-products-quick-view' ); ?>"
 										<?php echo implode( ' ', $custom_attributes ); ?>
 										/>
-									<p class="a3rev-ui-google-valid-key-message"><?php echo __( 'Your Google API Key is valid and automatic font updates are enabled.', 'wooquickview' ); ?></p>
-									<p class="a3rev-ui-google-unvalid-key-message"><?php echo __( 'Please enter a valid Google API Key.', 'wooquickview' ); ?></p>
+									<p class="a3rev-ui-google-valid-key-message"><?php echo __( 'Your Google API Key is valid and automatic font updates are enabled.', 'woocommerce-products-quick-view' ); ?></p>
+									<p class="a3rev-ui-google-unvalid-key-message"><?php echo __( 'Please enter a valid Google API Key.', 'woocommerce-products-quick-view' ); ?></p>
 								</div>
 							</div>
 						</td>
@@ -1631,7 +1802,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
                         	<?php echo $tip; ?>
-							<label><?php echo __( 'Check New Version', 'wooquickview' ); ?></label>
+							<label><?php echo __( 'Check New Version', 'woocommerce-products-quick-view' ); ?></label>
 						</th>
 						<td class="forminp forminp-manual_check_version">
 							<?php echo $description; ?>
@@ -1642,10 +1813,168 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 id="<?php echo $this->plugin_name . '-check-version'; ?>"
 								class="button button-primary a3rev-ui-manual_check_version"
                                 type="button"
-								value="<?php echo __( 'Check Now', 'wooquickview' ); ?>"
+								value="<?php echo __( 'Check Now', 'woocommerce-products-quick-view' ); ?>"
 								/> <span class="a3rev-ui-version-checking"> </span>
 								<p class="a3rev-ui-check-version-message <?php echo $new_version_class; ?>"><?php echo $version_message; ?></p>
 
+						</td>
+					</tr><?php
+
+				break;
+
+				// Ajax Submit type
+				case 'ajax_submit' :
+					$button_name      = $value['button_name'];
+					$progressing_text = $value['progressing_text'];
+					$completed_text   = $value['completed_text'];
+					$successed_text   = $value['successed_text'];
+					$submit_data      = json_encode( $value['submit_data'] );
+
+					?><tr valign="top">
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
+						<td class="forminp">
+
+                            <div class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-control">
+
+								<button
+									name="<?php echo $name_attribute; ?>"
+									id="<?php echo $id_attribute; ?>"
+									data-submit_data="<?php echo esc_attr( $submit_data ); ?>"
+									type="button"
+									class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-button <?php echo esc_attr( $value['class'] ); ?>"
+									style="<?php echo esc_attr( $value['css'] ); ?>"
+									<?php echo implode( ' ', $custom_attributes ); ?>
+								><?php echo $button_name; ?></button>
+								<span class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-successed"><?php echo $successed_text; ?></span>
+								<span class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-errors"></span>
+
+								<!-- Progress Bar -->
+								<div class="a3rev-ui-progress-bar-wrap">
+									<div class="a3rev-ui-progress-inner"></div>
+									<div class="a3rev-ui-progressing-text"><?php echo $progressing_text; ?></div>
+									<div class="a3rev-ui-completed-text"><?php echo $completed_text; ?></div>
+								</div>
+
+                           </div>
+                           <?php echo $description; ?>
+						</td>
+					</tr><?php
+
+				break;
+
+				// Ajax Multi Submit type
+				case 'ajax_multi_submit' :
+					$resubmit         = $value['resubmit'];
+					$button_name      = $value['button_name'];
+					$progressing_text = $value['progressing_text'];
+					$completed_text   = $value['completed_text'];
+					$successed_text   = $value['successed_text'];
+					$statistic_column = isset( $value['statistic_column'] ) ? $value['statistic_column'] : 1;
+
+					$multi_current_items = 0;
+					$multi_total_items   = 0;
+
+					$multi_submit = $value['multi_submit'];
+					$multi_ajax  = array();
+					if ( is_array( $multi_submit ) && count( $multi_submit ) > 0 ) {
+						$number_ajax = 0;
+						$old_item_id = '';
+						foreach ( $multi_submit as $single_submit ) {
+							$multi_current_items += (int) $single_submit['current_items'];
+							$multi_total_items += (int) $single_submit['total_items'];
+
+							$single_submit['next_item_id'] = '';
+							$multi_ajax[$single_submit['item_id']] = $single_submit;
+
+							if ( $number_ajax > 0 ) {
+								$multi_ajax[$old_item_id]['next_item_id'] = $single_submit['item_id'];
+							}
+							$old_item_id = $single_submit['item_id'];
+
+							$number_ajax++;
+						}
+					}
+					$multi_ajax = json_encode( $multi_ajax );
+
+					?><tr valign="top">
+						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
+						<td class="forminp">
+
+                            <div class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-control">
+								<?php echo $description; ?>
+								<button
+									data-resubmit="<?php echo $resubmit ? 1 : 0 ; ?>"
+									name="<?php echo $name_attribute; ?>"
+									id="<?php echo $id_attribute; ?>"
+									data-multi_ajax="<?php echo esc_attr( $multi_ajax ); ?>"
+									type="button"
+									class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-button <?php echo esc_attr( $value['class'] ); ?>"
+									style="<?php echo esc_attr( $value['css'] ); ?>"
+									<?php echo implode( ' ', $custom_attributes ); ?>
+								><?php echo $button_name; ?></button>
+								<span class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-successed"><?php echo $successed_text; ?></span>
+								<span class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-errors"></span>
+
+								<!-- Progress Bar -->
+								<div class="a3rev-ui-progress-bar-wrap">
+									<div class="a3rev-ui-progress-inner" data-current="<?php echo $multi_current_items; ?>" data-total="<?php echo $multi_total_items; ?>" ></div>
+									<div class="a3rev-ui-progressing-text"><?php echo $progressing_text; ?></div>
+									<div class="a3rev-ui-completed-text"><?php echo $completed_text; ?></div>
+								</div>
+								<div style="clear: both;"></div>
+
+								<!-- Status Object -->
+								<div class="a3rev-ui-statistics-wrap">
+								<?php if ( $multi_total_items > 0 ) {
+									$column_width = round( (100 / $statistic_column ), 2, PHP_ROUND_HALF_DOWN );
+									foreach ( $multi_submit as $single_submit ) {
+
+										$current_items = (int) $single_submit['current_items'];
+										$total_items   = (int) $single_submit['total_items'];
+
+										// Calculate deg value for cirlce
+										$current_deg = 360;
+										$left_deg    = 360;
+										$right_deg   = 180;
+										$pie_class   = 'pie-more-50';
+										if ( $current_items < $total_items ) {
+											$current_deg = round( ( $current_items / $total_items ) * 360 );
+										}
+										if ( $current_deg <= 180 ) {
+											$left_deg = $right_deg = $current_deg;
+											$pie_class = '';
+										} else {
+											$right_deg = 180;
+											$left_deg = $current_deg;
+										}
+
+										$statistic_customizer = isset ( $single_submit['statistic_customizer'] ) ? $single_submit['statistic_customizer'] : false;
+										if ( $statistic_customizer ) {
+											$current_color = isset( $statistic_customizer['current_color'] ) ? $statistic_customizer['current_color'] : '';
+										}
+								?>
+									<div style="<?php echo ( isset( $single_submit['show_statistic'] ) && ! $single_submit['show_statistic'] ) ? 'display:none;' : ''; ?> width: <?php echo $column_width; ?>%;" class="a3rev-ui-statistic-item a3rev-ui-statistic-<?php echo esc_attr( $single_submit['item_id'] ); ?>">
+										<div class="a3rev-ui-pie-wrap">
+											<div class="a3rev-ui-pie <?php echo esc_attr( $pie_class); ?>">
+												<div class="a3rev-ui-pie-left-side a3rev-ui-pie-half-circle" style="transform: rotate(<?php echo $left_deg; ?>deg); <?php echo ( ! empty( $current_color ) ? 'border-color:' . $current_color : '' ); ?>"></div>
+												<div class="a3rev-ui-pie-right-side a3rev-ui-pie-half-circle" style="transform: rotate(<?php echo $right_deg; ?>deg); <?php echo ( ! empty( $current_color ) ? 'border-color:' . $current_color : '' ); ?>"></div>
+											</div>
+											<div class="a3rev-ui-pie-shadow"></div>
+										</div>
+										<div class="a3rev-ui-statistic-text">
+											<span class="a3rev-ui-statistic-current-item" data-current="<?php echo $current_items; ?>" ><?php echo $current_items; ?></span>
+											<span class="a3rev-ui-statistic-separate">/</span>
+											<span class="a3rev-ui-statistic-total-item"><?php echo $total_items; ?></span>
+											<br />
+											<span class="a3rev-ui-statistic-item-name"><?php echo $single_submit['item_name']; ?></span>
+										</div>
+									</div>
+								<?php
+									}
+								} ?>
+								</div>
+								<div style="clear: both;"></div>
+                           </div>
 						</td>
 					</tr><?php
 
@@ -1655,13 +1984,13 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				case 'onoff_toggle_box' :
 
 					$option_value = $this->settings_get_option( $this->toggle_box_open_option, 0 );
-					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'wooquickview' );
-					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'wooquickview' );
+					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'woocommerce-products-quick-view' );
+					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'woocommerce-products-quick-view' );
 
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
                         	<?php echo $tip; ?>
-							<label for="<?php echo $this->toggle_box_open_option; ?>"><?php echo __( 'Open Box Display', 'wooquickview' ); ?></label>
+							<label for="<?php echo $this->toggle_box_open_option; ?>"><?php echo __( 'Open Box Display', 'woocommerce-products-quick-view' ); ?></label>
 						</th>
 						<td class="forminp forminp-onoff_checkbox forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 							<input
@@ -1674,7 +2003,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								value="1"
 								<?php checked( $option_value, 1 ); ?>
 								<?php echo implode( ' ', $custom_attributes ); ?>
-								/> <span class="description" style="margin-left:5px;"><?php echo __( 'ON and each admin panel setting box OPEN | CLOSED position are saved each time changes are SAVED.', 'wooquickview' ); ?></span>
+								/> <span class="description" style="margin-left:5px;"><?php echo __( 'ON and each admin panel setting box OPEN | CLOSED position are saved each time changes are SAVED.', 'woocommerce-products-quick-view' ); ?></span>
                         </td>
 					</tr><?php
 				break;
@@ -1755,8 +2084,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 									name="<?php echo $name_attribute; ?>[enable]"
 									id="<?php echo $id_attribute; ?>"
 									class="a3rev-ui-bg_color-enable a3rev-ui-onoff_checkbox <?php echo esc_attr( $value['class'] ); ?>"
-									checked_label="<?php _e( 'ON', 'wooquickview' ); ?>"
-									unchecked_label="<?php _e( 'OFF', 'wooquickview' ); ?>"
+									checked_label="<?php _e( 'ON', 'woocommerce-products-quick-view' ); ?>"
+									unchecked_label="<?php _e( 'OFF', 'woocommerce-products-quick-view' ); ?>"
 									type="checkbox"
 									value="1"
 									<?php checked( 1, $enable ); ?>
@@ -1924,8 +2253,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								<?php
 								if ( is_array( $value['onoff_options'] ) && count( $value['onoff_options'] ) > 0 ) {
 									foreach ( $value['onoff_options'] as $i_option ) {
-										if ( ! isset( $i_option['checked_label'] ) ) $i_option['checked_label'] = __( 'ON', 'wooquickview' );
-										if ( ! isset( $i_option['unchecked_label'] ) ) $i_option['unchecked_label'] = __( 'OFF', 'wooquickview' );
+										if ( ! isset( $i_option['checked_label'] ) ) $i_option['checked_label'] = __( 'ON', 'woocommerce-products-quick-view' );
+										if ( ! isset( $i_option['unchecked_label'] ) ) $i_option['unchecked_label'] = __( 'OFF', 'woocommerce-products-quick-view' );
 										if ( ! isset( $i_option['val'] ) ) $i_option['val'] = 1;
 										if ( ! isset( $i_option['text'] ) ) $i_option['text'] = '';
 										?>
@@ -2014,8 +2343,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				case 'onoff_checkbox' :
 				
 					if ( ! isset( $value['checked_value'] ) ) $value['checked_value'] = 1;
-					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'wooquickview' );
-					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'wooquickview' );
+					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'woocommerce-products-quick-view' );
+					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'woocommerce-products-quick-view' );
 		
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
@@ -2043,8 +2372,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 				case 'switcher_checkbox' :
 				
 					if ( ! isset( $value['checked_value'] ) ) $value['checked_value'] = 1;
-					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'wooquickview' );
-					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'wooquickview' );
+					if ( ! isset( $value['checked_label'] ) ) $value['checked_label'] = __( 'ON', 'woocommerce-products-quick-view' );
+					if ( ! isset( $value['unchecked_label'] ) ) $value['unchecked_label'] = __( 'OFF', 'woocommerce-products-quick-view' );
 		
 					?><tr valign="top">
 						<th scope="row" class="titledesc">
@@ -2079,11 +2408,11 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
 	
-							<label><?php _e( 'Width', 'wooquickview' ); ?> <input name="<?php echo $name_attribute; ?>[width]" id="<?php echo $id_attribute; ?>-width" type="text" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-width" value="<?php echo $width; ?>" /></label>
+							<label><?php _e( 'Width', 'woocommerce-products-quick-view' ); ?> <input name="<?php echo $name_attribute; ?>[width]" id="<?php echo $id_attribute; ?>-width" type="text" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-width" value="<?php echo $width; ?>" /></label>
 	
-							<label><?php _e( 'Height', 'wooquickview' ); ?> <input name="<?php echo $name_attribute; ?>[height]" id="<?php echo $id_attribute; ?>-height" type="text" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-height" value="<?php echo $height; ?>" /></label>
+							<label><?php _e( 'Height', 'woocommerce-products-quick-view' ); ?> <input name="<?php echo $name_attribute; ?>[height]" id="<?php echo $id_attribute; ?>-height" type="text" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-height" value="<?php echo $height; ?>" /></label>
 	
-							<label><?php _e( 'Hard Crop', 'wooquickview' ); ?> <input name="<?php echo $name_attribute; ?>[crop]" id="<?php echo $id_attribute; ?>-crop" type="checkbox" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-crop" <?php echo $crop; ?> /></label>
+							<label><?php _e( 'Hard Crop', 'woocommerce-products-quick-view' ); ?> <input name="<?php echo $name_attribute; ?>[crop]" id="<?php echo $id_attribute; ?>-crop" type="checkbox" class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-crop" <?php echo $crop; ?> /></label>
 	
 							</td>
 					</tr><?php
@@ -2176,7 +2505,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 id="<?php echo $id_attribute; ?>-face"
 								class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-face chzn-select <?php if ( is_rtl() ) { echo 'chzn-rtl'; } ?>"
 								>
-								<optgroup label="<?php _e( '-- Default Fonts --', 'wooquickview' ); ?>">
+								<optgroup label="<?php _e( '-- Default Fonts --', 'woocommerce-products-quick-view' ); ?>">
                                 <?php
 									foreach ( $wc_qv_fonts_face->get_default_fonts() as $val => $text ) {
 										?>
@@ -2187,7 +2516,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 									}
 								?>
                                 </optgroup>
-                                <optgroup label="<?php _e( '-- Google Fonts --', 'wooquickview' ); ?>">
+                                <optgroup label="<?php _e( '-- Google Fonts --', 'woocommerce-products-quick-view' ); ?>">
                                 <?php
 									foreach ( $wc_qv_fonts_face->get_google_fonts() as $font ) {
 										?>
@@ -2228,7 +2557,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								/> 
                                 
                            <!-- Preview Button -->
-                           <div class="a3rev-ui-typography-preview"><a href="#" class="a3rev-ui-typography-preview-button button submit-button" title="<?php _e( 'Preview your customized typography settings', 'wooquickview'); ?>"><span>&nbsp;</span></a></div>
+                           <div class="a3rev-ui-typography-preview"><a href="#" class="a3rev-ui-typography-preview-button button submit-button" title="<?php _e( 'Preview your customized typography settings', 'woocommerce-products-quick-view' ); ?>"><span>&nbsp;</span></a></div>
                            
                            </div>
                            
@@ -2290,7 +2619,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					?><tr valign="top">
 						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-border_corner">
-                        	<?php echo $description; ?>
+							<?php echo $description; ?>
                             <div class="a3rev-ui-settings-control">
                         	<!-- Border Width -->
 							<select
@@ -2337,8 +2666,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								/>
                            
                            <!-- Preview Button -->
-                           <div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-border-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized border settings', 'wooquickview'); ?>"><span>&nbsp;</span></a></div>
-                           
+                           <div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-border-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized border settings', 'woocommerce-products-quick-view' ); ?>"><span>&nbsp;</span></a></div>
+                           <span class="description" style="margin-left:5px;"><?php echo __( '0px = No Border', 'woocommerce-products-quick-view' ); ?></span>
                            <div style="clear:both; margin-bottom:10px"></div>
                            
                            <!-- Border Corner : Rounded or Square -->
@@ -2346,8 +2675,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                     name="<?php echo $name_attribute; ?>[corner]"
                                     id="<?php echo $id_attribute; ?>"
                                     class="a3rev-ui-border-corner a3rev-ui-onoff_checkbox <?php echo esc_attr( $value['class'] ); ?>"
-                                    checked_label="<?php _e( 'Rounded', 'wooquickview' ); ?>"
-                                    unchecked_label="<?php _e( 'Square', 'wooquickview' ); ?>"
+                                    checked_label="<?php _e( 'Rounded', 'woocommerce-products-quick-view' ); ?>"
+                                    unchecked_label="<?php _e( 'Square', 'woocommerce-products-quick-view' ); ?>"
                                     type="checkbox"
                                     value="rounded"
                                     <?php checked( 'rounded', $corner ); ?>
@@ -2357,7 +2686,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 							<!-- Border Rounded Value -->
 								<div class="a3rev-ui-border-corner-value-container">
                                 	<div class="a3rev-ui-border_corner-top_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'wooquickview' ); ?></span>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'woocommerce-products-quick-view' ); ?></span>
                                         <div class="a3rev-ui-slide-container">
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2377,7 +2706,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 		</div>
                                     </div>
                                     <div class="a3rev-ui-border_corner-top_right">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'wooquickview' ); ?></span> 
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'woocommerce-products-quick-view' ); ?></span> 
                                         <div class="a3rev-ui-slide-container">
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2397,7 +2726,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 		</div>
                                     </div>
                                     <div class="a3rev-ui-border_corner-bottom_right">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'wooquickview' ); ?></span> 
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'woocommerce-products-quick-view' ); ?></span> 
                                         <div class="a3rev-ui-slide-container">
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2417,7 +2746,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 		</div>
                                     </div>
                                     <div class="a3rev-ui-border_corner-bottom_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'wooquickview' ); ?></span>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'woocommerce-products-quick-view' ); ?></span>
                                         <div class="a3rev-ui-slide-container"> 
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2457,7 +2786,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					?><tr valign="top">
 						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp">
-                        	<?php echo $description; ?>
+							<?php echo $description; ?>
                             <div class="a3rev-ui-settings-control">
                         	<!-- Border Width -->
 							<select
@@ -2504,7 +2833,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								/>
                            
                            <!-- Preview Button -->
-                           <div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-border-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized border styles settings', 'wooquickview'); ?>"><span>&nbsp;</span></a></div>
+                           <div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-border-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized border styles settings', 'woocommerce-products-quick-view' ); ?>"><span>&nbsp;</span></a></div>
+                           <span class="description" style="margin-left:5px;"><?php echo __( '0px = No Border', 'woocommerce-products-quick-view' ); ?></span>
                            </div>
                            
 						</td>
@@ -2555,15 +2885,14 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					?><tr valign="top">
 						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
-                        	<?php echo $description; ?>
                             <div class="a3rev-ui-settings-control">	
                                 <!-- Border Corner : Rounded or Square -->
                                 <input
                                     name="<?php echo $name_attribute; ?>[corner]"
                                     id="<?php echo $id_attribute; ?>"
                                     class="a3rev-ui-border-corner a3rev-ui-onoff_checkbox <?php echo esc_attr( $value['class'] ); ?>"
-                                    checked_label="<?php _e( 'Rounded', 'wooquickview' ); ?>"
-                                    unchecked_label="<?php _e( 'Square', 'wooquickview' ); ?>"
+                                    checked_label="<?php _e( 'Rounded', 'woocommerce-products-quick-view' ); ?>"
+                                    unchecked_label="<?php _e( 'Square', 'woocommerce-products-quick-view' ); ?>"
                                     type="checkbox"
                                     value="rounded"
                                     <?php checked( 'rounded', $corner ); ?>
@@ -2571,12 +2900,12 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								/> 
                                 
                                 <!-- Preview Button -->
-                               	<div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-border-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized border settings', 'wooquickview'); ?>"><span>&nbsp;</span></a></div>
-                               
+                               	<div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-border-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized border settings', 'woocommerce-products-quick-view' ); ?>"><span>&nbsp;</span></a></div>
+                                <?php echo $description; ?>
                                	<!-- Border Rounded Value -->
 								<div class="a3rev-ui-border-corner-value-container">
                                 	<div class="a3rev-ui-border_corner-top_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'wooquickview' ); ?></span>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Left Corner', 'woocommerce-products-quick-view' ); ?></span>
                                         <div class="a3rev-ui-slide-container">
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2596,7 +2925,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 		</div>
                                     </div>
                                     <div class="a3rev-ui-border_corner-top_right">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'wooquickview' ); ?></span>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Top Right Corner', 'woocommerce-products-quick-view' ); ?></span>
                                         <div class="a3rev-ui-slide-container"> 
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2616,7 +2945,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 		</div>
                                     </div>
                                     <div class="a3rev-ui-border_corner-bottom_right">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'wooquickview' ); ?></span>
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Right Corner', 'woocommerce-products-quick-view' ); ?></span>
                                         <div class="a3rev-ui-slide-container"> 
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2636,7 +2965,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                 		</div>
                                     </div>
                                     <div class="a3rev-ui-border_corner-bottom_left">
-                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'wooquickview' ); ?></span> 
+                                        <span class="a3rev-ui-border_corner-span"><?php _e( 'Bottom Left Corner', 'woocommerce-products-quick-view' ); ?></span> 
                                         <div class="a3rev-ui-slide-container">
                                             <div class="a3rev-ui-slide-container-start">
                                                 <div class="a3rev-ui-slide-container-end">
@@ -2682,18 +3011,18 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 					?><tr valign="top">
 						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp forminp-box_shadow">
-                        	<?php echo $description; ?>
                             <input
                                     name="<?php echo $name_attribute; ?>[enable]"
                                     id="<?php echo $id_attribute; ?>"
                                     class="a3rev-ui-box_shadow-enable a3rev-ui-onoff_checkbox <?php echo esc_attr( $value['class'] ); ?>"
-                                    checked_label="<?php _e( 'YES', 'wooquickview' ); ?>"
-                                    unchecked_label="<?php _e( 'NO', 'wooquickview' ); ?>"
+                                    checked_label="<?php _e( 'ON', 'woocommerce-products-quick-view' ); ?>"
+                                    unchecked_label="<?php _e( 'OFF', 'woocommerce-products-quick-view' ); ?>"
                                     type="checkbox"
                                     value="1"
                                     <?php checked( 1, $enable ); ?>
                                     <?php echo implode( ' ', $custom_attributes ); ?>
 								/>
+							<?php echo $description; ?>
                             <div style="clear:both;"></div>    
                             <div class="a3rev-ui-box_shadow-enable-container">
                             <div class="a3rev-ui-settings-control">
@@ -2702,7 +3031,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								name="<?php echo $name_attribute; ?>[h_shadow]"
                                 id="<?php echo $id_attribute; ?>-h_shadow"
 								class="a3rev-ui-box_shadow-h_shadow chzn-select <?php if ( is_rtl() ) { echo 'chzn-rtl'; } ?>"
-                                data-placeholder="<?php _e( 'Horizontal Shadow', 'wooquickview' ); ?>"
+                                data-placeholder="<?php _e( 'Horizontal Shadow', 'woocommerce-products-quick-view' ); ?>"
 								>
 								<?php
 									for ( $i = -20; $i <= 20; $i++ ) {
@@ -2720,7 +3049,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								name="<?php echo $name_attribute; ?>[v_shadow]"
                                 id="<?php echo $id_attribute; ?>-v_shadow"
 								class="a3rev-ui-box_shadow-v_shadow chzn-select <?php if ( is_rtl() ) { echo 'chzn-rtl'; } ?>"
-                                data-placeholder="<?php _e( 'Vertical Shadow', 'wooquickview' ); ?>"
+                                data-placeholder="<?php _e( 'Vertical Shadow', 'woocommerce-products-quick-view' ); ?>"
 								>
 								<?php
 									for ( $i = -20; $i <= 20; $i++ ) {
@@ -2738,7 +3067,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								name="<?php echo $name_attribute; ?>[blur]"
                                 id="<?php echo $id_attribute; ?>-blur"
 								class="a3rev-ui-box_shadow-blur chzn-select <?php if ( is_rtl() ) { echo 'chzn-rtl'; } ?>"
-                                data-placeholder="<?php _e( 'Blur Distance', 'wooquickview' ); ?>"
+                                data-placeholder="<?php _e( 'Blur Distance', 'woocommerce-products-quick-view' ); ?>"
 								>
 								<?php
 									for ( $i = 0; $i <= 20; $i++ ) {
@@ -2756,7 +3085,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								name="<?php echo $name_attribute; ?>[spread]"
                                 id="<?php echo $id_attribute; ?>-spread"
 								class="a3rev-ui-box_shadow-spread chzn-select <?php if ( is_rtl() ) { echo 'chzn-rtl'; } ?>"
-                                data-placeholder="<?php _e( 'Spread Size', 'wooquickview' ); ?>"
+                                data-placeholder="<?php _e( 'Spread Size', 'woocommerce-products-quick-view' ); ?>"
 								>
 								<?php
 									for ( $i = 0; $i <= 20; $i++ ) {
@@ -2774,8 +3103,8 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
                                     name="<?php echo $name_attribute; ?>[inset]"
                                     id="<?php echo $id_attribute; ?>"
                                     class="a3rev-ui-box_shadow-inset a3rev-ui-onoff_checkbox"
-                                    checked_label="<?php _e( 'INNER', 'wooquickview' ); ?>"
-                                    unchecked_label="<?php _e( 'OUTER', 'wooquickview' ); ?>"
+                                    checked_label="<?php _e( 'INNER', 'woocommerce-products-quick-view' ); ?>"
+                                    unchecked_label="<?php _e( 'OUTER', 'woocommerce-products-quick-view' ); ?>"
                                     type="checkbox"
                                     value="inset"
                                     <?php checked( 'inset', $inset ); ?>
@@ -2793,7 +3122,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 								/>
                         	
                             <!-- Preview Button -->
-                           <div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-box_shadow-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized box shadow settings', 'wooquickview'); ?>"><span>&nbsp;</span></a></div>   
+                           <div class="a3rev-ui-settings-preview"><a href="#" class="a3rev-ui-box_shadow-preview-button a3rev-ui-settings-preview-button button submit-button" title="<?php _e( 'Preview your customized box shadow settings', 'woocommerce-products-quick-view' ); ?>"><span>&nbsp;</span></a></div>   
                            </div>
                            <div style="clear:both;"></div>
                            </div>
@@ -3031,7 +3360,7 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 			}
 		}
 		
-		if ( $end_heading_id !== false ) {
+		if ( $end_heading_id !== false && ! $closed_panel_inner ) {
 			if ( trim( $end_heading_id ) != '' ) do_action( $this->plugin_name . '_settings_' . sanitize_title( $end_heading_id ) . '_end' );
 				echo '</table>' . "\n\n";
 				echo '</div>' . "\n\n";
@@ -3058,11 +3387,17 @@ class WC_QV_Admin_Interface extends WC_QV_Admin_UI
 			echo '</div>' . "\n\n";
 		}
 
+		if ( $had_first_column ) {
+			// close panel column
+			echo '</div>' . "\n\n";
+		}
+
 		?>
+			</div> <!-- Close Panel Row -->
 		<?php do_action( $this->plugin_name . '-' . trim( $form_key ) . '_settings_end' ); ?>
             <p class="submit">
-                    <input type="submit" value="<?php _e('Save changes', 'wooquickview'); ?>" class="button button-primary" name="bt_save_settings" />
-                    <input type="submit" name="bt_reset_settings" class="button" value="<?php _e('Reset Settings', 'wooquickview'); ?>"  />
+                    <input type="submit" value="<?php _e('Save changes', 'woocommerce-products-quick-view' ); ?>" class="button button-primary" name="bt_save_settings" />
+                    <input type="submit" name="bt_reset_settings" class="button" value="<?php _e('Reset Settings', 'woocommerce-products-quick-view' ); ?>"  />
                     <input type="hidden" name="form_name_action" value="<?php echo $form_key; ?>"  />
                     <input type="hidden" class="last_tab" name="subtab" value="#<?php echo $current_subtab; ?>" />
             </p>

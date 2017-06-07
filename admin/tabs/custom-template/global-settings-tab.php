@@ -75,7 +75,7 @@ class WC_QV_Custom_Template_Global_Settings_Tab extends WC_QV_Admin_UI
 		
 		$tab_data = array( 
 			'name'				=> 'custom-template',
-			'label'				=> __( 'Custom Template', 'wooquickview' ),
+			'label'				=> __( 'Custom Template', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_custom_template_global_settings_tab_manager',
 		);
 		

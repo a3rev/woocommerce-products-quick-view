@@ -78,9 +78,9 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 		$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Global Settings successfully saved.', 'wooquickview' ),
-				'error_message'		=> __( 'Error: Global Settings can not save.', 'wooquickview' ),
-				'reset_message'		=> __( 'Global Settings successfully reseted.', 'wooquickview' ),
+				'success_message'	=> __( 'Global Settings successfully saved.', 'woocommerce-products-quick-view' ),
+				'error_message'		=> __( 'Error: Global Settings can not save.', 'woocommerce-products-quick-view' ),
+				'reset_message'		=> __( 'Global Settings successfully reseted.', 'woocommerce-products-quick-view' ),
 			);
 
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -135,7 +135,7 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'settings',
-			'label'				=> __( 'Container Style', 'wooquickview' ),
+			'label'				=> __( 'Container Style', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_custom_template_global_settings_form',
 		);
 		
@@ -178,7 +178,7 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
   		// Define settings			
      	$this->form_fields = array(
      		array(
-            	'name' 		=> __( 'CUSTOM TEMPLATE PREMIUM', 'wooquickview' ),
+            	'name' 		=> __( 'CUSTOM TEMPLATE PREMIUM', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'desc'		=> '<img class="rwd_image_maps" src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/premium-custom-template.png" usemap="#customTemplateMap" style="width: auto; max-width: 100%;" border="0" />
 <map name="customTemplateMap" id="customTemplateMap">
@@ -190,14 +190,14 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
            	),
 
 			array(
-				'name' 		=> __( 'Container Style', 'wooquickview' ),
+				'name' 		=> __( 'Container Style', 'woocommerce-products-quick-view' ),
 				'class'		=> 'pro_feature_fields pro_feature_hidden',
 				'id'		=> 'qv_template_container_box',
 				'type' 		=> 'heading',
 				'is_box'	=> true,
 			),
 			array(  
-				'name' 		=> __( 'Gallery Container Wide', 'wooquickview' ),
+				'name' 		=> __( 'Gallery Container Wide', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'gallery_container_wide',
 				'desc'		=> '%',
 				'type' 		=> 'slider',
@@ -207,28 +207,28 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 				'increment'	=> 1
 			),
 			array(  
-				'name' 		=> __( 'Gallery Position', 'wooquickview' ),
+				'name' 		=> __( 'Gallery Position', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'gallery_position',
 				'type' 		=> 'onoff_radio',
 				'default' 	=> 'left',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'left',
-						'text' 				=> __( 'Left', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Left', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'right',
-						'text' 				=> __( 'Right', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Right', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 				),
 			),
 			array(  
-				'name' 		=> __( 'Pop-up Container Background Colour', 'wooquickview' ),
-				'desc' 		=> __('Default', 'wooquickview'). ' [default_value]',
+				'name' 		=> __( 'Pop-up Container Background Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __('Default', 'woocommerce-products-quick-view' ). ' [default_value]',
 				'id' 		=> 'container_bg_color',
 				'type' 		=> 'color',
 				'default'	=> '#FFFFFF'

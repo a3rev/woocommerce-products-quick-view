@@ -41,159 +41,159 @@ class WC_QV_Custom_Template_Quantity_Selector_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-            	'name' => __( 'Quantity Selector', 'wooquickview' ),
+            	'name' => __( 'Quantity Selector', 'woocommerce-products-quick-view' ),
                 'type' => 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'		=> 'qv_template_quantity_selector_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Quantity Selector', 'wooquickview' ),
+				'name' 		=> __( 'Quantity Selector', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'show_quantity_selector',
 				'class'		=> 'show_quantity_selector',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 1,
 				'checked_value'		=> 1,
 				'unchecked_value' 	=> 0,
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 			
 			array(
-				'name'		=> __( 'Quantity Selector Container', 'wooquickview' ),
+				'name'		=> __( 'Quantity Selector Container', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
 				'class'		=> 'show_quantity_selector_container'
            	),
 			array(  
-				'name' 		=> __( 'Container Background Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Container Background Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quantity_selector_bg_colour',
 				'type' 		=> 'color',
 				'default'	=> '#DDDDDD'
 			),
 			array(  
-				'name' 		=> __( 'Container Border', 'wooquickview' ),
+				'name' 		=> __( 'Container Border', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_selector_border',
 				'type' 		=> 'border',
 				'default'	=> array( 'width' => '1px', 'style' => 'solid', 'color' => '#666666', 'corner' => 'rounded' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ),
 			),
 			array(  
-				'name' 		=> __( 'Container Shadow', 'wooquickview' ),
+				'name' 		=> __( 'Container Shadow', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_selector_shadow',
 				'type' 		=> 'box_shadow',
 				'default'	=> array( 'enable' => 0, 'h_shadow' => '5px' , 'v_shadow' => '5px', 'blur' => '2px' , 'spread' => '2px', 'color' => '#999999', 'inset' => '' )
 			),
 			array(  
-				'name' 		=> __( 'Container Border Margin (Outside)', 'wooquickview' ),
+				'name' 		=> __( 'Container Border Margin (Outside)', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_selector_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array(  'id' 		=> 'quantity_selector_margin_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 									array(  'id' 		=> 'quantity_selector_margin_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 	 								array(  'id' 		=> 'quantity_selector_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '0' ),
 									array(  'id' 		=> 'quantity_selector_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 	 							)
 			),
 			
 			array(
-				'name'		=> __( 'Quantity Input', 'wooquickview' ),
+				'name'		=> __( 'Quantity Input', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
 				'class'		=> 'show_quantity_selector_container'
            	),
 			array(  
-				'name' 		=> __( 'Quantity Input Font', 'wooquickview' ),
+				'name' 		=> __( 'Quantity Input Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_input_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '16px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
 			),
 			array(  
-				'name' 		=> __( 'Quantity Input Padding (Inside)', 'wooquickview' ),
+				'name' 		=> __( 'Quantity Input Padding (Inside)', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_input_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array(  'id' 		=> 'quantity_input_padding_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 									array(  'id' 		=> 'quantity_input_padding_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 	 								array(  'id' 		=> 'quantity_input_padding_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 									array(  'id' 		=> 'quantity_input_padding_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 	 							)
 			),
 			
 			array(
-				'name'		=> __( 'Quantity Plus / Minus', 'wooquickview' ),
+				'name'		=> __( 'Quantity Plus / Minus', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
 				'class'		=> 'show_quantity_selector_container'
            	),
 			array(  
-				'name' 		=> __( 'Quantity Plus / Minus Font', 'wooquickview' ),
+				'name' 		=> __( 'Quantity Plus / Minus Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_plus_minus_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '11px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'bold', 'color' => '#000000' )
 			),
 			array(  
-				'name' 		=> __( 'Background Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Background Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quantity_plus_minus_bg_colour',
 				'type' 		=> 'color',
 				'default'	=> '#DDDDDD'
 			),
 			array(  
-				'name' 		=> __( 'Background Colour Gradient From', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Background Colour Gradient From', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quantity_plus_minus_bg_colour_from',
 				'type' 		=> 'color',
 				'default'	=> '#FFFFFF'
 			),
 			
 			array(  
-				'name' 		=> __( 'Background Colour Gradient To', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Background Colour Gradient To', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quantity_plus_minus_bg_colour_to',
 				'type' 		=> 'color',
 				'default'	=> '#999999'
 			),
 			array(  
-				'name' 		=> __( 'Quantity Plus / Minus Padding (Inside)', 'wooquickview' ),
+				'name' 		=> __( 'Quantity Plus / Minus Padding (Inside)', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quantity_plus_minus_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array(  'id' 		=> 'quantity_plus_minus_padding_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '0' ),
 									array(  'id' 		=> 'quantity_plus_minus_padding_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '0' ),
 	 								array(  'id' 		=> 'quantity_plus_minus_padding_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '2' ),
 									array(  'id' 		=> 'quantity_plus_minus_padding_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '2' ),
 	 							)

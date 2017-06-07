@@ -160,9 +160,9 @@ class WC_Quick_View_Custom_Template
 				?>
                 <?php if ( $count > 0 ) { ?>
                 <div class="quick_view_product_rating_container">
-                    <div class="star-rating" title="<?php printf( __( 'Rated %s out of 5', 'wooquickview' ), $average ); ?>">
+                    <div class="star-rating" title="<?php printf( __( 'Rated %s out of 5', 'woocommerce-products-quick-view' ), $average ); ?>">
                         <span style="width:<?php echo ( ( $average / 5 ) * 100 ); ?>%">
-                            <strong itemprop="ratingValue" class="rating"><?php echo esc_html( $average ); ?></strong> <?php _e( 'out of 5', 'wooquickview' ); ?>
+                            <strong itemprop="ratingValue" class="rating"><?php echo esc_html( $average ); ?></strong> <?php _e( 'out of 5', 'woocommerce-products-quick-view' ); ?>
                         </span>
                     </div>
                     <div style="clear:both;"></div>
@@ -186,21 +186,21 @@ class WC_Quick_View_Custom_Template
                 <div class="quick_view_product_meta_container">
                 	<?php if ( wc_product_sku_enabled() && ( $my_product->get_sku() || $my_product->is_type( 'variable' ) ) ) : ?>
 
-                        <div class="quick_view_product_meta quick_view_product_sku"><span class="quick_view_product_meta_name"><?php _e( 'SKU:', 'wooquickview' ); ?></span> <span class="quick_view_product_meta_value"><?php echo ( $sku = $my_product->get_sku() ) ? $sku : __( 'N/A', 'wooquickview' ); ?></span>.</div>
+                        <div class="quick_view_product_meta quick_view_product_sku"><span class="quick_view_product_meta_name"><?php _e( 'SKU:', 'woocommerce-products-quick-view' ); ?></span> <span class="quick_view_product_meta_value"><?php echo ( $sku = $my_product->get_sku() ) ? $sku : __( 'N/A', 'woocommerce-products-quick-view' ); ?></span>.</div>
                 
                     <?php endif; ?>
 
                     <?php if ( version_compare( WC_VERSION, '3.0.0', '<' ) ) { ?>
                 
-                    <?php echo $my_product->get_categories( ', ', '<div class="quick_view_product_meta quick_view_product_category"><span class="quick_view_product_meta_name">' . _n( 'Category:', 'Categories:', $cat_count, 'wooquickview' ) . '</span> ', '.</div>' ); ?>
+                    <?php echo $my_product->get_categories( ', ', '<div class="quick_view_product_meta quick_view_product_category"><span class="quick_view_product_meta_name">' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
                 
-                    <?php echo $my_product->get_tags( ', ', '<div class="quick_view_product_meta quick_view_product_tag"><span class="quick_view_product_meta_name">' . _n( 'Tag:', 'Tags:', $tag_count, 'wooquickview' ) . '</span> ', '.</div>' ); ?>
+                    <?php echo $my_product->get_tags( ', ', '<div class="quick_view_product_meta quick_view_product_tag"><span class="quick_view_product_meta_name">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
 
                     <?php } else { ?>
 
-                    <?php echo wc_get_product_category_list( $my_product->get_id(), ', ', '<div class="quick_view_product_meta quick_view_product_category"><span class="quick_view_product_meta_name">' . _n( 'Category:', 'Categories:', $cat_count, 'wooquickview' ) . '</span> ', '.</div>' ); ?>
+                    <?php echo wc_get_product_category_list( $my_product->get_id(), ', ', '<div class="quick_view_product_meta quick_view_product_category"><span class="quick_view_product_meta_name">' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
                 
-                    <?php echo wc_get_product_tag_list( $my_product->get_id(), ', ', '<div class="quick_view_product_meta quick_view_product_tag"><span class="quick_view_product_meta_name">' . _n( 'Tag:', 'Tags:', $tag_count, 'wooquickview' ) . '</span> ', '.</div>' ); ?>
+                    <?php echo wc_get_product_tag_list( $my_product->get_id(), ', ', '<div class="quick_view_product_meta quick_view_product_tag"><span class="quick_view_product_meta_name">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
 
                     <?php } ?>
 

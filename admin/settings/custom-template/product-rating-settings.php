@@ -41,22 +41,22 @@ class WC_QV_Custom_Template_Product_Rating_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-				'name'		=> __( 'Product Rating', 'wooquickview' ),
+				'name'		=> __( 'Product Rating', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'		=> 'qv_template_rating_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Product Rating', 'wooquickview' ),
+				'name' 		=> __( 'Product Rating', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'show_rating',
 				'class'		=> 'show_rating',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 1,
 				'checked_value'		=> 1,
 				'unchecked_value' 	=> 0,
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 			
 			array(
@@ -65,56 +65,56 @@ class WC_QV_Custom_Template_Product_Rating_Settings
 				'class'		=> 'show_rating_container'
            	),
 			array(  
-				'name' 		=> __( 'Rating Alignment', 'wooquickview' ),
+				'name' 		=> __( 'Rating Alignment', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'rating_alignment',
 				'type' 		=> 'onoff_radio',
 				'default' 	=> 'left',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'left',
-						'text' 				=> __( 'Left', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Left', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'center',
-						'text' 				=> __( 'Center', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Center', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'right',
-						'text' 				=> __( 'Right', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Right', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 				),
 			),
 			array(  
-				'name' 		=> __( 'Rating Margin', 'wooquickview' ),
+				'name' 		=> __( 'Rating Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'rating_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array( 
 											'id' 		=> 'rating_margin_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 	 
 	 								array(  'id' 		=> 'rating_margin_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 											
 									array( 
 											'id' 		=> 'rating_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 											
 									array( 
 											'id' 		=> 'rating_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 	 							)

@@ -78,9 +78,9 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 		$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Dynamic Gallery Icon Styles successfully saved.', 'wooquickview' ),
-				'error_message'		=> __( 'Error: Dynamic Gallery Icon Styles can not save.', 'wooquickview' ),
-				'reset_message'		=> __( 'Dynamic Gallery Icon Styles successfully reseted.', 'wooquickview' ),
+				'success_message'	=> __( 'Dynamic Gallery Icon Styles successfully saved.', 'woocommerce-products-quick-view' ),
+				'error_message'		=> __( 'Error: Dynamic Gallery Icon Styles can not save.', 'woocommerce-products-quick-view' ),
+				'reset_message'		=> __( 'Dynamic Gallery Icon Styles successfully reseted.', 'woocommerce-products-quick-view' ),
 			);
 		
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -135,7 +135,7 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'gallery-icon-styles',
-			'label'				=> __( 'Icon Styles', 'wooquickview' ),
+			'label'				=> __( 'Icon Styles', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_custom_template_gallery_icon_settings_form',
 		);
 		
@@ -178,7 +178,7 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
   		// Define settings			
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
      		array(
-            	'name' 		=> __( 'GALLERY ICON STYLES PREMIUM', 'wooquickview' ),
+            	'name' 		=> __( 'GALLERY ICON STYLES PREMIUM', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'desc'		=> '<img class="rwd_image_maps" src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/premium-gallery-icons.png" usemap="#galleryIconMap" style="width: auto; max-width: 100%;" border="0" />
 <map name="galleryIconMap" id="galleryIconMap">
@@ -190,7 +190,7 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
            	),
 
 			array(
-				'name'   => __('Next / Previous Gallery Icons', 'wooquickview'),
+				'name'   => __('Next / Previous Gallery Icons', 'woocommerce-products-quick-view' ),
 				'type'   => 'heading',
 				'class'		=> 'pro_feature_fields pro_feature_hidden',
 				'id'     => 'qv_dgallery_next_pre_icons_box',
@@ -202,7 +202,7 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'css'		=> 'padding-bottom: 0px;',
 			),
 			array(
-				'name' => __( 'Arrow Icons Size', 'wooquickview' ),
+				'name' => __( 'Arrow Icons Size', 'woocommerce-products-quick-view' ),
 				'desc' 		=> "px",
 				'id' 		=> 'nextpre_icons_size',
 				'type' 		=> 'slider',
@@ -212,14 +212,14 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'increment'	=> 1,
 			),
 			array(
-				'name' 		=> __( 'Arrow Icon Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Arrow Icon Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'nextpre_icons_color',
 				'type' 		=> 'color',
 				'default'	=> '#000'
 			),
 			array(
-				'name' 		=> __( 'Background Colour', 'wooquickview' ),
+				'name' 		=> __( 'Background Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'nextpre_icons_background',
 				'class'		=> 'qv_dgallery_nextpre_icons_background',
 				'type' 		=> 'bg_color',
@@ -232,8 +232,8 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'css'		=> 'padding-bottom: 0px;',
 			),
 			array(
-				'name' => __( 'Background Transparency', 'wooquickview' ),
-				'desc' 		=> "%. " . __( '100% = Full Colour', 'wooquickview' ),
+				'name' => __( 'Background Transparency', 'woocommerce-products-quick-view' ),
+				'desc' 		=> "%. " . __( '100% = Full Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'nextpre_icons_opacity',
 				'type' 		=> 'slider',
 				'default'	=> 70,
@@ -246,61 +246,61 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'type'   => 'heading',
 			),
 			array(
-				'name' 		=> __( 'Border', 'wooquickview' ),
+				'name' 		=> __( 'Border', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'nextpre_icons_border',
 				'type' 		=> 'border',
 				'default'	=> array( 'width' => '0px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ),
 			),
 			array(
-				'name' => __( 'Border Shadow', 'wooquickview' ),
+				'name' => __( 'Border Shadow', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'nextpre_icons_shadow',
 				'type' 		=> 'box_shadow',
 				'default'	=> array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' )
 			),
 			array(
-				'name' 		=> __( 'Border Margin', 'wooquickview' ),
+				'name' 		=> __( 'Border Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'nextpre_icons_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
 									array(  'id' 		=> 'nextpre_icons_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 									array(  'id' 		=> 'nextpre_icons_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 	 							)
 			),
 			array(
-				'name' 		=> __( 'Border Padding', 'wooquickview' ),
-				'desc' 		=> __( 'Padding between the Icon and Container border.', 'wooquickview' ),
+				'name' 		=> __( 'Border Padding', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Padding between the Icon and Container border.', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'nextpre_icons_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
 	 								array(  'id' 		=> 'nextpre_icons_padding_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 
 	 								array(  'id' 		=> 'nextpre_icons_padding_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 
 									array(  'id' 		=> 'nextpre_icons_padding_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 
 									array(  'id' 		=> 'nextpre_icons_padding_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
@@ -308,8 +308,8 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 			),
 
 			array(
-				'name'   => __('Pause | Play Icon', 'wooquickview'),
-				'desc'   => __('This control icons will show when is viewing on Mobile or when the Control Nav Bar is turn OFF.', 'wooquickview'),
+				'name'   => __('Pause | Play Icon', 'woocommerce-products-quick-view' ),
+				'desc'   => __('This control icons will show when is viewing on Mobile or when the Control Nav Bar is turn OFF.', 'woocommerce-products-quick-view' ),
 				'type'   => 'heading',
 				'class'		=> 'pro_feature_fields pro_feature_hidden',
 				'id'     => 'qv_dgallery_pauseplay_icon_box',
@@ -321,7 +321,7 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'css'		=> 'padding-bottom: 0px;',
 			),
 			array(
-				'name' => __( 'Icon Size', 'wooquickview' ),
+				'name' => __( 'Icon Size', 'woocommerce-products-quick-view' ),
 				'desc' 		=> "px",
 				'id' 		=> 'pauseplay_icon_size',
 				'type' 		=> 'slider',
@@ -331,14 +331,14 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'increment'	=> 1,
 			),
 			array(
-				'name' 		=> __( 'Icon Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Icon Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'pauseplay_icon_color',
 				'type' 		=> 'color',
 				'default'	=> '#000'
 			),
 			array(
-				'name' 		=> __( 'Background Colour', 'wooquickview' ),
+				'name' 		=> __( 'Background Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pauseplay_icon_background',
 				'class'		=> 'qv_dgallery_pauseplay_icon_background',
 				'type' 		=> 'bg_color',
@@ -351,8 +351,8 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'css'		=> 'padding-bottom: 0px;',
 			),
 			array(
-				'name' => __( 'Background Transparency', 'wooquickview' ),
-				'desc' 		=> "%. " . __( '100% = Full Colour', 'wooquickview' ),
+				'name' => __( 'Background Transparency', 'woocommerce-products-quick-view' ),
+				'desc' 		=> "%. " . __( '100% = Full Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pauseplay_icon_opacity',
 				'type' 		=> 'slider',
 				'default'	=> 70,
@@ -366,73 +366,73 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'css'		=> 'padding-bottom: 0px;',
 			),
 			array(
-				'name' 		=> __( 'Border', 'wooquickview' ),
+				'name' 		=> __( 'Border', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pauseplay_icon_border',
 				'type' 		=> 'border',
 				'default'	=> array( 'width' => '0px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ),
 			),
 			array(
-				'name' => __( 'Border Shadow', 'wooquickview' ),
+				'name' => __( 'Border Shadow', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pauseplay_icon_shadow',
 				'type' 		=> 'box_shadow',
 				'default'	=> array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' )
 			),
 			array(
-				'name' 		=> __( 'Border Margin', 'wooquickview' ),
+				'name' 		=> __( 'Border Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pauseplay_icon_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
 	 								array(  'id' 		=> 'pauseplay_icon_margin_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 	 								array(  'id' 		=> 'pauseplay_icon_margin_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 									array(  'id' 		=> 'pauseplay_icon_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 									array(  'id' 		=> 'pauseplay_icon_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 	 							)
 			),
 			array(
-				'name' 		=> __( 'Border Padding', 'wooquickview' ),
-				'desc' 		=> __( 'Padding between the Icon and Container border.', 'wooquickview' ),
+				'name' 		=> __( 'Border Padding', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Padding between the Icon and Container border.', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pauseplay_icon_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
 	 								array(  'id' 		=> 'pauseplay_icon_padding_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 	 								array(  'id' 		=> 'pauseplay_icon_padding_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 									array(  'id' 		=> 'pauseplay_icon_padding_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
 
 									array(  'id' 		=> 'pauseplay_icon_padding_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '10' ),
@@ -440,7 +440,7 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 			),
 
 			array(
-				'name' => __( 'Vertical Position', 'wooquickview' ),
+				'name' => __( 'Vertical Position', 'woocommerce-products-quick-view' ),
 				'desc' 		=> '',
 				'id' 		=> 'pauseplay_icon_vertical_position',
 				'default'	=> 'center',
@@ -448,26 +448,26 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' => 'top',
-						'text' => __( 'Top', 'wooquickview' ),
+						'text' => __( 'Top', 'woocommerce-products-quick-view' ),
 						'checked_label'	=> 'ON',
 						'unchecked_label' => 'OFF',
 					),
 					array(
 						'val' => 'center',
-						'text' => __( 'Middle', 'wooquickview' ),
+						'text' => __( 'Middle', 'woocommerce-products-quick-view' ),
 						'checked_label'	=> 'ON',
 						'unchecked_label' => 'OFF',
 					),
 					array(
 						'val' => 'bottom',
-						'text' => __( 'Bottom', 'wooquickview' ),
+						'text' => __( 'Bottom', 'woocommerce-products-quick-view' ),
 						'checked_label'	=> 'ON',
 						'unchecked_label' => 'OFF',
 					),
 				),
 			),
 			array(
-				'name' => __( 'Horizontal Position', 'wooquickview' ),
+				'name' => __( 'Horizontal Position', 'woocommerce-products-quick-view' ),
 				'desc' 		=> '',
 				'id' 		=> 'pauseplay_icon_horizontal_position',
 				'default'	=> 'center',
@@ -475,19 +475,19 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' => 'left',
-						'text' => __( 'Left', 'wooquickview' ),
+						'text' => __( 'Left', 'woocommerce-products-quick-view' ),
 						'checked_label'	=> 'ON',
 						'unchecked_label' => 'OFF',
 					),
 					array(
 						'val' => 'center',
-						'text' => __( 'Center', 'wooquickview' ),
+						'text' => __( 'Center', 'woocommerce-products-quick-view' ),
 						'checked_label'	=> 'ON',
 						'unchecked_label' => 'OFF',
 					),
 					array(
 						'val' => 'right',
-						'text' => __( 'Right', 'wooquickview' ),
+						'text' => __( 'Right', 'woocommerce-products-quick-view' ),
 						'checked_label'	=> 'ON',
 						'unchecked_label' => 'OFF',
 					),
@@ -495,14 +495,14 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 			),
 
 			array(
-            	'name' 		=> __('Thumbnail Slider Arrows', 'wooquickview'),
+            	'name' 		=> __('Thumbnail Slider Arrows', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'     => 'qv_dgallery_thumbnail_slider_arrows_box',
 				'is_box' => true,
            	),
 			array(
-				'name' => __( 'Arrow Icons Size', 'wooquickview' ),
+				'name' => __( 'Arrow Icons Size', 'woocommerce-products-quick-view' ),
 				'desc' 		=> "px",
 				'id' 		=> 'thumb_nextpre_icons_size',
 				'type' 		=> 'slider',
@@ -512,44 +512,44 @@ class WC_QV_Custom_Template_Gallery_Icon_Styles_Settings extends WC_QV_Admin_UI
 				'increment'	=> 1,
 			),
 			array(
-				'name' 		=> __( 'Arrow Icon Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Arrow Icon Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'thumb_nextpre_icons_color',
 				'type' 		=> 'color',
 				'default'	=> '#000'
 			),
 			array(
-				'name' 		=> __( 'Background Colour', 'wooquickview' ),
+				'name' 		=> __( 'Background Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'thumb_nextpre_icons_background',
 				'type' 		=> 'bg_color',
 				'default'	=> array( 'enable' => 1, 'color' => '#FFF' )
 			),
 			array(
-				'name' 		=> __( 'Border', 'wooquickview' ),
+				'name' 		=> __( 'Border', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'thumb_nextpre_icons_border',
 				'type' 		=> 'border',
 				'default'	=> array( 'width' => '1px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ),
 			),
 			array(
-				'name' => __( 'Border Shadow', 'wooquickview' ),
+				'name' => __( 'Border Shadow', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'thumb_nextpre_icons_shadow',
 				'type' 		=> 'box_shadow',
 				'default'	=> array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' )
 			),
 			array(
-				'name' 		=> __( 'Border Padding', 'wooquickview' ),
-				'desc' 		=> __( 'Padding between the Icon and Container border.', 'wooquickview' ),
+				'name' 		=> __( 'Border Padding', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Padding between the Icon and Container border.', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'thumb_nextpre_icons_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
 									array(  'id' 		=> 'thumb_nextpre_icons_padding_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 
 									array(  'id' 		=> 'thumb_nextpre_icons_padding_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),

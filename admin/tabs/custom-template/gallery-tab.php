@@ -75,7 +75,7 @@ class WC_QV_Custom_Template_Gallery_Tab extends WC_QV_Admin_UI
 		
 		$tab_data = array( 
 			'name'				=> 'gallery-settings',
-			'label'				=> __( 'Dynamic Gallery', 'wooquickview' ),
+			'label'				=> __( 'Dynamic Gallery', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_custom_template_gallery_tab_manager',
 		);
 		

@@ -40,31 +40,31 @@ class WC_QV_Custom_Template_Product_Description_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-				'name'		=> __( 'Product Description', 'wooquickview' ),
+				'name'		=> __( 'Product Description', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'		=> 'qv_template_description_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Product Description', 'wooquickview' ),
+				'name' 		=> __( 'Product Description', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'show_description',
 				'class'		=> 'show_description',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 1,
 				'checked_value'		=> 1,
 				'unchecked_value' 	=> 0,
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 			
 			array(
-            	'name' 		=> __( 'Pull Product Description From', 'wooquickview' ),
+            	'name' 		=> __( 'Pull Product Description From', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
 				'class'		=> 'show_description_container',
            	),
 			array(  
-				'name' 		=> __( "Product Short Description", 'wooquickview' ),
+				'name' 		=> __( "Product Short Description", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pull_description_from',
 				'class'		=> 'pull_description_from',
 				'type' 		=> 'onoff_radio',
@@ -78,7 +78,7 @@ class WC_QV_Custom_Template_Product_Description_Settings
 				),
 			),
 			array(  
-				'name' 		=> __( 'Product Description', 'wooquickview' ),
+				'name' 		=> __( 'Product Description', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'pull_description_from',
 				'class'		=> 'pull_description_from',
 				'type' 		=> 'onoff_radio',
@@ -97,7 +97,7 @@ class WC_QV_Custom_Template_Product_Description_Settings
 				'class'		=> 'description_characters_container',
            	),
 			array(  
-				'name' 		=> __( 'Number of Characters', 'wooquickview' ),
+				'name' 		=> __( 'Number of Characters', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'description_characters',
 				'type' 		=> 'text',
 				'css'		=> 'width:40px;',
@@ -105,67 +105,67 @@ class WC_QV_Custom_Template_Product_Description_Settings
 			),
 			
 			array(
-				'name'		=> __( 'Product Description Style', 'wooquickview' ),
+				'name'		=> __( 'Product Description Style', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
 				'class'		=> 'show_description_container'
            	),
 			array(  
-				'name' 		=> __( 'Description Font', 'wooquickview' ),
+				'name' 		=> __( 'Description Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'description_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
 			),
 			array(  
-				'name' 		=> __( 'Description Alignment', 'wooquickview' ),
+				'name' 		=> __( 'Description Alignment', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'description_alignment',
 				'type' 		=> 'onoff_radio',
 				'default' 	=> 'left',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'left',
-						'text' 				=> __( 'Left', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Left', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'center',
-						'text' 				=> __( 'Center', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Center', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'right',
-						'text' 				=> __( 'Right', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Right', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 				),
 			),
 			array(  
-				'name' 		=> __( 'Description Margin', 'wooquickview' ),
+				'name' 		=> __( 'Description Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'description_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array( 
 											'id' 		=> 'description_margin_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 	 
 	 								array(  'id' 		=> 'description_margin_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 											
 									array( 
 											'id' 		=> 'description_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 											
 									array( 
 											'id' 		=> 'description_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 	 							)

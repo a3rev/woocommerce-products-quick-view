@@ -2,9 +2,11 @@
 /*
 Plugin Name: WooCommerce Products Quick View
 Description: This plugin adds the ultimate Quick View feature to your Shop page, Product category and Product tags listings. Opens the full pages content - add to cart and even view cart without leaving the page.
-Version: 1.6.1
+Version: 1.7.0
 Author: a3rev Software
-Author URI: http://www.a3rev.com/
+Author URI: https://a3rev.com/
+Text Domain: woocommerce-products-quick-view
+Domain Path: /languages
 License: This software is under commercial license and copyright to A3 Revolution Software Development team
 
 	WooCommerce Quick View. Plugin for the WooCommerce.
@@ -32,7 +34,24 @@ if (!defined("WC_QUICK_VIEW_ULTIMATE_AUTHOR_URI")) define("WC_QUICK_VIEW_ULTIMAT
 
 if (!defined("WC_QUICK_VIEW_ULTIMATE_DOCS_URI")) define("WC_QUICK_VIEW_ULTIMATE_DOCS_URI", "http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/");
 
-define( 'WC_QUICK_VIEW_ULTIMATE_VERSION', '1.6.1' );
+define( 'WC_QUICK_VIEW_ULTIMATE_VERSION', '1.7.0' );
+
+/**
+ * Load Localisation files.
+ *
+ * Note: the first-loaded translation file overrides any following ones if the same translation is present.
+ *
+ * Locales found in:
+ * 		- WP_LANG_DIR/woocommerce-products-quick-view/woocommerce-products-quick-view-LOCALE.mo
+ * 	 	- WP_LANG_DIR/plugins/woocommerce-products-quick-view-LOCALE.mo
+ * 	 	- /wp-content/plugins/woocommerce-products-quick-view/languages/woocommerce-products-quick-view-LOCALE.mo (which if not found falls back to)
+ */
+function quick_view_ultimate_plugin_textdomain() {
+	$locale = apply_filters( 'plugin_locale', get_locale(), 'woocommerce-products-quick-view' );
+
+	load_textdomain( 'woocommerce-products-quick-view', WP_LANG_DIR . '/woocommerce-products-quick-view/woocommerce-products-quick-view-' . $locale . '.mo' );
+	load_plugin_textdomain( 'woocommerce-products-quick-view', false, WC_QUICK_VIEW_ULTIMATE_FOLDER . '/languages/' );
+}
 
 include ('admin/admin-ui.php');
 include ('admin/admin-interface.php');

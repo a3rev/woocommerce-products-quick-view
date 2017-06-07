@@ -78,9 +78,9 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 		$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Quick View Button successfully saved.', 'wooquickview' ),
-				'error_message'		=> __( 'Error: Quick View Button can not save.', 'wooquickview' ),
-				'reset_message'		=> __( 'Quick View Button successfully reseted.', 'wooquickview' ),
+				'success_message'	=> __( 'Quick View Button successfully saved.', 'woocommerce-products-quick-view' ),
+				'error_message'		=> __( 'Error: Quick View Button can not save.', 'woocommerce-products-quick-view' ),
+				'reset_message'		=> __( 'Quick View Button successfully reseted.', 'woocommerce-products-quick-view' ),
 			);
 
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -134,7 +134,7 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'quick-view-button-settings',
-			'label'				=> __( 'Quick View Button', 'wooquickview' ),
+			'label'				=> __( 'Quick View Button', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_button_settings_form',
 		);
 		
@@ -178,7 +178,7 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-            	'name' => __( 'Set Display Type', 'wooquickview' ),
+            	'name' => __( 'Set Display Type', 'woocommerce-products-quick-view' ),
                 'type' => 'heading',
                 'class'=> 'quick_view_ultimate_container',
                 'id'		=> 'quick_view_button_display_type_box',
@@ -186,7 +186,7 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
                 'is_box'	=> true,
            	),
 			array(
-				'name' 		=> __( "Show Quick View as", 'wooquickview' ),
+				'name' 		=> __( "Show Quick View as", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_type',
 				'class'		=> 'quick_view_ultimate_type',
 				'type' 		=> 'onoff_radio',
@@ -194,14 +194,14 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'hover',
-						'text'				=> __( 'Button that shows on mouse hover on product image', 'wooquickview' ) ,
+						'text'				=> __( 'Button that shows on mouse hover on product image', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
 
 					array(
 						'val' 				=> 'under',
-						'text' 				=> __( 'Show as button or link text under image', 'wooquickview' ) ,
+						'text' 				=> __( 'Show as button or link text under image', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					)
@@ -209,51 +209,51 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 			),
 
 			array(
-            	'name' => __( 'Button Show On Hover', 'wooquickview' ),
+            	'name' => __( 'Button Show On Hover', 'woocommerce-products-quick-view' ),
                 'type' => 'heading',
                 'class'		=> 'qv_button_hover_container',
                 'id'		=> 'qv_button_hover_box',
                 'is_box'	=> true,
            	),
            	array(  
-				'name' 		=> __( 'Button Align', 'wooquickview' ),
+				'name' 		=> __( 'Button Align', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_alink',
 				'css' 		=> 'width:80px;',
 				'type' 		=> 'select',
 				'default'	=> 'center',
 				'options'	=> array(
-						'top'			=> __( 'Top', 'wooquickview' ) ,	
-						'center'		=> __( 'Center', 'wooquickview' ) ,	
-						'bottom'		=> __( 'Bottom', 'wooquickview' ) ,	
+						'top'			=> __( 'Top', 'woocommerce-products-quick-view' ) ,	
+						'center'		=> __( 'Center', 'woocommerce-products-quick-view' ) ,	
+						'bottom'		=> __( 'Bottom', 'woocommerce-products-quick-view' ) ,	
 					),
 			),
 			array(  
-				'name' => __( 'Button Text', 'wooquickview' ),
-				'desc' 		=> __('Text for Quick View Button Show On Hover', 'wooquickview'),
+				'name' => __( 'Button Text', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __('Text for Quick View Button Show On Hover', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_text',
 				'type' 		=> 'text',
-				'default'	=> __('QUICKVIEW', 'wooquickview')
+				'default'	=> __('QUICKVIEW', 'woocommerce-products-quick-view' )
 			),
 			array(  
-				'name' 		=> __( 'Button Font', 'wooquickview' ),
+				'name' 		=> __( 'Button Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '14px', 'line_height' => '1.4em', 'face' => 'Arial', 'style' => 'normal', 'color' => '#FFFFFF' )
 			),
 			array(  
-				'name' => __( 'Button Padding', 'wooquickview' ),
-				'desc' 		=> __( 'Padding from Button text to Button border Show On Hover', 'wooquickview' ),
+				'name' => __( 'Button Padding', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Padding from Button text to Button border Show On Hover', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array(  'id' 		=> 'quick_view_ultimate_on_hover_bt_padding_tb',
-	 										'name' 		=> __( 'Top/Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Top/Bottom', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '7' ),
 	 
 	 								array(  'id' 		=> 'quick_view_ultimate_on_hover_bt_padding_lr',
-	 										'name' 		=> __( 'Left/Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Left/Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '17' ),
@@ -261,28 +261,28 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 			),
 			
 			array(  
-				'name' 		=> __( 'Background Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview') . ' [default_value]',
+				'name' 		=> __( 'Background Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_bg',
 				'type' 		=> 'color',
 				'default'	=> '#999999'
 			),
 			array(  
-				'name' 		=> __( 'Background Colour Gradient From', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ). ' [default_value]',
+				'name' 		=> __( 'Background Colour Gradient From', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ). ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_bg_from',
 				'type' 		=> 'color',
 				'default'	=> '#999999'
 			),
 			array(  
-				'name' 		=> __( 'Background Colour Gradient To', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ). ' [default_value]',
+				'name' 		=> __( 'Background Colour Gradient To', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ). ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_bg_to',
 				'type' 		=> 'color',
 				'default'	=> '#999999'
 			),
 			array(  
-				'name' 		=> __( 'Button Transparency', 'wooquickview' ),
+				'name' 		=> __( 'Button Transparency', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_transparent',
 				'desc'		=> '%',
 				'type' 		=> 'slider',
@@ -292,13 +292,13 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 				'increment'	=> 10
 			),
 			array(  
-				'name' 		=> __( 'Button Border', 'wooquickview' ),
+				'name' 		=> __( 'Button Border', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_border',
 				'type' 		=> 'border',
 				'default'	=> array( 'width' => '1px', 'style' => 'solid', 'color' => '#FFFFFF', 'corner' => 'rounded' , 'rounded_value' => 3 ),
 			),
 			array(  
-				'name' => __( 'Button Shadow', 'wooquickview' ),
+				'name' => __( 'Button Shadow', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_shadow',
 				'type' 		=> 'box_shadow',
 				'default'	=> array( 'h_shadow' => '5px' , 'v_shadow' => '5px', 'blur' => '2px' , 'spread' => '2px', 'color' => '#999999', 'inset' => '' )
@@ -306,38 +306,38 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
 
 
 			array(
-            	'name' => __( 'Button/Hyperlink Show under Image', 'wooquickview' ),
+            	'name' => __( 'Button/Hyperlink Show under Image', 'woocommerce-products-quick-view' ),
                 'type' => 'heading',
                 'class'		=> 'qv_button_under_image_container',
                 'id'		=> 'qv_button_under_image_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Quick View Type', 'wooquickview' ),
+				'name' 		=> __( 'Quick View Type', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_type',
 				'class' 	=> 'quick_view_ultimate_under_image_change',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'link',
 				'checked_value'		=> 'link',
 				'unchecked_value'	=> 'button',
-				'checked_label'		=> __( 'Hyperlink', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'Button', 'wooquickview' ),
+				'checked_label'		=> __( 'Hyperlink', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'Button', 'woocommerce-products-quick-view' ),
 			),
 			array(  
-				'name' 		=> __( 'Horizontal Align', 'wooquickview' ),
+				'name' 		=> __( 'Horizontal Align', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_alink',
 				'css' 		=> 'width:80px;',
 				'type' 		=> 'select',
 				'default'	=> 'center',
 				'options'	=> array(
-						'center'		=> __( 'Center', 'wooquickview' ) ,	
-						'left'			=> __( 'Left', 'wooquickview' ) ,	
-						'right'			=> __( 'Right', 'wooquickview' ) ,	
+						'center'		=> __( 'Center', 'woocommerce-products-quick-view' ) ,	
+						'left'			=> __( 'Left', 'woocommerce-products-quick-view' ) ,	
+						'right'			=> __( 'Right', 'woocommerce-products-quick-view' ) ,	
 					),
 			),
 			array(  
-				'name' 		=> __( 'Magrin', 'wooquickview' ),
-				'desc' 		=> 'px '. __( 'Above/Below', 'wooquickview' ),
+				'name' 		=> __( 'Magrin', 'woocommerce-products-quick-view' ),
+				'desc' 		=> 'px '. __( 'Above/Below', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_margin',
 				'type' 		=> 'text',
 				'css' 		=> 'width:40px;',
@@ -350,21 +350,21 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
           		'class'		=> 'show_under_image_hyperlink_styling'
            	),
 			array(  
-				'name' => __( 'Hyperlink Text', 'wooquickview' ),
-				'desc' 		=> __( 'Text for Hyperlink show under image', 'wooquickview' ),
+				'name' => __( 'Hyperlink Text', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Text for Hyperlink show under image', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_link_text',
 				'type' 		=> 'text',
-				'default'	=> __('Quick View', 'wooquickview')
+				'default'	=> __('Quick View', 'woocommerce-products-quick-view' )
 			),
 			array(  
-				'name' 		=> __( 'Hyperlink Font', 'wooquickview' ),
+				'name' 		=> __( 'Hyperlink Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_link_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial', 'style' => 'bold', 'color' => '#000000' )
 			),
 			
 			array(  
-				'name' 		=> __( 'Hyperlink Hover Colour', 'wooquickview' ),
+				'name' 		=> __( 'Hyperlink Hover Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_link_font_hover_color',
 				'type' 		=> 'color',
 				'default'	=> '#999999'
@@ -376,60 +376,60 @@ class WC_QV_Button_Settings extends WC_QV_Admin_UI
           		'class' 	=> 'show_under_image_button_styling'
            	),
 			array(  
-				'name' 		=> __( 'Button Text', 'wooquickview' ),
-				'desc' 		=> __( 'Text for Button show under image', 'wooquickview' ),
+				'name' 		=> __( 'Button Text', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Text for Button show under image', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_text',
 				'type' 		=> 'text',
-				'default'	=> __('Quick View', 'wooquickview')
+				'default'	=> __('Quick View', 'woocommerce-products-quick-view' )
 			),
 			array(  
-				'name' 		=> __( 'Button Font', 'wooquickview' ),
+				'name' 		=> __( 'Button Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial', 'style' => 'bold', 'color' => '#FFFFFF' )
 			),
 			array(  
-				'name' 		=> __( 'Button Padding', 'wooquickview' ),
-				'desc' 		=> __( 'Padding from Button text to Button border show under image', 'wooquickview' ),
+				'name' 		=> __( 'Button Padding', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Padding from Button text to Button border show under image', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_padding',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array(  'id' 		=> 'quick_view_ultimate_under_image_bt_padding_tb',
-	 										'name' 		=> __( 'Top/Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Top/Bottom', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '7' ),
 	 
 	 								array(  'id' 		=> 'quick_view_ultimate_under_image_bt_padding_lr',
-	 										'name' 		=> __( 'Left/Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Left/Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '8' ),
 	 							)
 			),
 			array(  
-				'name' 		=> __( 'Background Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Background Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_under_image_bt_bg',
 				'type' 		=> 'color',
 				'default'	=> '#000000'
 			),
 			array(  
-				'name' 		=> __( 'Background Colour Gradient From', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Background Colour Gradient From', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_under_image_bt_bg_from',
 				'type' 		=> 'color',
 				'default'	=> '#000000'
 			),
 			array(  
-				'name' 		=> __( 'Background Colour Gradient To', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Background Colour Gradient To', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'quick_view_ultimate_under_image_bt_bg_to',
 				'type' 		=> 'color',
 				'default'	=> '#000000'
 			),
 			array(  
-				'name' 		=> __( 'Button Border', 'wooquickview' ),
+				'name' 		=> __( 'Button Border', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_under_image_bt_border',
 				'type' 		=> 'border',
 				'default'	=> array( 'width' => '1px', 'style' => 'solid', 'color' => '#000000', 'corner' => 'rounded' , 'rounded_value' => 3 ),

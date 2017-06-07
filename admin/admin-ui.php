@@ -106,14 +106,14 @@ class WC_QV_Admin_UI
 	 */
 	public function get_premium_video_data() {
 		$premium_video_data = array(
-				'box_title'    => __( 'Premium Version Enhanced Features', 'wooquickview' ),
+				'box_title'    => __( 'Premium Version Enhanced Features', 'woocommerce-products-quick-view' ),
 				'image_url'    => WC_QUICK_VIEW_ULTIMATE_IMAGES_URL. '/video.jpg',
 				'video_url'    => 'https://www.youtube.com/embed/9dGw-ORfMIk?version=3&autoplay=1',
-				'left_title'   => __( 'Premium Version Enhanced Features', 'wooquickview' ),
-				'left_text'    => __( 'WooCommerce Quick View Ultimate', 'wooquickview' )
-									. "\n\n" . __( 'Quick Video showing the main (not all) enhanced features that are built into the WooCommerce Quick View Ultimate version', 'wooquickview' ),
-				'right_title'  => __( 'Developer Support and Premium Features', 'wooquickview' ),
-				'right_text'   => __( 'Limited Time Offer. Purchase the Premium Version Lifetime License. That is a Lifetime of maintenance updates, feature upgrades and developer support for a once only fee. Offer ending soon.', 'wooquickview' )
+				'left_title'   => __( 'Premium Version Enhanced Features', 'woocommerce-products-quick-view' ),
+				'left_text'    => __( 'WooCommerce Quick View Ultimate', 'woocommerce-products-quick-view' )
+									. "\n\n" . __( 'Quick Video showing the main (not all) enhanced features that are built into the WooCommerce Quick View Ultimate version', 'woocommerce-products-quick-view' ),
+				'right_title'  => __( 'Developer Support and Premium Features', 'woocommerce-products-quick-view' ),
+				'right_text'   => __( 'Limited Time Offer. Purchase the Premium Version Lifetime License. That is a Lifetime of maintenance updates, feature upgrades and developer support for a once only fee. Offer ending soon.', 'woocommerce-products-quick-view' )
 									. "\n\n" . '<a target="_blank" href="'.$this->pro_plugin_page_url.'" class="button-primary">' . __( 'Get Premium Features and Support', '' ) . '</a>',
 			);
 
@@ -262,10 +262,10 @@ class WC_QV_Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 	public function upgrade_top_message( $echo = false, $setting_id = '' ) {
 		$upgrade_top_message = sprintf( '<div class="pro_feature_top_message">' 
-			. __( 'Advanced Settings - Upgrade to the <a href="%s" target="_blank">%s License</a> to activate these settings.', 'wooquickview' ) 
+			. __( 'Advanced Settings - Upgrade to the <a href="%s" target="_blank">%s License</a> to activate these settings.', 'woocommerce-products-quick-view' ) 
 			. '</div>'
 			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_plugin_page_url', apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url ) )
-			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Ultimate Version', 'wooquickview' ) ) )
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Ultimate Version', 'woocommerce-products-quick-view' ) ) )
 		);
 
 		$upgrade_top_message = apply_filters( $this->plugin_name . '_upgrade_top_message', $upgrade_top_message, $setting_id );
@@ -315,9 +315,9 @@ class WC_QV_Admin_UI
 			$transient_timeout = '_transient_timeout_' . $this->version_transient;
 			$timeout = get_option( $transient_timeout, false );
 			if ( false === $timeout ) {
-				$version_message = __( 'You should check now to see if have any new version is available', 'wooquickview' );
+				$version_message = __( 'You should check now to see if have any new version is available', 'woocommerce-products-quick-view' );
 			} elseif ( 'cannot_connect_api' == $version_transient ) {
-				$version_message = sprintf( __( 'Connection Failure! Please try again. If this issue persists please create a support request on the plugin <a href="%s" target="_blank">a3rev support forum</a>.', 'wooquickview' ), $this->support_url );
+				$version_message = sprintf( __( 'Connection Failure! Please try again. If this issue persists please create a support request on the plugin <a href="%s" target="_blank">a3rev support forum</a>.', 'woocommerce-products-quick-view' ), $this->support_url );
 			} else {
 				$version_info = explode( '||', $version_transient );
 				if ( FALSE !== stristr( $version_transient, '||' )
@@ -325,7 +325,7 @@ class WC_QV_Admin_UI
 					&& isset( $version_info[1] ) && $version_info[1] == 'valid'
 					&& version_compare( get_option('wc_quick_view_ultimate_version') , $version_info[0], '<' ) ) {
 
-						$version_message = sprintf( __( 'There is a new version <span class="a3rev-ui-new-plugin-version">%s</span> available, <a href="%s" target="_blank">update now</a> or download direct from <a href="%s" target="_blank">My Account</a> on a3rev.com', 'wooquickview' ),
+						$version_message = sprintf( __( 'There is a new version <span class="a3rev-ui-new-plugin-version">%s</span> available, <a href="%s" target="_blank">update now</a> or download direct from <a href="%s" target="_blank">My Account</a> on a3rev.com', 'woocommerce-products-quick-view' ),
 							$version_info[0],
 							wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' . WC_QUICK_VIEW_ULTIMATE_NAME ), 'upgrade-plugin_' . WC_QUICK_VIEW_ULTIMATE_NAME ),
 							'https://a3rev.com/my-account/downloads/'
@@ -334,7 +334,7 @@ class WC_QV_Admin_UI
 			}
 
 		} else {
-			$version_message = __( 'You should check now to see if have any new version is available', 'wooquickview' );
+			$version_message = __( 'You should check now to see if have any new version is available', 'woocommerce-products-quick-view' );
 		}
 
 		return $version_message;

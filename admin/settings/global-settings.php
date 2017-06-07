@@ -78,9 +78,9 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 		//$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Quick View Settings successfully saved.', 'wooquickview' ),
-				'error_message'		=> __( 'Error: Quick View Settings can not save.', 'wooquickview' ),
-				'reset_message'		=> __( 'Quick View Settings successfully reseted.', 'wooquickview' ),
+				'success_message'	=> __( 'Quick View Settings successfully saved.', 'woocommerce-products-quick-view' ),
+				'error_message'		=> __( 'Error: Quick View Settings can not save.', 'woocommerce-products-quick-view' ),
+				'reset_message'		=> __( 'Quick View Settings successfully reseted.', 'woocommerce-products-quick-view' ),
 			);
 			
 		add_action( $this->plugin_name . '_set_default_settings' , array( $this, 'set_default_settings' ) );
@@ -151,7 +151,7 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'settings',
-			'label'				=> __( 'Settings', 'wooquickview' ),
+			'label'				=> __( 'Settings', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_global_settings_form',
 		);
 		
@@ -195,7 +195,7 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
 		
 			array(
-            	'name' 		=> __( 'Plugin Framework Global Settings', 'wooquickview' ),
+            	'name' 		=> __( 'Plugin Framework Global Settings', 'woocommerce-products-quick-view' ),
             	'id'		=> 'plugin_framework_global_box',
                 'type' 		=> 'heading',
                 'first_open'=> true,
@@ -203,56 +203,56 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
            	),
 
 			array(
-           		'name'		=> __( 'Google Fonts', 'wooquickview' ),
-           		'desc'		=> __( 'By Default Google Fonts are pulled from a static JSON file in this plugin. This file is updated but does not have the latest font releases from Google.', 'wooquickview' ),
+           		'name'		=> __( 'Google Fonts', 'woocommerce-products-quick-view' ),
+           		'desc'		=> __( 'By Default Google Fonts are pulled from a static JSON file in this plugin. This file is updated but does not have the latest font releases from Google.', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
            	),
            	array(
                 'type' 		=> 'google_api_key',
            	),
            	array(
-            	'name' 		=> __( 'House Keeping', 'wooquickview' ),
+            	'name' 		=> __( 'House Keeping', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
             ),
 			array(
-				'name' 		=> __( 'Clean Up On Deletion', 'wooquickview' ),
-				'desc' 		=> __( 'On deletion (not deactivate) the plugin will completely remove all tables and data it created, leaving no trace it was ever here.', 'wooquickview'),
+				'name' 		=> __( 'Clean Up On Deletion', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'On deletion (not deactivate) the plugin will completely remove all tables and data it created, leaving no trace it was ever here.', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_lite_clean_on_deletion',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> '0',
 				'separate_option'	=> true,
 				'checked_value'		=> '1',
 				'unchecked_value'	=> '0',
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 
 			array(
-            	'name' => __( 'Quick View Activation', 'wooquickview' ),
+            	'name' => __( 'Quick View Activation', 'woocommerce-products-quick-view' ),
                 'type' => 'heading',
                 'id'		=> 'master_switch_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Quick View Feature', 'wooquickview' ),
+				'name' 		=> __( 'Quick View Feature', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_enable',
 				'class'		=> 'quick_view_ultimate_enable',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 'yes',
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'Enable', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'Disable', 'wooquickview' ),
+				'checked_label'		=> __( 'Enable', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'Disable', 'woocommerce-products-quick-view' ),
 			),
 
 			array(
-            	'name' => __( 'Quick View Content Type', 'wooquickview' ),
+            	'name' => __( 'Quick View Content Type', 'woocommerce-products-quick-view' ),
                 'type' => 'heading',
                 'class'=> 'quick_view_ultimate_container',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( "Custom Template Pop-up", 'wooquickview' ),
+				'name' 		=> __( "Custom Template Pop-up", 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_popup_content',
 				'class'		=> 'quick_view_ultimate_popup_content',
 				'type' 		=> 'onoff_radio',
@@ -260,7 +260,7 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'custom_template',
-						'text' 				=> __( 'Use the Custom Template for pop-up with Dynamic product image gallery', 'wooquickview' ).' <span class="description">('.__( 'recommended', 'wooquickview' ).')</span>' ,
+						'text' 				=> __( 'Use the Custom Template for pop-up with Dynamic product image gallery', 'woocommerce-products-quick-view' ).' <span class="description">('.__( 'recommended', 'woocommerce-products-quick-view' ).')</span>' ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
@@ -272,14 +272,14 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
                 'class'=> 'quick_view_custom_template_container',
            	),
            	array(
-				'name' 		=> __( 'Dynamic Gallery Activation', 'wooquickview' ),
+				'name' 		=> __( 'Dynamic Gallery Activation', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_template_dynamic_gallery_activate',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 'yes',
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 
            	array(
@@ -288,7 +288,7 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
                 'class'=> 'quick_view_ultimate_container',
            	),
 			array(  
-				'name' 		=> __( 'Site Product Page', 'wooquickview' ),
+				'name' 		=> __( 'Site Product Page', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_popup_content',
 				'class'		=> 'quick_view_ultimate_popup_content',
 				'type' 		=> 'onoff_radio',
@@ -296,7 +296,7 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'full_page',
-						'text' 				=> __( 'Open full site in pop-up', 'wooquickview' ) ,
+						'text' 				=> __( 'Open full site in pop-up', 'woocommerce-products-quick-view' ) ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),

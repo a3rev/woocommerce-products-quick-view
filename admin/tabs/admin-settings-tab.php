@@ -75,7 +75,7 @@ class WC_QV_Admin_Settings_Tab extends WC_QV_Admin_UI
 		
 		$tab_data = array( 
 			'name'				=> 'settings',
-			'label'				=> __( 'Settings', 'wooquickview' ),
+			'label'				=> __( 'Settings', 'woocommerce-products-quick-view' ),
 			'callback_function'	=> 'wc_qv_admin_settings_tab_manager',
 		);
 		

@@ -98,7 +98,7 @@ class WC_QV_Uploader extends WC_QV_Admin_UI
 
 		$output .= '<input type="hidden" name="'.$attachment_id_name_attribute.'" id="'.$id_attribute.'_attachment_id" value="'.$attachment_id.'" class=" a3_upload_attachment_id" />';
 		$output .= '<input data-strip-methods="'.$strip_methods.'" type="text" name="'.$name_attribute.'" id="'.$id_attribute.'" value="'.esc_attr( $value ).'" class="'.$id_attribute. ' ' .$class.' a3_upload" style="'.$css.'" rel="'.$field_name.'" /> ';
-		$output .= '<input id="upload_'.$id_attribute.'" class="a3rev-ui-upload-button a3_upload_button button" type="button" value="'.__( 'Upload', 'wooquickview' ).'" /> '.$description;
+		$output .= '<input id="upload_'.$id_attribute.'" class="a3rev-ui-upload-button a3_upload_button button" type="button" value="'.__( 'Upload', 'woocommerce-products-quick-view' ).'" /> '.$description;
 		
 		$output .= '<div style="clear:both;"></div><div class="a3_screenshot" id="'.$id_attribute.'_image" style="'.( ( $value == '' ) ? 'display:none;' : 'display:block;' ).'">';
 
@@ -118,7 +118,7 @@ class WC_QV_Uploader extends WC_QV_Admin_UI
 
 				$output .= '';
 
-				$title = __( 'View File', 'wooquickview' );
+				$title = __( 'View File', 'woocommerce-products-quick-view' );
 
 				$output .= '<div class="a3_no_image"><span class="a3_file_link"><a href="'.esc_url( $value ).'" target="_blank" rel="a3_external">'.$title.'</a></span>'.$remove.'</div>';
 

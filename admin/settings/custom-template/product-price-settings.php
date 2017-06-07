@@ -41,22 +41,22 @@ class WC_QV_Custom_Template_Product_Price_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-				'name'		=> __( 'Product Price', 'wooquickview' ),
+				'name'		=> __( 'Product Price', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'		=> 'qv_template_product_price_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Product Price', 'wooquickview' ),
+				'name' 		=> __( 'Product Price', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'show_product_price',
 				'class'		=> 'show_product_price',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 1,
 				'checked_value'		=> 1,
 				'unchecked_value' 	=> 0,
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 			
 			array(
@@ -65,68 +65,68 @@ class WC_QV_Custom_Template_Product_Price_Settings
 				'class'		=> 'show_product_price_container'
            	),
 			array(  
-				'name' 		=> __( 'Price Font', 'wooquickview' ),
+				'name' 		=> __( 'Price Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'price_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#FF0000' )
 			),
 			array(  
-				'name' 		=> __( 'Old Price Font', 'wooquickview' ),
+				'name' 		=> __( 'Old Price Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'old_price_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '11px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
 			),
 			array(  
-				'name' 		=> __( 'Price Alignment', 'wooquickview' ),
+				'name' 		=> __( 'Price Alignment', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'price_alignment',
 				'type' 		=> 'onoff_radio',
 				'default' 	=> 'left',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'left',
-						'text' 				=> __( 'Left', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Left', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'center',
-						'text' 				=> __( 'Center', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Center', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'right',
-						'text' 				=> __( 'Right', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Right', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 				),
 			),
 			array(  
-				'name' 		=> __( 'Price Margin', 'wooquickview' ),
+				'name' 		=> __( 'Price Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'price_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array( 
 											'id' 		=> 'price_margin_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 	 
 	 								array(  'id' 		=> 'price_margin_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 											
 									array( 
 											'id' 		=> 'price_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 											
 									array( 
 											'id' 		=> 'price_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 	 							)

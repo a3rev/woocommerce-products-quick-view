@@ -41,22 +41,22 @@ class WC_QV_Custom_Template_Control_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-				'name'		=> __( 'Controls Settings', 'wooquickview' ),
+				'name'		=> __( 'Controls Settings', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'		=> 'qv_template_controls_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Next / Previous Control', 'wooquickview' ),
+				'name' 		=> __( 'Next / Previous Control', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'enable_control',
 				'class'		=> 'enable_control',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 1,
 				'checked_value'		=> 1,
 				'unchecked_value' 	=> 0,
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 			
 			array(
@@ -64,27 +64,27 @@ class WC_QV_Custom_Template_Control_Settings
 				'class'		=> 'popup_control_container'
            	),
 			array(  
-				'name' 		=> __( 'Control Transition', 'wooquickview' ),
+				'name' 		=> __( 'Control Transition', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'control_transition',
 				'type' 		=> 'onoff_radio',
 				'default' 	=> 'hover',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'alway',
-						'text' 				=> __( 'Alway show when popup loaded', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Alway show when popup loaded', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'hover',
-						'text' 				=> __( 'Show when hover on popup container', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Show when hover on popup container', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 				),			
 			),
 			array(
-				'name' => __( 'Arrow Icons Size', 'wooquickview' ),
+				'name' => __( 'Arrow Icons Size', 'woocommerce-products-quick-view' ),
 				'desc' 		=> "px",
 				'id' 		=> 'popup_nextpre_icons_size',
 				'type' 		=> 'slider',
@@ -94,15 +94,15 @@ class WC_QV_Custom_Template_Control_Settings
 				'increment'	=> 1,
 			),
 			array(
-				'name' 		=> __( 'Arrow Icon Colour', 'wooquickview' ),
-				'desc' 		=> __( 'Default', 'wooquickview' ) . ' [default_value]',
+				'name' 		=> __( 'Arrow Icon Colour', 'woocommerce-products-quick-view' ),
+				'desc' 		=> __( 'Default', 'woocommerce-products-quick-view' ) . ' [default_value]',
 				'id' 		=> 'popup_nextpre_icons_color',
 				'type' 		=> 'color',
 				'default'	=> '#727272'
 			),
 			array(
-				'name' => __( 'Arrow Icon Transparency', 'wooquickview' ),
-				'desc' 		=> "%. " . __( '100% = Full Colour', 'wooquickview' ),
+				'name' => __( 'Arrow Icon Transparency', 'woocommerce-products-quick-view' ),
+				'desc' 		=> "%. " . __( '100% = Full Colour', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'popup_nextpre_icons_opacity',
 				'type' 		=> 'slider',
 				'default'	=> 80,
@@ -111,18 +111,18 @@ class WC_QV_Custom_Template_Control_Settings
 				'increment'	=> 10,
 			),
 			array(
-				'name' 		=> __( 'Border Margin', 'wooquickview' ),
+				'name' 		=> __( 'Border Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'popup_nextpre_icons_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
 									array(  'id' 		=> 'popup_nextpre_icons_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),
 
 									array(  'id' 		=> 'popup_nextpre_icons_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> '5' ),

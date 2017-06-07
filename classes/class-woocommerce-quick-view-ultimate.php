@@ -570,13 +570,13 @@ class WC_Quick_View_Ultimate
 		}
 
 		global $wc_qv_admin_init;
-		$links[] = '<a href="http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/" target="_blank">'.__('Documentation', 'wooquickview').'</a>';
-		$links[] = '<a href="'.$wc_qv_admin_init->support_url.'" target="_blank">'.__('Support', 'wooquickview').'</a>';
+		$links[] = '<a href="http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/" target="_blank">'.__('Documentation', 'woocommerce-products-quick-view' ).'</a>';
+		$links[] = '<a href="'.$wc_qv_admin_init->support_url.'" target="_blank">'.__('Support', 'woocommerce-products-quick-view' ).'</a>';
 		return $links;
 	}
 
 	public function settings_plugin_links($actions) {
-		$actions = array_merge( array( 'settings' => '<a href="admin.php?page=wc-quick-view">' . __( 'Settings', 'wooquickview' ) . '</a>' ), $actions );
+		$actions = array_merge( array( 'settings' => '<a href="admin.php?page=wc-quick-view">' . __( 'Settings', 'woocommerce-products-quick-view' ) . '</a>' ), $actions );
 
 		return $actions;
 	}
@@ -584,15 +584,15 @@ class WC_Quick_View_Ultimate
 	public function plugin_extension_box( $boxes = array() ) {
 		global $wc_qv_admin_init;
 
-		$support_box = '<a href="'.$wc_qv_admin_init->support_url.'" target="_blank" alt="'.__('Go to Support Forum', 'wooquickview').'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/go-to-support-forum.png" /></a>';
+		$support_box = '<a href="'.$wc_qv_admin_init->support_url.'" target="_blank" alt="'.__('Go to Support Forum', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/go-to-support-forum.png" /></a>';
 
 		$boxes[] = array(
 			'content' => $support_box,
 			'css' => 'border: none; padding: 0; background: none;'
 		);
 
-		$review_box = '<div style="margin-bottom: 5px; font-size: 12px;"><strong>' . __('Is this plugin is just what you needed? If so', 'wooquickview') . '</strong></div>';
-        $review_box .= '<a href="https://wordpress.org/support/view/plugin-reviews/woocommerce-products-quick-view#postform" target="_blank" alt="'.__('Submit Review for Plugin on WordPress', 'wooquickview').'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/a-5-star-rating-would-be-appreciated.png" /></a>';
+		$review_box = '<div style="margin-bottom: 5px; font-size: 12px;"><strong>' . __('Is this plugin is just what you needed? If so', 'woocommerce-products-quick-view' ) . '</strong></div>';
+        $review_box .= '<a href="https://wordpress.org/support/view/plugin-reviews/woocommerce-products-quick-view#postform" target="_blank" alt="'.__('Submit Review for Plugin on WordPress', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/a-5-star-rating-would-be-appreciated.png" /></a>';
 
         $boxes[] = array(
             'content' => $review_box,
@@ -600,23 +600,23 @@ class WC_Quick_View_Ultimate
         );
 
 
-		$free_woocommerce_box = '<a href="https://profiles.wordpress.org/a3rev/#content-plugins" target="_blank" alt="'.__('Free WooCommerce Plugins', 'wooquickview').'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/free-woocommerce-plugins.png" /></a>';
+		$free_woocommerce_box = '<a href="https://profiles.wordpress.org/a3rev/#content-plugins" target="_blank" alt="'.__('Free WooCommerce Plugins', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/free-woocommerce-plugins.png" /></a>';
 
 		$boxes[] = array(
 			'content' => $free_woocommerce_box,
 			'css' => 'border: none; padding: 0; background: none;'
 		);
 
-		$free_wordpress_box = '<a href="https://profiles.wordpress.org/a3rev/#content-plugins" target="_blank" alt="'.__('Free WordPress Plugins', 'wooquickview').'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/free-wordpress-plugins.png" /></a>';
+		$free_wordpress_box = '<a href="https://profiles.wordpress.org/a3rev/#content-plugins" target="_blank" alt="'.__('Free WordPress Plugins', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/free-wordpress-plugins.png" /></a>';
 
 		$boxes[] = array(
 			'content' => $free_wordpress_box,
 			'css' => 'border: none; padding: 0; background: none;'
 		);
 
-		$connect_box = '<div style="margin-bottom: 5px;">' . __('Connect with us via','wooquickview') . '</div>';
-		$connect_box .= '<a href="https://www.facebook.com/a3rev" target="_blank" alt="'.__('a3rev Facebook', 'wooquickview').'" style="margin-right: 5px;"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/follow-facebook.png" /></a> ';
-		$connect_box .= '<a href="https://twitter.com/a3rev" target="_blank" alt="'.__('a3rev Twitter', 'wooquickview').'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/follow-twitter.png" /></a>';
+		$connect_box = '<div style="margin-bottom: 5px;">' . __('Connect with us via', 'woocommerce-products-quick-view') . '</div>';
+		$connect_box .= '<a href="https://www.facebook.com/a3rev" target="_blank" alt="'.__('a3rev Facebook', 'woocommerce-products-quick-view' ).'" style="margin-right: 5px;"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/follow-facebook.png" /></a> ';
+		$connect_box .= '<a href="https://twitter.com/a3rev" target="_blank" alt="'.__('a3rev Twitter', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/follow-twitter.png" /></a>';
 
 		$boxes[] = array(
 			'content' => $connect_box,

@@ -41,22 +41,22 @@ class WC_QV_Custom_Template_Product_Meta_Settings
      	$this->form_fields = apply_filters( $this->form_key . '_settings_fields', array(
 
 			array(
-				'name'		=> __( 'Product Meta', 'wooquickview' ),
+				'name'		=> __( 'Product Meta', 'woocommerce-products-quick-view' ),
                 'type' 		=> 'heading',
                 'class'		=> 'pro_feature_fields pro_feature_hidden',
                 'id'		=> 'qv_template_product_meta_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Product Meta', 'wooquickview' ),
+				'name' 		=> __( 'Product Meta', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'show_product_meta',
 				'class'		=> 'show_product_meta',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 1,
 				'checked_value'		=> 1,
 				'unchecked_value' 	=> 0,
-				'checked_label'		=> __( 'ON', 'wooquickview' ),
-				'unchecked_label' 	=> __( 'OFF', 'wooquickview' ),
+				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
+				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
 			),
 			
 			array(
@@ -65,74 +65,74 @@ class WC_QV_Custom_Template_Product_Meta_Settings
 				'class'		=> 'show_product_meta_container'
            	),
 			array(  
-				'name' 		=> __( 'Product Meta Alignment', 'wooquickview' ),
+				'name' 		=> __( 'Product Meta Alignment', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'meta_alignment',
 				'type' 		=> 'onoff_radio',
 				'default' 	=> 'left',
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'left',
-						'text' 				=> __( 'Left', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Left', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'center',
-						'text' 				=> __( 'Center', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Center', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 					array(
 						'val' 				=> 'right',
-						'text' 				=> __( 'Right', 'wooquickview' ),
-						'checked_label'		=> __( 'ON', 'wooquickview') ,
-						'unchecked_label' 	=> __( 'OFF', 'wooquickview') ,
+						'text' 				=> __( 'Right', 'woocommerce-products-quick-view' ),
+						'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ) ,
+						'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ) ,
 					),
 				),
 			),
 			array(  
-				'name' 		=> __( 'Product Meta Name Font', 'wooquickview' ),
+				'name' 		=> __( 'Product Meta Name Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'meta_name_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
 			),
 			array(  
-				'name' 		=> __( 'Product Meta Value Font', 'wooquickview' ),
+				'name' 		=> __( 'Product Meta Value Font', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'meta_value_font',
 				'type' 		=> 'typography',
 				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
 			),
 			array(  
-				'name' 		=> __( 'Product Meta Value Hover Color', 'wooquickview' ),
+				'name' 		=> __( 'Product Meta Value Hover Color', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'meta_value_font_hover_color',
 				'type' 		=> 'color',
 				'default'	=> '#999999'
 			),
 			array(  
-				'name' 		=> __( 'Product Meta Margin', 'wooquickview' ),
+				'name' 		=> __( 'Product Meta Margin', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'meta_margin',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array( 
 	 								array( 
 											'id' 		=> 'meta_margin_top',
-	 										'name' 		=> __( 'Top', 'wooquickview' ),
+	 										'name' 		=> __( 'Top', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 	 
 	 								array(  'id' 		=> 'meta_margin_bottom',
-	 										'name' 		=> __( 'Bottom', 'wooquickview' ),
+	 										'name' 		=> __( 'Bottom', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 5 ),
 											
 									array( 
 											'id' 		=> 'meta_margin_left',
-	 										'name' 		=> __( 'Left', 'wooquickview' ),
+	 										'name' 		=> __( 'Left', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 											
 									array( 
 											'id' 		=> 'meta_margin_right',
-	 										'name' 		=> __( 'Right', 'wooquickview' ),
+	 										'name' 		=> __( 'Right', 'woocommerce-products-quick-view' ),
 	 										'css'		=> 'width:40px;',
 	 										'default'	=> 0 ),
 	 							)

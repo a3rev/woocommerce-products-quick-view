@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Product Quick View\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-03 11:20+0700\n"
-"PO-Revision-Date: 2016-09-03 11:20+0700\n"
+"POT-Creation-Date: 2017-06-07 16:45+0700\n"
+"PO-Revision-Date: 2017-06-07 16:45+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "Language: en\n"
@@ -16,81 +16,82 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin-interface.php:178
+#: admin/admin-interface.php:186
 msgid "Great! You have the latest version installed."
 msgstr ""
 
-#: admin/admin-interface.php:243
+#: admin/admin-interface.php:251
 msgid "Settings successfully saved."
 msgstr ""
 
-#: admin/admin-interface.php:251
+#: admin/admin-interface.php:259
 msgid "Error: Settings can not save."
 msgstr ""
 
-#: admin/admin-interface.php:259
+#: admin/admin-interface.php:267
 msgid "Settings successfully reseted."
 msgstr ""
 
-#: admin/admin-interface.php:280
+#: admin/admin-interface.php:288
 msgid "Thin"
 msgstr ""
 
-#: admin/admin-interface.php:281
+#: admin/admin-interface.php:289
 msgid "Thin/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:282
+#: admin/admin-interface.php:290
 msgid "Normal"
 msgstr ""
 
-#: admin/admin-interface.php:283
+#: admin/admin-interface.php:291
 msgid "Italic"
 msgstr ""
 
-#: admin/admin-interface.php:284
+#: admin/admin-interface.php:292
 msgid "Bold"
 msgstr ""
 
-#: admin/admin-interface.php:285
+#: admin/admin-interface.php:293
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:295
+#: admin/admin-interface.php:303
 msgid "Solid"
 msgstr ""
 
-#: admin/admin-interface.php:296
+#: admin/admin-interface.php:304
 msgid "Double"
 msgstr ""
 
-#: admin/admin-interface.php:297
+#: admin/admin-interface.php:305
 msgid "Dashed"
 msgstr ""
 
-#: admin/admin-interface.php:298
+#: admin/admin-interface.php:306
 msgid "Dotted"
 msgstr ""
 
-#: admin/admin-interface.php:299
+#: admin/admin-interface.php:307
 msgid "Groove"
 msgstr ""
 
-#: admin/admin-interface.php:300
+#: admin/admin-interface.php:308
 msgid "Ridge"
 msgstr ""
 
-#: admin/admin-interface.php:301
+#: admin/admin-interface.php:309
 msgid "Inset"
 msgstr ""
 
-#: admin/admin-interface.php:302
+#: admin/admin-interface.php:310
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1572 admin/admin-interface.php:1658
-#: admin/admin-interface.php:1758 admin/admin-interface.php:1927
-#: admin/admin-interface.php:2017 admin/admin-interface.php:2046
+#: admin/admin-interface.php:1743 admin/admin-interface.php:1987
+#: admin/admin-interface.php:2087 admin/admin-interface.php:2256
+#: admin/admin-interface.php:2346 admin/admin-interface.php:2375
+#: admin/admin-interface.php:3018
 #: admin/settings/custom-template/add-to-cart-settings.php:58
 #: admin/settings/custom-template/add-to-cart-settings.php:87
 #: admin/settings/custom-template/add-to-cart-settings.php:93
@@ -136,9 +137,10 @@ msgstr ""
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1573 admin/admin-interface.php:1659
-#: admin/admin-interface.php:1759 admin/admin-interface.php:1928
-#: admin/admin-interface.php:2018 admin/admin-interface.php:2047
+#: admin/admin-interface.php:1744 admin/admin-interface.php:1988
+#: admin/admin-interface.php:2088 admin/admin-interface.php:2257
+#: admin/admin-interface.php:2347 admin/admin-interface.php:2376
+#: admin/admin-interface.php:3019
 #: admin/settings/custom-template/add-to-cart-settings.php:59
 #: admin/settings/custom-template/add-to-cart-settings.php:88
 #: admin/settings/custom-template/add-to-cart-settings.php:94
@@ -184,150 +186,146 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1578
+#: admin/admin-interface.php:1749
 msgid "Google Fonts API"
 msgstr ""
 
-#: admin/admin-interface.php:1590
+#: admin/admin-interface.php:1761
 msgid ""
 "ON to connect to Google Fonts API and have auto font updates direct from "
 "Google."
 msgstr ""
 
-#: admin/admin-interface.php:1594
+#: admin/admin-interface.php:1765
 #, php-format
 msgid ""
 "Enter your existing Google Fonts API Key below. Don't have a key? Visit <a "
 "href='%s' target='_blank'>Google Developer API</a> to create a key"
 msgstr ""
 
-#: admin/admin-interface.php:1611
+#: admin/admin-interface.php:1782
 msgid "Google Fonts API Key"
 msgstr ""
 
-#: admin/admin-interface.php:1614
+#: admin/admin-interface.php:1785
 msgid "Your Google API Key is valid and automatic font updates are enabled."
 msgstr ""
 
-#: admin/admin-interface.php:1615
+#: admin/admin-interface.php:1786
 msgid "Please enter a valid Google API Key."
 msgstr ""
 
-#: admin/admin-interface.php:1634
+#: admin/admin-interface.php:1805
 msgid "Check New Version"
 msgstr ""
 
-#: admin/admin-interface.php:1645
+#: admin/admin-interface.php:1816
 msgid "Check Now"
 msgstr ""
 
-#: admin/admin-interface.php:1664
+#: admin/admin-interface.php:1993
 msgid "Open Box Display"
 msgstr ""
 
-#: admin/admin-interface.php:1677
+#: admin/admin-interface.php:2006
 msgid ""
 "ON and each admin panel setting box OPEN | CLOSED position are saved each "
 "time changes are SAVED."
 msgstr ""
 
-#: admin/admin-interface.php:2082
+#: admin/admin-interface.php:2411
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:2084
+#: admin/admin-interface.php:2413
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:2086
+#: admin/admin-interface.php:2415
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:2179
+#: admin/admin-interface.php:2508
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:2190
+#: admin/admin-interface.php:2519
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:2231
+#: admin/admin-interface.php:2560
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:2340 admin/admin-interface.php:2574
+#: admin/admin-interface.php:2669 admin/admin-interface.php:2903
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:2349 admin/admin-interface.php:2565
+#: admin/admin-interface.php:2670 admin/admin-interface.php:2837
+msgid "0px = No Border"
+msgstr ""
+
+#: admin/admin-interface.php:2678 admin/admin-interface.php:2894
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin-interface.php:2350 admin/admin-interface.php:2566
+#: admin/admin-interface.php:2679 admin/admin-interface.php:2895
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:2360 admin/admin-interface.php:2579
+#: admin/admin-interface.php:2689 admin/admin-interface.php:2908
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2380 admin/admin-interface.php:2599
+#: admin/admin-interface.php:2709 admin/admin-interface.php:2928
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2400 admin/admin-interface.php:2619
+#: admin/admin-interface.php:2729 admin/admin-interface.php:2948
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2420 admin/admin-interface.php:2639
+#: admin/admin-interface.php:2749 admin/admin-interface.php:2968
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2507
+#: admin/admin-interface.php:2836
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2690
-msgid "YES"
-msgstr ""
-
-#: admin/admin-interface.php:2691
-msgid "NO"
-msgstr ""
-
-#: admin/admin-interface.php:2705
+#: admin/admin-interface.php:3034
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2723
+#: admin/admin-interface.php:3052
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2741
+#: admin/admin-interface.php:3070
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2759
+#: admin/admin-interface.php:3088
 msgid "Spread Size"
 msgstr ""
 
-#: admin/admin-interface.php:2777
+#: admin/admin-interface.php:3106
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2778
+#: admin/admin-interface.php:3107
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2796
+#: admin/admin-interface.php:3125
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:3064
+#: admin/admin-interface.php:3399
 msgid "Save changes"
 msgstr ""
 
-#: admin/admin-interface.php:3065
+#: admin/admin-interface.php:3400
 msgid "Reset Settings"
 msgstr ""
 
@@ -412,6 +410,7 @@ msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:51
 #: admin/settings/fancybox-popup-settings.php:50
+#: admin/settings/prettyphoto-popup-settings.php:51
 msgid "Pop-up Maximum Width"
 msgstr ""
 
@@ -465,15 +464,18 @@ msgid "Elastic"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:105
+#: admin/settings/prettyphoto-popup-settings.php:61
 msgid "Opening & Closing Speed"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:106
+#: admin/settings/prettyphoto-popup-settings.php:62
 msgid "Milliseconds when open and close popup"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:113
 #: admin/settings/fancybox-popup-settings.php:133
+#: admin/settings/prettyphoto-popup-settings.php:69
 msgid "Background Overlay Colour"
 msgstr ""
 
@@ -1472,7 +1474,7 @@ msgid "Quick View Settings successfully reseted."
 msgstr ""
 
 #: admin/settings/global-settings.php:154 admin/tabs/admin-settings-tab.php:78
-#: classes/class-woocommerce-quick-view-ultimate.php:491
+#: classes/class-woocommerce-quick-view-ultimate.php:579
 msgid "Settings"
 msgstr ""
 
@@ -1546,6 +1548,14 @@ msgstr ""
 
 #: admin/settings/global-settings.php:299
 msgid "Open full site in pop-up"
+msgstr ""
+
+#: admin/settings/prettyphoto-popup-settings.php:44
+msgid "PrettyPhoto Pop Up"
+msgstr ""
+
+#: admin/settings/prettyphoto-popup-settings.php:70
+msgid "Select a colour or empty for use default color from WooCommerce."
 msgstr ""
 
 #: admin/settings/quick-view-button-settings.php:81
@@ -1672,12 +1682,24 @@ msgstr ""
 msgid "Pop Up Tool"
 msgstr ""
 
-#: admin/settings/quick-view-popup-settings.php:195
-msgid "FANCYBOX"
+#: admin/settings/quick-view-popup-settings.php:196
+msgid "PrettyPhoto"
 msgstr ""
 
 #: admin/settings/quick-view-popup-settings.php:196
-msgid "COLORBOX"
+msgid "(recommended)"
+msgstr ""
+
+#: admin/settings/quick-view-popup-settings.php:202
+msgid "ColorBox"
+msgstr ""
+
+#: admin/settings/quick-view-popup-settings.php:208
+msgid "FancyBox"
+msgstr ""
+
+#: admin/settings/quick-view-popup-settings.php:208
+msgid "Depreciated! Do not use. Will be removed in future version"
 msgstr ""
 
 #: admin/tabs/admin-popup-style-tab.php:78
@@ -1692,72 +1714,68 @@ msgstr ""
 msgid "Custom Template"
 msgstr ""
 
-#: classes/class-quick-view-template.php:133
+#: classes/class-quick-view-template.php:163
 #, php-format
 msgid "Rated %s out of 5"
 msgstr ""
 
-#: classes/class-quick-view-template.php:135
+#: classes/class-quick-view-template.php:165
 msgid "out of 5"
 msgstr ""
 
-#: classes/class-quick-view-template.php:159
+#: classes/class-quick-view-template.php:189
 msgid "SKU:"
 msgstr ""
 
-#: classes/class-quick-view-template.php:159
+#: classes/class-quick-view-template.php:189
 msgid "N/A"
 msgstr ""
 
-#: classes/class-quick-view-template.php:287
-msgid "Choose an option"
+#: classes/class-quick-view-template.php:332
+msgid "Clear"
 msgstr ""
 
-#: classes/class-quick-view-template.php:335
-msgid "Clear selection"
-msgstr ""
-
-#: classes/class-quick-view-template.php:368
+#: classes/class-quick-view-template.php:366
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:485
+#: classes/class-woocommerce-quick-view-ultimate.php:573
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:486
+#: classes/class-woocommerce-quick-view-ultimate.php:574
 msgid "Support"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:499
+#: classes/class-woocommerce-quick-view-ultimate.php:587
 msgid "Go to Support Forum"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:506
+#: classes/class-woocommerce-quick-view-ultimate.php:594
 msgid "Is this plugin is just what you needed? If so"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:507
+#: classes/class-woocommerce-quick-view-ultimate.php:595
 msgid "Submit Review for Plugin on WordPress"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:515
+#: classes/class-woocommerce-quick-view-ultimate.php:603
 msgid "Free WooCommerce Plugins"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:522
+#: classes/class-woocommerce-quick-view-ultimate.php:610
 msgid "Free WordPress Plugins"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:529
+#: classes/class-woocommerce-quick-view-ultimate.php:617
 msgid "Connect with us via"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:530
+#: classes/class-woocommerce-quick-view-ultimate.php:618
 msgid "a3rev Facebook"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:531
+#: classes/class-woocommerce-quick-view-ultimate.php:619
 msgid "a3rev Twitter"
 msgstr ""
 
