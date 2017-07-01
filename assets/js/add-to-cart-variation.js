@@ -1,9 +1,10 @@
 jQuery(document).ready(function($) {
 	// Reset buttons
-	$('.quick_view_reset_variations').click(function(){
+	$('.quick_view_reset_variations').on( 'click', function(){
 		$('.quick_view_table_variations select').val('').change();
+        $(this).css('visibility','hidden');
 		return false;
-	}).css('visibility','hidden');
+	});
 
 	//check if two arrays of attributes match
     function variations_match(attrs1, attrs2) {
@@ -130,7 +131,14 @@ jQuery(document).ready(function($) {
 		var variation_title = variation.image_title;
 
 		$('.quick_view_variations_button').show();
-        $('.quick_view_single_variation').html( variation.price_html + variation.availability_html );
+
+        if ( ! variation.is_purchasable || ! variation.is_in_stock || ! variation.variation_is_visible ) {
+            $('.quick_view_single_variation').html( 'Sorry, this product is unavailable. Please choose a different combination' );
+            $('.quick_view_single_variation_wrap').find('.quick_view_add_to_cart_button').addClass('disabled');
+        } else {
+            $('.quick_view_single_variation').html( variation.price_html + variation.availability_html );
+            $('.quick_view_single_variation_wrap').find('.quick_view_add_to_cart_button').removeClass('disabled');
+        }
 
         if ( ! o_src ) {
             $(img).attr('data-o_src', $(img).attr('src'));
@@ -194,7 +202,6 @@ jQuery(document).ready(function($) {
 		$('.quick_view_table_variations select').each(function(){
 
 			if ( exclude && $(this).attr('name') == exclude ) {
-
 				all_set = false;
 				current_settings[$(this).attr('name')] = '';
 
@@ -234,7 +241,9 @@ jQuery(document).ready(function($) {
         }
 
         if (any_set) {
-        	if ($('.reset_variations').css('visibility') == 'hidden') $('.reset_variations').css('visibility','visible').hide().fadeIn();
+        	if ($('.reset_variations').css('visibility') == 'hidden') {
+                $('.reset_variations').css('visibility','visible').hide().fadeIn();
+            }
         } else {
 			$('.reset_variations').css('visibility','hidden');
 		}

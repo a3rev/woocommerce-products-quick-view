@@ -3,7 +3,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
 Tested up to: 4.8.0
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,12 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.7.1 - 2017/07/01 =
+* Tweak - Tested for full compatibility with WooCommerce version 3.1.0
+* Tweak - Show warning for variation is unavailable on popup
+* Tweak - Set add to cart button to disabled if variation is unavailable on popup 
+* Fix - Show the Reset link on popup if Variable Product has default attributes
 
 = 1.7.0 - 2017/06/07 =
 * Feature - Launched WooCommerce Products Quick View public Github Repository
@@ -361,6 +367,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.7.1 =
+Maintenance Update. 3 code tweaks and 1 bug fix for compatibility with WooCommerce version 3.1.0
 
 = 1.7.0 =
 Feature Update. 3 code tweaks for compatibility with WordPress major version 4.8.0 and WooCommerce version 3.0.7 plus launch of public Github repo for source code
