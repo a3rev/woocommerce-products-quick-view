@@ -2,8 +2,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
-Tested up to: 4.9.0
-Stable tag: 1.7.2
+Tested up to: 4.9.1
+Stable tag: 1.8.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,14 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.8.0 - 2017/12/19 =
+* Feature upgrade. Added full support for WooCommerce default product gallery including zoom feature and variation images
+* Tweak - Remove Dynamic Gallery script 
+* Tweak - Remove Dynamic Gallery Tab and setting options
+* Tweak - Remove depreciated Fancybox option for popup tool. Automatically set to PrettyPhoto if site was using the Fancybox pop up
+* Tweak - Tested for compatibility with WooCommerce 3.2.6
+* Tweak - Tested for compatibility with WordPress 4.9.1
 
 = 1.7.2 - 2017/10/13 =
 * Tweak - Tested for compatibility with WooCommerce 3.2.0
@@ -372,6 +380,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.8.0 =
+Feature Upgrade. Added full support for WooCommerce default product gallery including zoom feature and variation images. Compatibility with WordPress 4.9.1 and WooCommerce 3.2.6
 
 = 1.7.2 =
 Maintenance Upgrade. Tweaks for compatibility with WooCommerce 3.2.0 and WordPress 4.8.2

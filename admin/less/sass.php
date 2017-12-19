@@ -136,7 +136,6 @@ class WC_QV_Less
 
         ob_start();
 		include( $this->plugin_dir. '/templates/customized_popup_style.php' );
-        include( $this->plugin_dir. '/templates/customized_gallery_style.php' );
 		$sass = ob_get_clean();
 		$sass = str_replace( '<style>', '', str_replace( '</style>', '', $sass ) );
 		$sass = str_replace( '<style type="text/css">', '', str_replace( '</style>', '', $sass ) );

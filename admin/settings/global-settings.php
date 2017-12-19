@@ -260,33 +260,13 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 				'onoff_options' => array(
 					array(
 						'val' 				=> 'custom_template',
-						'text' 				=> __( 'Use the Custom Template for pop-up with Dynamic product image gallery', 'woocommerce-products-quick-view' ).' <span class="description">('.__( 'recommended', 'woocommerce-products-quick-view' ).')</span>' ,
+						'text' 				=> __( 'Use the Custom Template for pop-up with WC gallery', 'woocommerce-products-quick-view' ).' <span class="description">('.__( 'recommended', 'woocommerce-products-quick-view' ).')</span>' ,
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
 				),
 			),
-			array(
-            	'name' => '',
-                'type' => 'heading',
-                'class'=> 'quick_view_custom_template_container',
-           	),
-           	array(
-				'name' 		=> __( 'Dynamic Gallery Activation', 'woocommerce-products-quick-view' ),
-				'id' 		=> 'quick_view_template_dynamic_gallery_activate',
-				'type' 		=> 'onoff_checkbox',
-				'default'	=> 'yes',
-				'checked_value'		=> 'yes',
-				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'ON', 'woocommerce-products-quick-view' ),
-				'unchecked_label' 	=> __( 'OFF', 'woocommerce-products-quick-view' ),
-			),
 
-           	array(
-            	'name' => '',
-                'type' => 'heading',
-                'class'=> 'quick_view_ultimate_container',
-           	),
 			array(  
 				'name' 		=> __( 'Site Product Page', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_popup_content',
@@ -310,9 +290,6 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 <script>
 (function($) {
 $(document).ready(function() {
-	if ( $("input.quick_view_ultimate_popup_content:checked").val() != 'custom_template') {
-		$('.quick_view_custom_template_container').css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px' } );
-	}
 
 	if ( $("input[name='quick_view_ultimate_enable']:checked").val() != 'yes') {
 		$('.quick_view_ultimate_container').css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px' } );
@@ -325,13 +302,6 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).on( "a3rev-ui-onoff_radio-switch", '.quick_view_ultimate_popup_content', function( event, value, status ) {
-		$('.quick_view_custom_template_container').attr('style','display:none;');
-		if ( value == 'custom_template' && status == 'true' ) {
-			$('.quick_view_custom_template_container').slideDown();
-		}
-	});
-
 });
 })(jQuery);
 </script>
@@ -341,15 +311,12 @@ $(document).ready(function() {
 	public function show_hide_tabs() {
 		$quick_view_ultimate_enable        = get_option( 'quick_view_ultimate_enable', 'yes' );
 		$quick_view_ultimate_popup_content = get_option( 'quick_view_ultimate_popup_content', 'custom_template' );
-		$dynamic_gallery_activate          = get_option( 'quick_view_template_dynamic_gallery_activate', 'yes' );
 ?>
 <style type="text/css">
 <?php if ( 'yes' != $quick_view_ultimate_enable ) { ?>
 	.nav-tab.quick-view-button, .nav-tab.quick-view-popup, .nav-tab.custom-template, .nav-tab.gallery-settings { display: none; }
 <?php } elseif ( 'custom_template' != $quick_view_ultimate_popup_content ) { ?>
 	.nav-tab.custom-template, .nav-tab.gallery-settings { display: none; }
-<?php } elseif ( 'yes' != $dynamic_gallery_activate ) { ?>
-	.nav-tab.gallery-settings { display: none; }
 <?php } ?>
 </style>
 	<?php

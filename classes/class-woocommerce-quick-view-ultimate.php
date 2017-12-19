@@ -38,7 +38,7 @@ class WC_Quick_View_Ultimate
 		add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'add_quick_view_ultimate_under_image_each_products'), 11 );
 		
 		//Enqueue Script
-		add_action( 'wp_enqueue_scripts', array ( $this, 'frontend_register_scripts') );
+		add_action( 'wp_enqueue_scripts', array ( $this, 'frontend_register_scripts'), 11 );
 		add_action( 'woocommerce_after_shop_loop', array( $this, 'quick_view_ultimate_wp_enqueue_style'), 13 );
 		add_action( 'wp_head', array( $this, 'fix_style_js_responsi_theme'), 13 );
 		
@@ -69,29 +69,34 @@ class WC_Quick_View_Ultimate
 		}
 
 		$quick_view_ultimate_popup_tool = get_option('quick_view_ultimate_popup_tool');
-		if ($quick_view_ultimate_popup_tool == 'prettyphoto') {
+		if ( 'colorbox' == $quick_view_ultimate_popup_tool ) {
+			wp_enqueue_style( 'a3_colorbox_style', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/colorbox.css' );
+			wp_enqueue_script( 'colorbox_script', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array('jquery'), false, true );
+		} else {
 			$wc_assets_path = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
 
 			wp_enqueue_style( 'woocommerce_prettyPhoto_css', $wc_assets_path . 'css/prettyPhoto.css' );
 			wp_enqueue_script( 'prettyPhoto', $wc_assets_path . 'js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array('jquery'), '3.1.6', true );
-		} elseif ($quick_view_ultimate_popup_tool == 'colorbox') {
-			wp_enqueue_style( 'a3_colorbox_style', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/colorbox.css' );
-			wp_enqueue_script( 'colorbox_script', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array('jquery'), false, true );
-		} elseif ($quick_view_ultimate_popup_tool == 'fancybox') {
-			wp_enqueue_style( 'woocommerce_fancybox_styles', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/fancybox/fancybox.css' );
-			wp_enqueue_script( 'fancybox', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/fancybox/fancybox'.$suffix.'.js', array('jquery'), false, true );
 		}
+
 		wp_enqueue_style( 'quick-view-css', WC_QUICK_VIEW_ULTIMATE_CSS_URL.'/style.css', array(), WC_QUICK_VIEW_ULTIMATE_VERSION );
 
 		$quick_view_ultimate_popup_content = get_option('quick_view_ultimate_popup_content', 'custom_template' );
-		$dynamic_gallery_activate          = get_option('quick_view_template_dynamic_gallery_activate', 'yes' );
 
 		if ( 'custom_template' == $quick_view_ultimate_popup_content ) {
 
-			if ( 'yes' == $dynamic_gallery_activate ) {
-				wp_enqueue_style( 'a3-dgallery-style' );
-				wp_enqueue_script( 'a3-dgallery-script' );
+			if ( current_theme_supports( 'wc-product-gallery-zoom' ) ) {
+				wp_enqueue_script( 'zoom' );
 			}
+			if ( current_theme_supports( 'wc-product-gallery-slider' ) ) {
+				wp_enqueue_script( 'flexslider' );
+			}
+			if ( current_theme_supports( 'wc-product-gallery-lightbox' ) ) {
+				wp_enqueue_script( 'photoswipe-ui-default' );
+				wp_enqueue_style( 'photoswipe-default-skin' );
+				add_action( 'wp_footer', 'woocommerce_photoswipe' );
+			}
+			wp_enqueue_script( 'wc-single-product' );
 
 			$_upload_dir = wp_upload_dir();
 			if ( file_exists( $_upload_dir['basedir'] . '/sass/wc_product_quick_view.min.css' ) ) {
@@ -235,13 +240,7 @@ class WC_Quick_View_Ultimate
 		wp_enqueue_style( 'quick-view-css', WC_QUICK_VIEW_ULTIMATE_CSS_URL.'/style.css', array(), WC_QUICK_VIEW_ULTIMATE_VERSION );
 
 		$quick_view_ultimate_popup_content = get_option('quick_view_ultimate_popup_content', 'custom_template' );
-		$dynamic_gallery_activate = get_option('quick_view_template_dynamic_gallery_activate', 'yes' );
 		if ( 'custom_template' == $quick_view_ultimate_popup_content ) {
-
-			if ( 'yes' == $dynamic_gallery_activate ) {
-				wp_enqueue_style( 'a3-dgallery-style' );
-				wp_enqueue_script( 'a3-dgallery-script' );
-			}
 
 			$_upload_dir = wp_upload_dir();
 			if ( file_exists( $_upload_dir['basedir'] . '/sass/wc_product_quick_view.min.css' ) ) {
@@ -262,16 +261,6 @@ class WC_Quick_View_Ultimate
 		$quick_view_ultimate_popup_tool = get_option('quick_view_ultimate_popup_tool');
 
 		$quick_view_ultimate_popup_content = get_option('quick_view_ultimate_popup_content', 'custom_template' );
-		$dynamic_gallery_activate = get_option('quick_view_template_dynamic_gallery_activate', 'yes' );
-		
-		$quick_view_ultimate_fancybox_center_on_scroll = get_option('quick_view_ultimate_fancybox_center_on_scroll');
-		if ( $quick_view_ultimate_fancybox_center_on_scroll == '' ) $quick_view_ultimate_fancybox_center_on_scroll = 'false';
-		
-		$quick_view_ultimate_fancybox_transition_in = get_option('quick_view_ultimate_fancybox_transition_in');
-		$quick_view_ultimate_fancybox_transition_out = get_option('quick_view_ultimate_fancybox_transition_out');
-		$quick_view_ultimate_fancybox_speed_in = get_option('quick_view_ultimate_fancybox_speed_in');
-		$quick_view_ultimate_fancybox_speed_out = get_option('quick_view_ultimate_fancybox_speed_out');
-		$quick_view_ultimate_fancybox_overlay_color = get_option('quick_view_ultimate_fancybox_overlay_color');
 		
 		$quick_view_ultimate_colorbox_center_on_scroll = get_option('quick_view_ultimate_colorbox_center_on_scroll');
 		if ( $quick_view_ultimate_colorbox_center_on_scroll == '' ) $quick_view_ultimate_colorbox_center_on_scroll = 'false';
@@ -319,9 +308,58 @@ class WC_Quick_View_Ultimate
 				return url;
 			}
 
-			<?php
-			if ( $quick_view_ultimate_popup_tool == 'prettyphoto' ) {
-			?>
+			<?php if ( 'colorbox' == $quick_view_ultimate_popup_tool ) { ?>
+			jQuery(document).on( 'quick_view_close_popup', function(){
+				jQuery.colorbox.close();
+			});
+			
+			jQuery(document).bind('cbox_cleanup', function(){
+				jQuery.post( '<?php echo admin_url('admin-ajax.php', 'relative');?>?action=quick_view_ultimate_reload_cart&security=<?php echo wp_create_nonce("reload-cart");?>', '', function(rsHTML){
+					jQuery('.widget_shopping_cart_content').html(rsHTML);
+					
+				});
+			});
+			jQuery(document).on("click", ".quick_view_ultimate_click.colorbox", function(){
+				
+				var product_id = jQuery(this).attr('id');
+				var product_url = jQuery(this).attr('data-link');
+
+				<?php if ( $quick_view_ultimate_popup_content == 'full_page' ) { ?>
+				var url = product_url;
+				<?php } else { ?>
+				var url = wc_qv_get_custom_template( product_id );
+				<?php } ?>
+				
+				var popup_wide = <?php echo (int) get_option('quick_view_ultimate_colorbox_popup_width', 600 ); ?>;
+				var popup_tall = <?php echo (int) get_option('quick_view_ultimate_colorbox_popup_height', 500 ); ?>;
+				if ( wc_qv_getWidth()  <= 568 ) {
+					popup_wide = '100%';
+					popup_tall = '90%';
+				}
+				
+				jQuery.colorbox({
+					href		: url,
+					<?php if ( $quick_view_ultimate_popup_content != 'custom_template' ) { ?>
+					iframe		: true,
+					<?php } ?>
+					opacity		: 0.85,
+					scrolling	: true,
+					initialWidth: 100,
+					initialHeight: 100,
+					innerWidth	: popup_wide,
+					innerHeight	: popup_tall,
+					maxWidth  	: '100%',
+					maxHeight  	: '90%',
+					returnFocus : true,
+					transition  : '<?php echo $quick_view_ultimate_colorbox_transition;?>',
+					speed		: <?php echo $quick_view_ultimate_colorbox_speed;?>,
+					fixed		: <?php echo $quick_view_ultimate_colorbox_center_on_scroll;?>
+				});
+				return false;
+			});
+
+			<?php } else { ?>
+
 			jQuery(document).on( 'quick_view_close_popup', function(){
 				jQuery.prettyPhoto.close();
 			});
@@ -385,130 +423,9 @@ class WC_Quick_View_Ultimate
 
 				return false;
 			});
-			<?php
-			} elseif ( $quick_view_ultimate_popup_tool == 'fancybox' ) {
-			?>
-			jQuery(document).on( 'quick_view_close_popup', function(){
-				jQuery.fancybox.close();
-			});
 
-			jQuery(document).on("click", ".quick_view_ultimate_click.fancybox", function(){
-			
-				var product_id = jQuery(this).attr('id');
-				var product_url = jQuery(this).attr('data-link');
-				
-				var auto_Dimensions = true;
-				
-				<?php if ( $quick_view_ultimate_popup_content == 'full_page' ) { ?>
-				// detect iOS to fix scroll for iframe on fancybox
-				var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-				if ( iOS ) {
-					jQuery('#fancybox-content').attr( "style", "overflow-y: auto !important; -webkit-overflow-scrolling: touch !important;" );
-				}
-				var url = product_url;
-				<?php } else { ?>
-				var url = wc_qv_get_custom_template( product_id );
-				auto_Dimensions = false;
-				<?php } ?>
-				
-				var popup_wide = <?php echo (int) get_option('quick_view_ultimate_fancybox_popup_width', 600 ); ?>;
-				var popup_tall = <?php echo (int) get_option('quick_view_ultimate_fancybox_popup_height', 500 ); ?>;
-				if ( wc_qv_getWidth()  <= 600 ) { 
-					popup_wide = '90%';
-					popup_tall = '90%'; 
-				}
-			
-                jQuery.fancybox({
-					<?php if ( $quick_view_ultimate_popup_content == 'custom_template' ) { ?>
-					content: url,
-					type: "ajax",
-					<?php } else { ?>
-					href: url,
-					type: "iframe",
-					<?php } ?>
-					centerOnScroll : <?php echo $quick_view_ultimate_fancybox_center_on_scroll;?>,
-					transitionIn : '<?php echo $quick_view_ultimate_fancybox_transition_in;?>', 
-					transitionOut: '<?php echo $quick_view_ultimate_fancybox_transition_out;?>',
-					easingIn: 'swing',
-					easingOut: 'swing',
-					speedIn : <?php echo $quick_view_ultimate_fancybox_speed_in;?>,
-					speedOut : <?php echo $quick_view_ultimate_fancybox_speed_out;?>,
-					width: popup_wide,
-					autoScale: true,
-					height: popup_tall,
-					margin: 0,
-					padding: 10,
-					maxWidth: "90%",
-					maxHeight: "90%",
-					autoDimensions: auto_Dimensions,
-					overlayColor: '<?php echo str_replace( array( 'background-color:', '!important', ';' ), '', $wc_qv_admin_interface->generate_background_color_css( $quick_view_ultimate_fancybox_overlay_color ) );?>',
-					showCloseButton : true,
-					openEffect	: "none",
-					closeEffect	: "none",
-					onClosed: function() {
-						jQuery.post( '<?php echo admin_url('admin-ajax.php', 'relative');?>?action=quick_view_ultimate_reload_cart&security=<?php echo wp_create_nonce("reload-cart");?>', '', function(rsHTML){
-							jQuery('.widget_shopping_cart_content').html(rsHTML);
-							
-						});
-					}
-                });
+			<?php } ?>
 
-				return false;
-			});
-			<?php		
-			}elseif( $quick_view_ultimate_popup_tool == 'colorbox' ){
-			?>
-			jQuery(document).on( 'quick_view_close_popup', function(){
-				jQuery.colorbox.close();
-			});
-			
-			jQuery(document).bind('cbox_cleanup', function(){
-				jQuery.post( '<?php echo admin_url('admin-ajax.php', 'relative');?>?action=quick_view_ultimate_reload_cart&security=<?php echo wp_create_nonce("reload-cart");?>', '', function(rsHTML){
-					jQuery('.widget_shopping_cart_content').html(rsHTML);
-					
-				});
-			});
-			jQuery(document).on("click", ".quick_view_ultimate_click.colorbox", function(){
-				
-				var product_id = jQuery(this).attr('id');
-				var product_url = jQuery(this).attr('data-link');
-
-				<?php if ( $quick_view_ultimate_popup_content == 'full_page' ) { ?>
-				var url = product_url;
-				<?php } else { ?>
-				var url = wc_qv_get_custom_template( product_id );
-				<?php } ?>
-				
-				var popup_wide = <?php echo (int) get_option('quick_view_ultimate_colorbox_popup_width', 600 ); ?>;
-				var popup_tall = <?php echo (int) get_option('quick_view_ultimate_colorbox_popup_height', 500 ); ?>;
-				if ( wc_qv_getWidth()  <= 568 ) {
-					popup_wide = '100%';
-					popup_tall = '90%';
-				}
-				
-				jQuery.colorbox({
-					href		: url,
-					<?php if ( $quick_view_ultimate_popup_content != 'custom_template' ) { ?>
-					iframe		: true,
-					<?php } ?>
-					opacity		: 0.85,
-					scrolling	: true,
-					initialWidth: 100,
-					initialHeight: 100,
-					innerWidth	: popup_wide,
-					innerHeight	: popup_tall,
-					maxWidth  	: '100%',
-					maxHeight  	: '90%',
-					returnFocus : true,
-					transition  : '<?php echo $quick_view_ultimate_colorbox_transition;?>',
-					speed		: <?php echo $quick_view_ultimate_colorbox_speed;?>,
-					fixed		: <?php echo $quick_view_ultimate_colorbox_center_on_scroll;?>
-				});
-				return false;
-			});
-			<?php	
-			}
-			?>
 		});	
 		</script>
         <style type="text/css">

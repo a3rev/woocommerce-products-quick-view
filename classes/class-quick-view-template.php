@@ -65,10 +65,6 @@ class WC_Quick_View_Custom_Template
 		jQuery(document).ready(function($) {
 			<?php if ( $quick_view_ultimate_popup_tool == 'colorbox' ) { ?>
 			$(document).find('#cboxContent').append( '<div class="quick_view_popup_loading"></div>' );
-			<?php } elseif (  $quick_view_ultimate_popup_tool == 'fancybox' ) { ?>
-			setTimeout( function() {
-				$(document).find('#fancybox-content').append( '<div class="quick_view_popup_loading"></div>' );
-			}, 1000);
 			<?php } ?>
 		});
 		</script>
@@ -81,8 +77,6 @@ class WC_Quick_View_Custom_Template
 	public static function custom_template_popup( $product_id, $orderby = 'menu_order', $is_shop = 'no', $is_category = 'no', $next_previous_loaded = 'no' ) {
 		global $wc_quick_view_ultimate;
 		global $quick_view_template_global_settings;
-
-		$dynamic_gallery_activate = get_option('quick_view_template_dynamic_gallery_activate', 'yes' );
 		
 		if ( version_compare( WC()->version, '2.2.0', '<' ) ) {
 			$my_product = get_product( $product_id );
@@ -136,13 +130,8 @@ class WC_Quick_View_Custom_Template
         	<!-- Product Gallery -->
         	<div class="quick_view_product_gallery_container">
             <?php
-            if ( 'yes' == $dynamic_gallery_activate ) {
-				global $wc_quick_view_template_gallery_class;
-				$wc_quick_view_template_gallery_class->wc_dynamic_gallery_display( $product_id, $next_previous_loaded );
-			} else {
 				global $wc_quick_view_template_default_gallery_class;
 				$wc_quick_view_template_default_gallery_class->wc_default_gallery_display( $product_id );
-			}
 			?>
             </div>
             <div class="quick_view_product_data_container">

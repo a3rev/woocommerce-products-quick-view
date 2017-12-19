@@ -99,7 +99,6 @@ class WC_QV_Admin_Page extends WC_QV_Admin_UI
 		include_once( $this->admin_plugin_dir() . '/tabs/admin-popup-style-tab.php' );
 
 		include_once( $this->admin_plugin_dir() . '/tabs/custom-template/global-settings-tab.php' );
-		include_once( $this->admin_plugin_dir() . '/tabs/custom-template/gallery-tab.php' );
 		
 	}
 	

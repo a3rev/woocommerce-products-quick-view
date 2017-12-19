@@ -203,19 +203,9 @@ class WC_QV_Popup_Settings extends WC_QV_Admin_UI
 						'checked_label'		=> 'ON',
 						'unchecked_label' 	=> 'OFF',
 					),
-					array(
-						'val' 				=> 'fancybox',
-						'text' 				=> __( 'FancyBox', 'woocommerce-products-quick-view' ) . ' - ' . __( 'Depreciated! Do not use. Will be removed in future version', 'woocommerce-products-quick-view' ) ,
-						'checked_label'		=> 'ON',
-						'unchecked_label' 	=> 'OFF',
-					)
 				),
 			),
         );
-
-        include_once( $this->admin_plugin_dir() . '/settings/fancybox-popup-settings.php' );
-		global $wc_qv_fancybox_popup_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_fancybox_popup_settings->form_fields );
 
 		include_once( $this->admin_plugin_dir() . '/settings/colorbox-popup-settings.php' );
 		global $wc_qv_colorbox_popup_settings;
@@ -236,24 +226,16 @@ $(document).ready(function() {
 
 	var popup_tool = $("input.quick_view_ultimate_popup_tool:checked").val();
 	if ( popup_tool == 'colorbox') {
-		$(".quick_view_fancybox_popup_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px'} );
-		$(".quick_view_prettyphoto_popup_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px'} );
-	} else if ( popup_tool == 'fancybox' ) {
-		$(".quick_view_colorbox_popup_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px'} );
 		$(".quick_view_prettyphoto_popup_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px'} );
 	} else {
 		$(".quick_view_colorbox_popup_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px'} );
-		$(".quick_view_fancybox_popup_container").css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px'} );
 	}
 
 	$(document).on( "a3rev-ui-onoff_radio-switch", '.quick_view_ultimate_popup_tool', function( event, value, status ) {
 		$(".quick_view_colorbox_popup_container").attr('style','display:none;');
-		$(".quick_view_fancybox_popup_container").attr('style','display:none;');
 		$(".quick_view_prettyphoto_popup_container").attr('style','display:none;');
 		if ( value == 'colorbox' && status == 'true' ) {
 			$(".quick_view_colorbox_popup_container").slideDown();
-		} else if ( value == 'fancybox' && status == 'true' ) {
-			$(".quick_view_fancybox_popup_container").slideDown();
 		} else if ( status == 'true' ) {
 			$(".quick_view_prettyphoto_popup_container").slideDown();
 		}

@@ -13,72 +13,38 @@ class WC_Quick_View_Template_Default_Gallery_Class
 {
 
 	public function wc_default_gallery_display( $product_id = 0 ) {
-		global $wc_quick_view_gallery_functions;
-		global $quick_view_template_gallery_style_settings;
+		global $post, $product;
 
 		$product = wc_get_product( $product_id );
-	?>
-	<div class="woocommerce">
-	<div class="product">
-	<div class="images" style="width: 100% !important;">
-	<?php
-		if ( has_post_thumbnail( $product_id ) ) {
-			$image            = get_the_post_thumbnail( $product_id, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ) );
-			echo $image;
-		} else {
-			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<img src="%s" alt="%s" />', wc_placeholder_img_src(), __( 'Placeholder', 'woocommerce' ) ), $product_id );
-		}
+		$post    = get_post( $product_id );
 
-		// Get gallery of this product
-		if ( version_compare( WC_VERSION, '3.0.0', '<' ) ) {
-			$attachment_ids = $product->get_gallery_attachment_ids();
-		} else {
-			$attachment_ids = $product->get_gallery_image_ids();
-		}
+		setup_postdata( $post );
 
-		if ( $attachment_ids ) {
-
-			$loop 		= 0;
-			$columns 	= apply_filters( 'woocommerce_product_thumbnails_columns', 3 );
-	?>
-		<div class="thumbnails <?php echo 'columns-' . $columns; ?>">
-		<?php
-			foreach ( $attachment_ids as $attachment_id ) {
-				$classes = array();
-
-				if ( $loop === 0 || $loop % $columns === 0 ) {
-					$classes[] = 'first';
-				}
-
-				if ( ( $loop + 1 ) % $columns === 0 ) {
-					$classes[] = 'last';
-				}
-
-				$image_class = implode( ' ', $classes );
-
-				echo apply_filters(
-					'woocommerce_single_product_image_thumbnail_html',
-					sprintf(
-						'<a class="%s">%s</a>',
-						esc_attr( $image_class ),
-						wp_get_attachment_image( $attachment_id, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ), 0 )
-					),
-					$attachment_id,
-					$product_id,
-					esc_attr( $image_class )
-				);
-
-				$loop++;
-			}
 		?>
+		<div class="single-product">
+			<div class="product">
+		<?php
+
+		wc_get_template( 'single-product/product-image.php' );
+
+		wp_reset_postdata();
+		?>
+			</div>
 		</div>
-	<?php
-		}
-	?>
-	</div>
-	</div>
-	</div>
-	<?php
+		<script type="text/javascript">
+			jQuery( function( $ ) {
+				/*
+				 * Initialize all galleries on page.
+				 */
+				setTimeout( function() {
+					$( '.quick_view_product_gallery_container .woocommerce-product-gallery' ).each( function() {
+						$( this ).wc_product_gallery();
+					} );
+				}, 100 );
+			});
+		</script>
+		<?php
+
 	}
 }
 

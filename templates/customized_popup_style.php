@@ -10,7 +10,7 @@ extract($quick_view_template_global_settings);
 /* CSS Document */
 
 /* Container Style */
-#fancybox-content > div, #cboxLoadedContent {
+#cboxLoadedContent {
 	background-color: <?php echo $container_bg_color; ?> !important;
 }
 .quick_view_popup_container {
@@ -255,6 +255,7 @@ extract($quick_view_template_global_settings);
     background-size: contain;
     content: "" !important;
     padding-right: 16px;
+    display: initial;
 }
 .quick_view_product_addtocart_container .quick_view_add_to_cart_link.added:after {
 	top:0 !important;	

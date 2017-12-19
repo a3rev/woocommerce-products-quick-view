@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Product Quick View\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-03 11:20+0700\n"
-"PO-Revision-Date: 2017-06-07 16:45+0700\n"
+"POT-Creation-Date: 2017-12-18 18:06+0700\n"
+"PO-Revision-Date: 2017-12-18 18:06+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "Language: en\n"
@@ -16,81 +16,82 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin-interface.php:178
+#: admin/admin-interface.php:186
 msgid "Great! You have the latest version installed."
 msgstr ""
 
-#: admin/admin-interface.php:243
+#: admin/admin-interface.php:251
 msgid "Settings successfully saved."
 msgstr ""
 
-#: admin/admin-interface.php:251
+#: admin/admin-interface.php:259
 msgid "Error: Settings can not save."
 msgstr ""
 
-#: admin/admin-interface.php:259
+#: admin/admin-interface.php:267
 msgid "Settings successfully reseted."
 msgstr ""
 
-#: admin/admin-interface.php:280
+#: admin/admin-interface.php:288
 msgid "Thin"
 msgstr ""
 
-#: admin/admin-interface.php:281
+#: admin/admin-interface.php:289
 msgid "Thin/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:282
+#: admin/admin-interface.php:290
 msgid "Normal"
 msgstr ""
 
-#: admin/admin-interface.php:283
+#: admin/admin-interface.php:291
 msgid "Italic"
 msgstr ""
 
-#: admin/admin-interface.php:284
+#: admin/admin-interface.php:292
 msgid "Bold"
 msgstr ""
 
-#: admin/admin-interface.php:285
+#: admin/admin-interface.php:293
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:295
+#: admin/admin-interface.php:303
 msgid "Solid"
 msgstr ""
 
-#: admin/admin-interface.php:296
+#: admin/admin-interface.php:304
 msgid "Double"
 msgstr ""
 
-#: admin/admin-interface.php:297
+#: admin/admin-interface.php:305
 msgid "Dashed"
 msgstr ""
 
-#: admin/admin-interface.php:298
+#: admin/admin-interface.php:306
 msgid "Dotted"
 msgstr ""
 
-#: admin/admin-interface.php:299
+#: admin/admin-interface.php:307
 msgid "Groove"
 msgstr ""
 
-#: admin/admin-interface.php:300
+#: admin/admin-interface.php:308
 msgid "Ridge"
 msgstr ""
 
-#: admin/admin-interface.php:301
+#: admin/admin-interface.php:309
 msgid "Inset"
 msgstr ""
 
-#: admin/admin-interface.php:302
+#: admin/admin-interface.php:310
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1572 admin/admin-interface.php:1658
-#: admin/admin-interface.php:1758 admin/admin-interface.php:1927
-#: admin/admin-interface.php:2017 admin/admin-interface.php:2046
+#: admin/admin-interface.php:1743 admin/admin-interface.php:1987
+#: admin/admin-interface.php:2087 admin/admin-interface.php:2256
+#: admin/admin-interface.php:2346 admin/admin-interface.php:2375
+#: admin/admin-interface.php:3018
 #: admin/settings/custom-template/add-to-cart-settings.php:58
 #: admin/settings/custom-template/add-to-cart-settings.php:87
 #: admin/settings/custom-template/add-to-cart-settings.php:93
@@ -98,11 +99,6 @@ msgstr ""
 #: admin/settings/custom-template/control-settings.php:58
 #: admin/settings/custom-template/control-settings.php:75
 #: admin/settings/custom-template/control-settings.php:81
-#: admin/settings/custom-template/gallery-style-settings.php:226
-#: admin/settings/custom-template/gallery-style-settings.php:273
-#: admin/settings/custom-template/gallery-style-settings.php:391
-#: admin/settings/custom-template/gallery-style-settings.php:547
-#: admin/settings/custom-template/gallery-style-settings.php:580
 #: admin/settings/custom-template/global-settings.php:218
 #: admin/settings/custom-template/global-settings.php:224
 #: admin/settings/custom-template/product-description-settings.php:57
@@ -129,16 +125,14 @@ msgstr ""
 #: admin/settings/custom-template/product-title-settings.php:97
 #: admin/settings/custom-template/quantity-selector-settings.php:58
 #: admin/settings/custom-template/read-more-settings.php:58
-#: admin/settings/custom-template/thumbnails-settings.php:57
-#: admin/settings/custom-template/thumbnails-settings.php:73
 #: admin/settings/global-settings.php:226
-#: admin/settings/global-settings.php:281
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1573 admin/admin-interface.php:1659
-#: admin/admin-interface.php:1759 admin/admin-interface.php:1928
-#: admin/admin-interface.php:2018 admin/admin-interface.php:2047
+#: admin/admin-interface.php:1744 admin/admin-interface.php:1988
+#: admin/admin-interface.php:2088 admin/admin-interface.php:2257
+#: admin/admin-interface.php:2347 admin/admin-interface.php:2376
+#: admin/admin-interface.php:3019
 #: admin/settings/custom-template/add-to-cart-settings.php:59
 #: admin/settings/custom-template/add-to-cart-settings.php:88
 #: admin/settings/custom-template/add-to-cart-settings.php:94
@@ -146,11 +140,6 @@ msgstr ""
 #: admin/settings/custom-template/control-settings.php:59
 #: admin/settings/custom-template/control-settings.php:76
 #: admin/settings/custom-template/control-settings.php:82
-#: admin/settings/custom-template/gallery-style-settings.php:227
-#: admin/settings/custom-template/gallery-style-settings.php:274
-#: admin/settings/custom-template/gallery-style-settings.php:392
-#: admin/settings/custom-template/gallery-style-settings.php:548
-#: admin/settings/custom-template/gallery-style-settings.php:581
 #: admin/settings/custom-template/global-settings.php:219
 #: admin/settings/custom-template/global-settings.php:225
 #: admin/settings/custom-template/product-description-settings.php:58
@@ -177,157 +166,150 @@ msgstr ""
 #: admin/settings/custom-template/product-title-settings.php:98
 #: admin/settings/custom-template/quantity-selector-settings.php:59
 #: admin/settings/custom-template/read-more-settings.php:59
-#: admin/settings/custom-template/thumbnails-settings.php:58
-#: admin/settings/custom-template/thumbnails-settings.php:74
 #: admin/settings/global-settings.php:227
-#: admin/settings/global-settings.php:282
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1578
+#: admin/admin-interface.php:1749
 msgid "Google Fonts API"
 msgstr ""
 
-#: admin/admin-interface.php:1590
+#: admin/admin-interface.php:1761
 msgid ""
 "ON to connect to Google Fonts API and have auto font updates direct from "
 "Google."
 msgstr ""
 
-#: admin/admin-interface.php:1594
+#: admin/admin-interface.php:1765
 #, php-format
 msgid ""
 "Enter your existing Google Fonts API Key below. Don't have a key? Visit <a "
 "href='%s' target='_blank'>Google Developer API</a> to create a key"
 msgstr ""
 
-#: admin/admin-interface.php:1611
+#: admin/admin-interface.php:1782
 msgid "Google Fonts API Key"
 msgstr ""
 
-#: admin/admin-interface.php:1614
+#: admin/admin-interface.php:1785
 msgid "Your Google API Key is valid and automatic font updates are enabled."
 msgstr ""
 
-#: admin/admin-interface.php:1615
+#: admin/admin-interface.php:1786
 msgid "Please enter a valid Google API Key."
 msgstr ""
 
-#: admin/admin-interface.php:1634
+#: admin/admin-interface.php:1805
 msgid "Check New Version"
 msgstr ""
 
-#: admin/admin-interface.php:1645
+#: admin/admin-interface.php:1816
 msgid "Check Now"
 msgstr ""
 
-#: admin/admin-interface.php:1664
+#: admin/admin-interface.php:1993
 msgid "Open Box Display"
 msgstr ""
 
-#: admin/admin-interface.php:1677
+#: admin/admin-interface.php:2006
 msgid ""
 "ON and each admin panel setting box OPEN | CLOSED position are saved each "
 "time changes are SAVED."
 msgstr ""
 
-#: admin/admin-interface.php:2082
+#: admin/admin-interface.php:2411
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:2084
+#: admin/admin-interface.php:2413
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:2086
+#: admin/admin-interface.php:2415
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:2179
+#: admin/admin-interface.php:2508
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:2190
+#: admin/admin-interface.php:2519
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:2231
+#: admin/admin-interface.php:2560
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:2340 admin/admin-interface.php:2574
+#: admin/admin-interface.php:2669 admin/admin-interface.php:2903
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:2349 admin/admin-interface.php:2565
+#: admin/admin-interface.php:2670 admin/admin-interface.php:2837
+msgid "0px = No Border"
+msgstr ""
+
+#: admin/admin-interface.php:2678 admin/admin-interface.php:2894
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin-interface.php:2350 admin/admin-interface.php:2566
+#: admin/admin-interface.php:2679 admin/admin-interface.php:2895
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:2360 admin/admin-interface.php:2579
+#: admin/admin-interface.php:2689 admin/admin-interface.php:2908
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2380 admin/admin-interface.php:2599
+#: admin/admin-interface.php:2709 admin/admin-interface.php:2928
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2400 admin/admin-interface.php:2619
+#: admin/admin-interface.php:2729 admin/admin-interface.php:2948
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2420 admin/admin-interface.php:2639
+#: admin/admin-interface.php:2749 admin/admin-interface.php:2968
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2507
+#: admin/admin-interface.php:2836
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2690
-msgid "YES"
-msgstr ""
-
-#: admin/admin-interface.php:2691
-msgid "NO"
-msgstr ""
-
-#: admin/admin-interface.php:2705
+#: admin/admin-interface.php:3034
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2723
+#: admin/admin-interface.php:3052
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2741
+#: admin/admin-interface.php:3070
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2759
+#: admin/admin-interface.php:3088
 msgid "Spread Size"
 msgstr ""
 
-#: admin/admin-interface.php:2777
+#: admin/admin-interface.php:3106
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2778
+#: admin/admin-interface.php:3107
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2796
+#: admin/admin-interface.php:3125
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:3064
+#: admin/admin-interface.php:3399
 msgid "Save changes"
 msgstr ""
 
-#: admin/admin-interface.php:3065
+#: admin/admin-interface.php:3400
 msgid "Reset Settings"
 msgstr ""
 
@@ -411,27 +393,23 @@ msgid "Colour Box Pop Up"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:51
-#: admin/settings/fancybox-popup-settings.php:50
+#: admin/settings/prettyphoto-popup-settings.php:51
 msgid "Pop-up Maximum Width"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:61
-#: admin/settings/fancybox-popup-settings.php:60
 msgid "Pop-up Maximum Height"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:71
-#: admin/settings/fancybox-popup-settings.php:70
 msgid "Fix Position on Scroll"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:78
-#: admin/settings/fancybox-popup-settings.php:77
 msgid "Pop-up stays centered in screen while page scrolls behind it."
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:85
-#: admin/settings/fancybox-popup-settings.php:84
 msgid "Pop-up scrolls up and down with the page."
 msgstr ""
 
@@ -444,41 +422,34 @@ msgid "Choose a pop-up opening & closing effect. Default - None"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:99
-#: admin/settings/custom-template/gallery-style-settings.php:237
 #: admin/settings/custom-template/product-title-settings.php:58
-#: admin/settings/fancybox-popup-settings.php:98
-#: admin/settings/fancybox-popup-settings.php:111
 msgid "None"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:100
-#: admin/settings/custom-template/gallery-style-settings.php:238
-#: admin/settings/fancybox-popup-settings.php:99
-#: admin/settings/fancybox-popup-settings.php:112
 msgid "Fade"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:101
-#: admin/settings/fancybox-popup-settings.php:100
-#: admin/settings/fancybox-popup-settings.php:113
 msgid "Elastic"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:105
+#: admin/settings/prettyphoto-popup-settings.php:61
 msgid "Opening & Closing Speed"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:106
+#: admin/settings/prettyphoto-popup-settings.php:62
 msgid "Milliseconds when open and close popup"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:113
-#: admin/settings/fancybox-popup-settings.php:133
+#: admin/settings/prettyphoto-popup-settings.php:69
 msgid "Background Overlay Colour"
 msgstr ""
 
 #: admin/settings/colorbox-popup-settings.php:114
-#: admin/settings/fancybox-popup-settings.php:134
 msgid "Select a colour or empty for no colour."
 msgstr ""
 
@@ -487,9 +458,6 @@ msgstr ""
 #: admin/settings/custom-template/add-to-cart-settings.php:162
 #: admin/settings/custom-template/add-to-cart-settings.php:170
 #: admin/settings/custom-template/control-settings.php:98
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:216
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:335
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:516
 #: admin/settings/custom-template/global-settings.php:231
 #: admin/settings/custom-template/quantity-selector-settings.php:69
 #: admin/settings/custom-template/quantity-selector-settings.php:158
@@ -498,7 +466,6 @@ msgstr ""
 #: admin/settings/custom-template/read-more-settings.php:122
 #: admin/settings/custom-template/read-more-settings.php:129
 #: admin/settings/custom-template/read-more-settings.php:137
-#: admin/settings/fancybox-popup-settings.php:134
 #: admin/settings/quick-view-button-settings.php:265
 #: admin/settings/quick-view-button-settings.php:272
 #: admin/settings/quick-view-button-settings.php:279
@@ -543,16 +510,6 @@ msgstr ""
 #: admin/settings/custom-template/add-to-cart-settings.php:201
 #: admin/settings/custom-template/add-to-cart-settings.php:225
 #: admin/settings/custom-template/control-settings.php:119
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:266
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:297
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:398
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:429
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:478
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:546
-#: admin/settings/custom-template/gallery-style-settings.php:321
-#: admin/settings/custom-template/gallery-style-settings.php:352
-#: admin/settings/custom-template/gallery-style-settings.php:442
-#: admin/settings/custom-template/gallery-style-settings.php:473
 #: admin/settings/custom-template/global-settings.php:217
 #: admin/settings/custom-template/product-description-settings.php:126
 #: admin/settings/custom-template/product-description-settings.php:162
@@ -575,7 +532,6 @@ msgid "Left"
 msgstr ""
 
 #: admin/settings/custom-template/add-to-cart-settings.php:92
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:484
 #: admin/settings/custom-template/product-description-settings.php:132
 #: admin/settings/custom-template/product-meta-settings.php:81
 #: admin/settings/custom-template/product-price-settings.php:93
@@ -590,16 +546,6 @@ msgstr ""
 #: admin/settings/custom-template/add-to-cart-settings.php:205
 #: admin/settings/custom-template/add-to-cart-settings.php:229
 #: admin/settings/custom-template/control-settings.php:125
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:272
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:303
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:404
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:435
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:490
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:552
-#: admin/settings/custom-template/gallery-style-settings.php:327
-#: admin/settings/custom-template/gallery-style-settings.php:358
-#: admin/settings/custom-template/gallery-style-settings.php:448
-#: admin/settings/custom-template/gallery-style-settings.php:479
 #: admin/settings/custom-template/global-settings.php:223
 #: admin/settings/custom-template/product-description-settings.php:138
 #: admin/settings/custom-template/product-description-settings.php:168
@@ -667,15 +613,8 @@ msgid "Button Font"
 msgstr ""
 
 #: admin/settings/custom-template/add-to-cart-settings.php:154
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:222
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:341
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:522
-#: admin/settings/custom-template/gallery-style-settings.php:285
-#: admin/settings/custom-template/gallery-style-settings.php:406
-#: admin/settings/custom-template/gallery-style-settings.php:510
 #: admin/settings/custom-template/quantity-selector-settings.php:157
 #: admin/settings/custom-template/read-more-settings.php:121
-#: admin/settings/custom-template/thumbnails-settings.php:140
 #: admin/settings/quick-view-button-settings.php:264
 #: admin/settings/quick-view-button-settings.php:411
 msgid "Background Colour"
@@ -718,14 +657,6 @@ msgstr ""
 
 #: admin/settings/custom-template/add-to-cart-settings.php:193
 #: admin/settings/custom-template/add-to-cart-settings.php:217
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:285
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:386
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:417
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:451
-#: admin/settings/custom-template/gallery-style-settings.php:309
-#: admin/settings/custom-template/gallery-style-settings.php:340
-#: admin/settings/custom-template/gallery-style-settings.php:430
-#: admin/settings/custom-template/gallery-style-settings.php:461
 #: admin/settings/custom-template/product-description-settings.php:151
 #: admin/settings/custom-template/product-meta-settings.php:118
 #: admin/settings/custom-template/product-price-settings.php:112
@@ -743,14 +674,6 @@ msgstr ""
 
 #: admin/settings/custom-template/add-to-cart-settings.php:197
 #: admin/settings/custom-template/add-to-cart-settings.php:221
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:291
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:392
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:423
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:463
-#: admin/settings/custom-template/gallery-style-settings.php:315
-#: admin/settings/custom-template/gallery-style-settings.php:346
-#: admin/settings/custom-template/gallery-style-settings.php:436
-#: admin/settings/custom-template/gallery-style-settings.php:467
 #: admin/settings/custom-template/product-description-settings.php:156
 #: admin/settings/custom-template/product-meta-settings.php:123
 #: admin/settings/custom-template/product-price-settings.php:117
@@ -798,14 +721,10 @@ msgid "Show when hover on popup container"
 msgstr ""
 
 #: admin/settings/custom-template/control-settings.php:87
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:205
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:505
 msgid "Arrow Icons Size"
 msgstr ""
 
 #: admin/settings/custom-template/control-settings.php:97
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:215
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:515
 msgid "Arrow Icon Colour"
 msgstr ""
 
@@ -814,302 +733,11 @@ msgid "Arrow Icon Transparency"
 msgstr ""
 
 #: admin/settings/custom-template/control-settings.php:105
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:236
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:355
 msgid "100% = Full Colour"
 msgstr ""
 
 #: admin/settings/custom-template/control-settings.php:114
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:261
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:381
-#: admin/settings/custom-template/gallery-style-settings.php:303
-#: admin/settings/custom-template/gallery-style-settings.php:424
 msgid "Border Margin"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:81
-msgid "Dynamic Gallery Icon Styles successfully saved."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:82
-msgid "Error: Dynamic Gallery Icon Styles can not save."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:83
-msgid "Dynamic Gallery Icon Styles successfully reseted."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:138
-msgid "Icon Styles"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:181
-msgid "GALLERY ICON STYLES PREMIUM"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:193
-msgid "Next / Previous Gallery Icons"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:235
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:354
-#: admin/settings/custom-template/gallery-style-settings.php:522
-msgid "Background Transparency"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:249
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:369
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:528
-#: admin/settings/custom-template/gallery-style-settings.php:291
-#: admin/settings/custom-template/gallery-style-settings.php:412
-#: admin/settings/custom-template/thumbnails-settings.php:146
-msgid "Border"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:255
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:375
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:534
-#: admin/settings/custom-template/gallery-style-settings.php:297
-#: admin/settings/custom-template/gallery-style-settings.php:418
-msgid "Border Shadow"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:279
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:411
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:540
-#: admin/settings/custom-template/gallery-style-settings.php:334
-#: admin/settings/custom-template/gallery-style-settings.php:455
-msgid "Border Padding"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:280
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:412
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:541
-msgid "Padding between the Icon and Container border."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:311
-msgid "Pause | Play Icon"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:312
-msgid ""
-"This control icons will show when is viewing on Mobile or when the Control "
-"Nav Bar is turn OFF."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:324
-msgid "Icon Size"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:334
-msgid "Icon Colour"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:443
-msgid "Vertical Position"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:457
-msgid "Middle"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:470
-msgid "Horizontal Position"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-icon-styles-settings.php:498
-msgid "Thumbnail Slider Arrows"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:81
-msgid "Gallery Style successfully saved."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:82
-msgid "Error: Gallery Style can not save."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:83
-msgid "Gallery Style successfully reseted."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:138
-msgid "Gallery Style"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:181
-msgid "GALLERY STYLES PREMIUM"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:192
-msgid "Gallery Dimensions"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:199
-msgid "Gallery Container Height"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:201
-msgid ""
-"Dynamic and Gallery Container height will auto adjust to the scaled height "
-"of each image."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:206
-msgid "FIXED"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:207
-msgid "DYNAMIC"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:211
-msgid "Gallery Image Transition Effects"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:212
-msgid ""
-"Note! These settings DO NOT apply to mobile and tablet when the + Mobile and "
-"Tablet Touch Swipe feature is switched on."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:219
-msgid "Auto Start"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:230
-msgid "Slide Transition Effect"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:239
-msgid "Slide Hori"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:240
-msgid "Slide Vert"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:241
-msgid "Resize"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:245
-msgid "Time Between Transitions"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:255
-msgid "Transition Effect Speed"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:266
-msgid "Single Image Transition"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:267
-msgid ""
-"ON to auto deactivate image transition effect when only 1 image is loaded to "
-"gallery."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:278
-msgid "Gallery Container"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:304
-msgid "Margin around the Container border."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:335
-msgid "Padding between the main image and Container border."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:365
-msgid "Gallery Icon Display Type"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:371
-msgid "SHOW"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:372
-msgid "ON HOVER"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:376
-msgid "Nav Bar Control Container"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:379
-msgid ""
-"ON to show a Stop Slideshow, Start Slideshow Nav Bar under the gallery in PC "
-"and Laptop browsers. If OFF Start | Stop functions are done with click image "
-"and Pause Play Icon"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:384
-msgid "Control Nav Bar"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:400
-#: admin/settings/custom-template/gallery-style-settings.php:504
-msgid "Font"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:425
-msgid "Margin around the Nav Bar border."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:456
-msgid "Padding between the the Text and Nav Bar border."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:486
-msgid "Vertical Separator"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:493
-msgid "Caption Text Container"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:511
-msgid "Caption text background colour."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:523
-msgid "Scale - 0 = 100% transparent - 100 = 100% Solid Colour."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:533
-msgid "Lazy Load Scroll Bar Container"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:540
-msgid "Scroll Bar"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:556
-msgid "Scroll Bar Colour"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:563
-msgid "Product Feature Image"
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:567
-msgid ""
-"ON this option and the Product Image (featured image) will show as the first "
-"image in the gallery without having to upload it to the Gallery."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:568
-msgid ""
-"OFF and the uploaded Product Image (feature image) will show on the product "
-"card but not in the Gallery on Product Page."
-msgstr ""
-
-#: admin/settings/custom-template/gallery-style-settings.php:574
-msgid "Include in Gallery"
 msgstr ""
 
 #: admin/settings/custom-template/global-settings.php:81
@@ -1341,124 +969,6 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: admin/settings/custom-template/thumbnails-settings.php:43
-msgid "Image Thumbnails"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:50
-msgid "Gallery Thumbnails"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:66
-msgid "Single Image Thumbnail"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:67
-msgid "ON to hide thumbnail when only 1 image is loaded to gallery."
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:77
-msgid "Thumbnail Display"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:78
-msgid "Static displays all Gallery thumbnails in columns"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:85
-msgid "Slider"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:86
-msgid "Static"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:93
-msgid "Thumbnail Dimensions"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:94
-#, php-format
-msgid ""
-"The plugin is using <a href=\"%s\" target=\"_blank\">Product Thumbnails "
-"Dimension</a> from WooCommerce Settings"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:98
-msgid "Thumbnail Spacing"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:106
-msgid "Thumbnail Columns"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:107
-msgid "columns"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:109
-msgid ""
-"Applies to Thumbnail Slider (number visible in Slider) and Static Thumbnail "
-"Display. Default of WooCommerce is 3 column"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:118
-msgid "Thumbnail Border Colour"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:119
-#: admin/settings/custom-template/thumbnails-settings.php:126
-msgid "Type in the word <code>transparent</code> for no colour"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:125
-msgid "Current Thumbail Border Colour"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:133
-msgid "Thumbnail Slider Container"
-msgstr ""
-
-#: admin/settings/custom-template/thumbnails-settings.php:152
-msgid "Border Shadow Effect"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:43
-msgid "Fancy Box Pop Up"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:91
-msgid "Open Transition Effect"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:92
-msgid "Choose a pop-up opening effect. Default - None."
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:104
-msgid "Close Transistion Effect"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:105
-msgid "Choose a pop-up closing effect. Default - None."
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:117
-msgid "Opening Speed"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:118
-msgid "Milliseconds when open popup"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:125
-msgid "Closing Speed"
-msgstr ""
-
-#: admin/settings/fancybox-popup-settings.php:126
-msgid "Milliseconds when close popup"
-msgstr ""
-
 #: admin/settings/global-settings.php:81
 msgid "Quick View Settings successfully saved."
 msgstr ""
@@ -1472,7 +982,7 @@ msgid "Quick View Settings successfully reseted."
 msgstr ""
 
 #: admin/settings/global-settings.php:154 admin/tabs/admin-settings-tab.php:78
-#: classes/class-woocommerce-quick-view-ultimate.php:491
+#: classes/class-woocommerce-quick-view-ultimate.php:496
 msgid "Settings"
 msgstr ""
 
@@ -1529,23 +1039,27 @@ msgid "Custom Template Pop-up"
 msgstr ""
 
 #: admin/settings/global-settings.php:263
-msgid "Use the Custom Template for pop-up with Dynamic product image gallery"
+msgid "Use the Custom Template for pop-up with WC gallery"
 msgstr ""
 
 #: admin/settings/global-settings.php:263
 msgid "recommended"
 msgstr ""
 
-#: admin/settings/global-settings.php:275
-msgid "Dynamic Gallery Activation"
-msgstr ""
-
-#: admin/settings/global-settings.php:291
+#: admin/settings/global-settings.php:271
 msgid "Site Product Page"
 msgstr ""
 
-#: admin/settings/global-settings.php:299
+#: admin/settings/global-settings.php:279
 msgid "Open full site in pop-up"
+msgstr ""
+
+#: admin/settings/prettyphoto-popup-settings.php:44
+msgid "PrettyPhoto Pop Up"
+msgstr ""
+
+#: admin/settings/prettyphoto-popup-settings.php:70
+msgid "Select a colour or empty for use default color from WooCommerce."
 msgstr ""
 
 #: admin/settings/quick-view-button-settings.php:81
@@ -1672,107 +1186,87 @@ msgstr ""
 msgid "Pop Up Tool"
 msgstr ""
 
-#: admin/settings/quick-view-popup-settings.php:195
-msgid "FANCYBOX"
+#: admin/settings/quick-view-popup-settings.php:196
+msgid "PrettyPhoto"
 msgstr ""
 
 #: admin/settings/quick-view-popup-settings.php:196
-msgid "COLORBOX"
+msgid "(recommended)"
+msgstr ""
+
+#: admin/settings/quick-view-popup-settings.php:202
+msgid "ColorBox"
 msgstr ""
 
 #: admin/tabs/admin-popup-style-tab.php:78
 msgid "Pop Up"
 msgstr ""
 
-#: admin/tabs/custom-template/gallery-tab.php:78
-msgid "Dynamic Gallery"
-msgstr ""
-
 #: admin/tabs/custom-template/global-settings-tab.php:78
 msgid "Custom Template"
 msgstr ""
 
-#: classes/class-quick-view-template.php:133
+#: classes/class-quick-view-template.php:152
 #, php-format
 msgid "Rated %s out of 5"
 msgstr ""
 
-#: classes/class-quick-view-template.php:135
+#: classes/class-quick-view-template.php:154
 msgid "out of 5"
 msgstr ""
 
-#: classes/class-quick-view-template.php:159
+#: classes/class-quick-view-template.php:178
 msgid "SKU:"
 msgstr ""
 
-#: classes/class-quick-view-template.php:159
+#: classes/class-quick-view-template.php:178
 msgid "N/A"
 msgstr ""
 
-#: classes/class-quick-view-template.php:287
-msgid "Choose an option"
+#: classes/class-quick-view-template.php:321
+msgid "Clear"
 msgstr ""
 
-#: classes/class-quick-view-template.php:335
-msgid "Clear selection"
-msgstr ""
-
-#: classes/class-quick-view-template.php:368
+#: classes/class-quick-view-template.php:355
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:485
+#: classes/class-woocommerce-quick-view-ultimate.php:490
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:486
+#: classes/class-woocommerce-quick-view-ultimate.php:491
 msgid "Support"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:499
+#: classes/class-woocommerce-quick-view-ultimate.php:504
 msgid "Go to Support Forum"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:506
+#: classes/class-woocommerce-quick-view-ultimate.php:511
 msgid "Is this plugin is just what you needed? If so"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:507
+#: classes/class-woocommerce-quick-view-ultimate.php:512
 msgid "Submit Review for Plugin on WordPress"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:515
+#: classes/class-woocommerce-quick-view-ultimate.php:520
 msgid "Free WooCommerce Plugins"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:522
+#: classes/class-woocommerce-quick-view-ultimate.php:527
 msgid "Free WordPress Plugins"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:529
+#: classes/class-woocommerce-quick-view-ultimate.php:534
 msgid "Connect with us via"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:530
+#: classes/class-woocommerce-quick-view-ultimate.php:535
 msgid "a3rev Facebook"
 msgstr ""
 
-#: classes/class-woocommerce-quick-view-ultimate.php:531
+#: classes/class-woocommerce-quick-view-ultimate.php:536
 msgid "a3rev Twitter"
-msgstr ""
-
-#: classes/dynamic-gallery/class-wc-default-gallery.php:29
-msgid "Placeholder"
-msgstr ""
-
-#: classes/dynamic-gallery/class-wc-dynamic-gallery.php:207
-msgid "START SLIDESHOW"
-msgstr ""
-
-#: classes/dynamic-gallery/class-wc-dynamic-gallery.php:208
-msgid "STOP SLIDESHOW"
-msgstr ""
-
-#: classes/dynamic-gallery/class-wc-dynamic-gallery.php:221
-msgid "ZOOM +"
 msgstr ""
