@@ -3,7 +3,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
 Tested up to: 4.9.1
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,12 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.8.1 - 2018/01/15 =
+* Maintenance Update. This version has 1 major code tweak and 1 bug fix with the prettyPhoto pop up script.
+* Tweak - Load prettyPhoto script from plugin. Was previously loaded from the WooCommerce plugin but it was depreciated from their gallery - now use Zoom lib which is not a pop up.
+* Fix - Load script with correct order to resolve the JavaScript prettyPhoto is not defined error
+* Credit  Thanks to Ignacio Cano for reporting the bug.
 
 = 1.8.0 - 2017/12/19 =
 * Feature upgrade. Added full support for WooCommerce default product gallery including zoom feature and variation images
@@ -380,6 +386,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.8.1 = 
+Maintenance Update. 1 major code tweak and 1 bug fix with the prettyPhoto pop up script.
 
 = 1.8.0 =
 Feature Upgrade. Added full support for WooCommerce default product gallery including zoom feature and variation images. Compatibility with WordPress 4.9.1 and WooCommerce 3.2.6

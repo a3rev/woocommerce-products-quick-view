@@ -71,12 +71,14 @@ class WC_Quick_View_Ultimate
 		$quick_view_ultimate_popup_tool = get_option('quick_view_ultimate_popup_tool');
 		if ( 'colorbox' == $quick_view_ultimate_popup_tool ) {
 			wp_enqueue_style( 'a3_colorbox_style', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/colorbox.css' );
-			wp_enqueue_script( 'colorbox_script', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array('jquery'), false, true );
+			wp_enqueue_script( 'colorbox_script', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array('jquery'), false, false );
 		} else {
 			$wc_assets_path = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
 
-			wp_enqueue_style( 'woocommerce_prettyPhoto_css', $wc_assets_path . 'css/prettyPhoto.css' );
-			wp_enqueue_script( 'prettyPhoto', $wc_assets_path . 'js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array('jquery'), '3.1.6', true );
+			wp_enqueue_style( 'woocommerce_prettyPhoto_css', WC_QUICK_VIEW_ULTIMATE_CSS_URL . '/prettyPhoto.css' );
+
+			wp_deregister_script( 'prettyPhoto' );
+			wp_enqueue_script( 'prettyPhoto', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array('jquery'), '3.1.6', false );
 		}
 
 		wp_enqueue_style( 'quick-view-css', WC_QUICK_VIEW_ULTIMATE_CSS_URL.'/style.css', array(), WC_QUICK_VIEW_ULTIMATE_VERSION );
