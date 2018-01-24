@@ -2,9 +2,9 @@
 /*
 Plugin Name: WooCommerce Products Quick View
 Description: This plugin adds the ultimate Quick View feature to your Shop page, Product category and Product tags listings. Opens the full pages content - add to cart and even view cart without leaving the page.
-Version: 1.8.1
+Version: 1.8.2
 Requires at least: 4.5
-Tested up to: 4.9.1
+Tested up to: 4.9.2
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Text Domain: woocommerce-products-quick-view
@@ -38,7 +38,7 @@ if (!defined("WC_QUICK_VIEW_ULTIMATE_AUTHOR_URI")) define("WC_QUICK_VIEW_ULTIMAT
 
 if (!defined("WC_QUICK_VIEW_ULTIMATE_DOCS_URI")) define("WC_QUICK_VIEW_ULTIMATE_DOCS_URI", "http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/");
 
-define( 'WC_QUICK_VIEW_ULTIMATE_VERSION', '1.8.1' );
+define( 'WC_QUICK_VIEW_ULTIMATE_VERSION', '1.8.2' );
 
 /**
  * Load Localisation files.

@@ -363,7 +363,9 @@ class WC_Quick_View_Ultimate
 			<?php } else { ?>
 
 			jQuery(document).on( 'quick_view_close_popup', function(){
-				jQuery.prettyPhoto.close();
+				if ( jQuery('div.pp_overlay').length > 0 ) {
+					jQuery.prettyPhoto.close();
+				}
 			});
 
 			jQuery(".init_prettyphoto").prettyPhoto({

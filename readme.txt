@@ -2,8 +2,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
-Tested up to: 4.9.1
-Stable tag: 1.8.1
+Tested up to: 4.9.2
+Stable tag: 1.8.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,11 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.8.2 - 2018/01/24 =
+* Maintenance Update. 1 bug fix for conflict with 3rd party plugin pop ups.
+* Tweak - Tested for compatibility with WordPress 4.9.2
+* Fix - Check if pp_overlay is appended to document before allow 3rd party plugin call to trigger quick_view_close_popup
 
 = 1.8.1 - 2018/01/15 =
 * Maintenance Update. This version has 1 major code tweak and 1 bug fix with the prettyPhoto pop up script.
@@ -386,6 +391,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.8.2 =
+Maintenance Update. 1 bug fix for conflict with 3rd party plugin pop ups and compatibility with WordPress 4.9.2
 
 = 1.8.1 = 
 Maintenance Update. 1 major code tweak and 1 bug fix with the prettyPhoto pop up script.
