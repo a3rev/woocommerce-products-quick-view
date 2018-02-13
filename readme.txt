@@ -116,7 +116,7 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 == Changelog ==
 
-= 1.8.2 - 2018/02/13 =
+= 1.8.3 - 2018/02/13 =
 * Maintenance Update. Under the bonnet tweaks to keep your plugin running smoothly and is the foundation for new features to be developed this year 
 * Framework - Update a3rev Plugin Framework to version 2.0.2
 * Framework - Add Framework version for all style and script files
@@ -400,7 +400,7 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 == Upgrade Notice ==
 
-= 1.8.2 =
+= 1.8.3 =
 Maintenance Update. This version updates the Plugin Framework to v 2.0.2, adds full compatibility with a3rev Dashboard, WordPress v 4.9.4 and WooCoomerce v 3.3.1
 
 = 1.8.2 =
