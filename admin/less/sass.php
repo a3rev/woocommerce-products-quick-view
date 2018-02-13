@@ -5,10 +5,10 @@ if (!defined('ABSPATH'))
 
 class WC_QV_Less
 {
-	public $plugin_name = 'wc_quick_view_ultimate';
-	public $css_file_name = 'wc_product_quick_view';
-	public $plugin_folder = WC_QUICK_VIEW_ULTIMATE_FOLDER;
-	public $plugin_dir = WC_QUICK_VIEW_ULTIMATE_DIR;
+    public $plugin_name   = WC_QUICK_VIEW_ULTIMATE_KEY;
+    public $css_file_name = 'wc_product_quick_view';
+    public $plugin_folder = WC_QUICK_VIEW_ULTIMATE_FOLDER;
+    public $plugin_dir    = WC_QUICK_VIEW_ULTIMATE_DIR;
     
     /*-----------------------------------------------------------------------------------*/
     /* Constructor */

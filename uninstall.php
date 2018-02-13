@@ -5,20 +5,22 @@
  * Uninstalling deletes options, tables, and pages.
  *
  */
-if( ! defined( 'WP_UNINSTALL_PLUGIN' ) )
+if( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) 
 	exit();
 
+$plugin_key = 'wc_quick_view_ultimate';
+
 // Delete Google Font
-delete_option('wc_quick_view_google_api_key' . '_enable');
-delete_transient('wc_quick_view_google_api_key' . '_status');
-delete_option('wc_quick_view_ultimate' . '_google_font_list');
+delete_option( $plugin_key . '_google_api_key' . '_enable' );
+delete_transient( $plugin_key . '_google_api_key' . '_status' );
+delete_option( $plugin_key . '_google_font_list' );
 
-if (get_option('quick_view_lite_clean_on_deletion') == 1) {
-    delete_option('wc_quick_view_google_api_key');
-    delete_option('wc_quick_view_toggle_box_open');
-    delete_option('wc_quick_view_ultimate' . '-custom-boxes');
+if ( get_option( $plugin_key . '_clean_on_deletion' ) == 1 ) {
+	delete_option( $plugin_key . '_google_api_key' );
+	delete_option( $plugin_key . '_toggle_box_open' );
+	delete_option( $plugin_key . '-custom-boxes' );
 
-    delete_metadata( 'user', 0, 'wc_quick_view_ultimate' . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
+	delete_metadata( 'user', 0,  $plugin_key . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
 
     // Delete global settings
     delete_option('quick_view_ultimate_enable');
@@ -95,5 +97,5 @@ if (get_option('quick_view_lite_clean_on_deletion') == 1) {
     delete_option('quick_view_template_gallery_thumbnails_settings');
     delete_option('quick_view_template_quantity_selector_settings');
 
-    delete_option('quick_view_lite_clean_on_deletion');
+    delete_option( $plugin_key . '_clean_on_deletion' );
 }

@@ -2,9 +2,7 @@
 /**
  * Register Activation Hook
  */
-update_option('wc_quick_view_ultimate_plugin', 'wc_quick_view_ultimate');
 function wc_quick_view_ultimate_install(){
-	global $wpdb;
 
 	// Set Settings Default from Admin Init
 	global $wc_qv_admin_init;
@@ -16,7 +14,6 @@ function wc_quick_view_ultimate_install(){
 
 	update_option('wc_quick_view_ultimate_version', '1.7.1');
 	update_option('wc_quick_view_lite_version', WC_QUICK_VIEW_ULTIMATE_VERSION );
-	update_option('wc_quick_view_ultimate_plugin', 'wc_quick_view_ultimate');
 
 	delete_metadata( 'user', 0, $wc_qv_admin_init->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
 
