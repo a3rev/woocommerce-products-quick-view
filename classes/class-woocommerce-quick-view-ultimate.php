@@ -521,7 +521,7 @@ class WC_Quick_View_Ultimate
         );
 
 
-		$free_woocommerce_box = '<a href="https://profiles.wordpress.org/a3rev/#content-plugins" target="_blank" alt="'.__('Free WooCommerce Plugins', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/free-woocommerce-plugins.png" /></a>';
+		$free_woocommerce_box = '<a href="https://profiles.wordpress.org/a3rev/#content-plugins" target="_blank" alt="'.__('Free WooCommerce Plugins', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/free-woocommerce-plugins.jpg" /></a>';
 
 		$boxes[] = array(
 			'content' => $free_woocommerce_box,

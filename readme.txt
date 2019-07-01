@@ -1,17 +1,17 @@
-=== WooCommerce Products Quick View ===
+=== Products Quick View for WooCommerce ===
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
-Tested up to: 5.1.1
-Stable tag: 1.8.6
+Tested up to: 5.2.2
+Stable tag: 1.8.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Add Quick View feature to all grid view products on shop, category, tag pages. Opens full product page content, add to cart without leaving the page
+Add Quick View feature to all product cards on shop, category, tag pages. Opens full product page content, add to cart without leaving the page
 
 == DESCRIPTION ==
 
-WooCommerce Products Quick View gives your customers a true supermarket shopping experience. In a supermarket shoppers browse products on the shelves, picking up the ones they are interested up, reading all the relevant information and either adding the item to their cart or putting it back on the shelf and continuing to browser. You can now give your customer exactly the same experience with WooCommerce Products Quick View.
+Products Quick View for WooCommerce gives your customers a true supermarket shopping experience. In a supermarket shoppers browse products on the shelves, picking up the ones they are interested up, reading all the relevant information and either adding the item to their cart or putting it back on the shelf and continuing to browser. You can now give your customer exactly the same experience with WooCommerce Products Quick View.
 
 While browsing products anywhere in your store - shop page / category pages / tag pages they see a product that interests them - instead of clicking 'More Details' and going to another page to view all the product information and images they click Quick View and see it all in a pop-up right there on their screen. This is the sequence
 
@@ -60,13 +60,13 @@ It is quick easy and incredibly convenient for your customers and will create mo
 
 There is a Premium version of this plugin that offers more advanced features if required.
 
-* [WooCommerce Quick View Ultimate](http://a3rev.com/shop/woocommerce-quick-view-ultimate/)
+* [Quick View Ultimate](http://a3rev.com/shop/woocommerce-quick-view-ultimate/)
 
 = CONTRIBUTE =
 
-When you download WooCommerce Products Quick View, you join our the a3rev Software community. Regardless of if you are a WordPress beginner or experienced developer if you are interested in contributing to the future development of this plugin head over to the WooCommerce Products Quick View[GitHub Repository](https://github.com/a3rev/woocommerce-products-quick-view) to find out how you can contribute.
+When you download Products Quick View for WooCommerce, you join our the a3rev Software community. Regardless of if you are a WordPress beginner or experienced developer if you are interested in contributing to the future development of this plugin head over to the Products Quick View[GitHub Repository](https://github.com/a3rev/woocommerce-products-quick-view) to find out how you can contribute.
 
-Want to add a new language to WooCommerce Products Quick View! You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/woocommerce-products-quick-view)
+Want to add a new language? You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/woocommerce-products-quick-view)
 
 
 == Installation ==
@@ -75,12 +75,12 @@ Want to add a new language to WooCommerce Products Quick View! You can contribut
 
 * WordPress 4.5
 * WooCommerce v2.6 and later.
-* PHP version 5.5 or greater
+* PHP version 5.6.20 or greater
 * MySQL version 5.5 or greater
 
 = Automatic installation =
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't even need to leave your web browser. To do an automatic install of WooCommerce Products Quick View, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New. Search WooCommerce Products Quick View and click install. Or download the plugin from wordpress.org and click the upload sub nav item and use the WordPress plugins uploader to upload the plugin from your computer and unpack it and install it for you.
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't even need to leave your web browser. To do an automatic install of Products Quick View, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New. Search Products Quick View for WooCommerce and click install. Or download the plugin from wordpress.org and click the upload sub nav item and use the WordPress plugins uploader to upload the plugin from your computer and unpack it and install it for you.
 
 = Manual installation =
 
@@ -95,7 +95,7 @@ The manual installation method involves downloading our plugin and uploading it 
 
 1. Install and activate the plugin
 
-2. On wp-admin go to the WC Quick View Menu
+2. On wp-admin go to the WooCommerce > Quick View Menu
 
 3. Go to Quick View sub menu Settings - Turn the Quick View Feature ON.
 
@@ -115,6 +115,12 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.8.7 - 2019/06/29 =
+* This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2 and WooCommerce 3.6.4
+* Tweak - Test for compatibility with WooCommerce 3.6.4
+* Tweak - Test for compatibility with WordPress 5.2.2
+* Fix - PHP warning continue targeting switch is equivalent to break for compatibility on PHP 7.3
 
 = 1.8.6 - 2019/04/26 =
 * This maintenance update has tweaks for compatibility with WordPress 5.2.0 and WooCommerce 3.6.0 major new versions whilst maintaining backward compatibility
@@ -159,7 +165,7 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 * Maintenance Update. This version has 1 major code tweak and 1 bug fix with the prettyPhoto pop up script.
 * Tweak - Load prettyPhoto script from plugin. Was previously loaded from the WooCommerce plugin but it was depreciated from their gallery - now use Zoom lib which is not a pop up.
 * Fix - Load script with correct order to resolve the JavaScript prettyPhoto is not defined error
-* Credit  Thanks to Ignacio Cano for reporting the bug.
+* Credit - Thanks to Ignacio Cano for reporting the bug.
 
 = 1.8.0 - 2017/12/19 =
 * Feature upgrade. Added full support for WooCommerce default product gallery including zoom feature and variation images
@@ -425,6 +431,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.8.7 =
+This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2 and WooCommerce 3.6.4
 
 = 1.8.6 =
 This maintenance update has tweaks for compatibility with WordPress 5.2.0 and WooCommerce 3.6.0 major new versions whilst maintaining backward compatibility
