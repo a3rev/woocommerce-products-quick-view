@@ -3,7 +3,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
 Tested up to: 5.2.2
-Stable tag: 1.8.7
+Stable tag: 1.8.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,13 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.8.8 - 2019/09/03 =
+* This upgrade is for compatibility with Responsi Framework 7.6.0 and WooCommerce 3.7.0
+* Refactor - Rewrite frontend HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces 
+* Refactor - Rewrite customizer HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces
+* Refactor - HTML, CSS, JS and Variables Class and ID names called from the framework making plugin file sizes smaller and faster to load
+* Tweak - Test for compatibility with WooCommerce 3.7.0
 
 = 1.8.7 - 2019/06/29 =
 * This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2 and WooCommerce 3.6.4
@@ -431,6 +438,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.8.8 =
+This upgrade is for compatibility with Responsi Framework 7.6.0. IMPORTANT! Be sure that you have upgraded to Responsi 7.6.0 BEFORE you run this upgrade
 
 = 1.8.7 =
 This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2 and WooCommerce 3.6.4

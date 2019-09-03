@@ -1,6 +1,6 @@
 /*Quick View Under Image*/
 
-body #main div.box_content div.box_item .entry-item.sticky_product .thumbnail .quick_view_ultimate_content_under a{
+body .main div.box_content div.box_item .entry-item.sticky_product .thumbnail .quick_view_ultimate_content_under a{
 	display: none !important;
 }
 

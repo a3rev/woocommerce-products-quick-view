@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 		jQuery(this).removeClass("product_hover");	
 	});
 	
-	jQuery(document).on("mouseenter", ".shop-product", function(){
+	jQuery(document).on("mouseenter", ".card-product", function(){
 		jQuery(this).addClass("product_hover");
 		var bt_position = jQuery(this).find(".quick_view_ultimate_container").attr('position');
 		var quick_view_ultimate_margin = 0;
@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
 			jQuery(this).find(".quick_view_ultimate_container").css('top',"0px");
 		}
 	});
-	jQuery(document).on("mouseleave", ".shop-product", function(){
+	jQuery(document).on("mouseleave", ".card-product", function(){
 		jQuery(this).removeClass("product_hover");	
 	});
 });	
