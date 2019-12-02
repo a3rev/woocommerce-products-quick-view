@@ -8,7 +8,14 @@
  * button_style_show_on_hover()
  * button_style_under_image()
  */
-class WC_Quick_View_Ultimate_Style
+
+namespace A3Rev\WCQV;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Style
 {
 	
 	public function __construct(){
@@ -124,4 +131,3 @@ class WC_Quick_View_Ultimate_Style
 	}
 	
 }
-$GLOBALS['wc_quick_view_ultimate_style'] = new WC_Quick_View_Ultimate_Style();

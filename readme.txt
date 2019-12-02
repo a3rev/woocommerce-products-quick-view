@@ -2,8 +2,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 4.5
-Tested up to: 5.2.2
-Stable tag: 1.8.8
+Tested up to: 5.3
+Stable tag: 1.9.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,15 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.9.0 - 2019/12/20 =
+* This feature release upgrades the plugins PHP to Composer Dependency Manager, a full security review plus compatibility with WordPress 5.3.0 and WooCommerce 3.8.1 
+* Feature - Plugin fully refactored to Composer for cleaner and faster PHP code
+* Tweak - Remove the hard coded PHP error_reporting display errors false from compile sass to css
+* Tweak - Test for compatibility with WordPress 5.3.0
+* Tweak - Test for compatibility with WooCommerce 3.8.1
+* Dev - Replace file_get_contents with HTTP API wp_remote_get
+* Dev - Ensure that all inputs are sanitized and all outputs are escaped
 
 = 1.8.8 - 2019/09/03 =
 * This upgrade is for compatibility with Responsi Framework 7.6.0 and WooCommerce 3.7.0
@@ -438,6 +447,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.9.0 =
+This feature release upgrades the plugins PHP to Composer Dependency Manager, a full security review plus compatibility with WordPress 5.3.0 and WooCommerce 3.8.1
 
 = 1.8.8 =
 This upgrade is for compatibility with Responsi Framework 7.6.0. IMPORTANT! Be sure that you have upgraded to Responsi 7.6.0 BEFORE you run this upgrade

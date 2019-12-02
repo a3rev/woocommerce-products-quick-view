@@ -18,7 +18,14 @@
  * plugin_extension()
  * plugin_extra_links()
  */
-class WC_Quick_View_Ultimate
+
+namespace A3Rev;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class WCQV
 {
 	public function __construct() {
 		$this->init();
@@ -547,7 +554,3 @@ class WC_Quick_View_Ultimate
 		return $boxes;
 	}
 }
-
-$GLOBALS['wc_quick_view_ultimate'] = new WC_Quick_View_Ultimate();
-
-?>

@@ -1,0 +1,22 @@
+{
+    "name": "a3rev/wc-quick-view",
+    "description": "This plugin adds the ultimate Quick View feature to your Shop page, Product category and Product tags listings. Opens the full pages content - add to cart and even view cart without leaving the page.",
+    "license": "GPLv2 or later",
+    "authors": [
+        {
+            "name": "a3rev Software",
+            "email": "admin@a3rev.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "php": ">=5.6|>=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "A3Rev\\": [ "classes/" ]
+        }
+    }
+}

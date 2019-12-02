@@ -54,10 +54,10 @@ add_filter( $wc_qv_admin_init->plugin_name . '_plugin_extension_boxes', array( $
 add_action('plugin_action_links_' . WC_QUICK_VIEW_ULTIMATE_NAME, array( $wc_quick_view_ultimate, 'settings_plugin_links' ) );
 
 //Ajax Load Custom Template for Popup
-add_action('wp_ajax_quick_view_custom_template_load', array( 'WC_Quick_View_Custom_Template', 'quick_view_custom_template_load') );
-add_action('wp_ajax_nopriv_quick_view_custom_template_load', array( 'WC_Quick_View_Custom_Template', 'quick_view_custom_template_load') );
-add_action('wp_ajax_quick_view_prettyphoto_custom_template_load', array( 'WC_Quick_View_Custom_Template', 'quick_view_prettyphoto_custom_template_load') );
-add_action('wp_ajax_nopriv_quick_view_prettyphoto_custom_template_load', array( 'WC_Quick_View_Custom_Template', 'quick_view_prettyphoto_custom_template_load') );
+add_action('wp_ajax_quick_view_custom_template_load', array( '\A3Rev\WCQV\Custom_Template', 'quick_view_custom_template_load') );
+add_action('wp_ajax_nopriv_quick_view_custom_template_load', array( '\A3Rev\WCQV\Custom_Template', 'quick_view_custom_template_load') );
+add_action('wp_ajax_quick_view_prettyphoto_custom_template_load', array( '\A3Rev\WCQV\Custom_Template', 'quick_view_prettyphoto_custom_template_load') );
+add_action('wp_ajax_nopriv_quick_view_prettyphoto_custom_template_load', array( '\A3Rev\WCQV\Custom_Template', 'quick_view_prettyphoto_custom_template_load') );
 
 
 // Check upgrade functions
@@ -103,5 +103,3 @@ function wc_quick_view_lite_upgrade_plugin () {
 	update_option('wc_quick_view_lite_version', WC_QUICK_VIEW_ULTIMATE_VERSION );
 
 }
-
-?>

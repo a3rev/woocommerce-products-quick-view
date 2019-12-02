@@ -9,8 +9,19 @@
  * wc_dynamic_gallery_display()
  * wc_dynamic_gallery_preview()
  */
-class WC_Quick_View_Template_Default_Gallery_Class
+
+namespace A3Rev\WCQV;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Dynamic_Gallery
 {
+
+	public function __construct() {
+
+	}
 
 	public function wc_default_gallery_display( $product_id = 0 ) {
 		global $post, $product;
@@ -47,8 +58,3 @@ class WC_Quick_View_Template_Default_Gallery_Class
 
 	}
 }
-
-global $wc_quick_view_template_default_gallery_class;
-$wc_quick_view_template_default_gallery_class = new WC_Quick_View_Template_Default_Gallery_Class();
-
-?>

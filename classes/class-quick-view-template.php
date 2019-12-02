@@ -6,20 +6,27 @@
  *
  * custom_template_display()
  */
-class WC_Quick_View_Custom_Template
+
+namespace A3Rev\WCQV;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Custom_Template
 {
 	public static function quick_view_custom_template_load() {
 		
-		$product_id = $_REQUEST['product_id'];
-		$orderby = $_REQUEST['orderby'];
-		$is_shop = $_REQUEST['is_shop'];
-		$is_category = $_REQUEST['is_category'];
+		$product_id = absint( $_REQUEST['product_id'] );
+		$orderby = sanitize_text_field( $_REQUEST['orderby'] );
+		$is_shop = sanitize_text_field( $_REQUEST['is_shop'] );
+		$is_category = sanitize_text_field( $_REQUEST['is_category'] );
 
 		$quick_view_ultimate_popup_tool = get_option( 'quick_view_ultimate_popup_tool', 'prettyphoto' );
 		if ( 'prettyphoto' != $quick_view_ultimate_popup_tool ) {
-			echo WC_Quick_View_Custom_Template::custom_template_display( $product_id, $orderby, $is_shop, $is_category );
+			echo self::custom_template_display( $product_id, $orderby, $is_shop, $is_category );
 		} else {
-			echo WC_Quick_View_Custom_Template::prettyphoto_init_custom_template( $product_id, $orderby, $is_shop, $is_category );
+			echo self::prettyphoto_init_custom_template( $product_id, $orderby, $is_shop, $is_category );
 		}
 		
 		die();
@@ -27,12 +34,12 @@ class WC_Quick_View_Custom_Template
 
 	public static function quick_view_prettyphoto_custom_template_load() {
 		
-		$product_id = $_REQUEST['product_id'];
-		$orderby = $_REQUEST['orderby'];
-		$is_shop = $_REQUEST['is_shop'];
-		$is_category = $_REQUEST['is_category'];
+		$product_id = absint( $_REQUEST['product_id'] );
+		$orderby = sanitize_text_field( $_REQUEST['orderby'] );
+		$is_shop = sanitize_text_field( $_REQUEST['is_shop'] );
+		$is_category = sanitize_text_field( $_REQUEST['is_category'] );
 
-		echo WC_Quick_View_Custom_Template::custom_template_popup( $product_id, $orderby, $is_shop, $is_category );
+		echo self::custom_template_popup( $product_id, $orderby, $is_shop, $is_category );
 		
 		die();
 	}
@@ -57,7 +64,7 @@ class WC_Quick_View_Custom_Template
 
 		$output_html .= ob_get_clean();
 		$output_html .= '<div class="quick_view_popup_container">';
-		$output_html .= WC_Quick_View_Custom_Template::custom_template_popup( $product_id, $orderby, $is_shop, $is_category );
+		$output_html .= self::custom_template_popup( $product_id, $orderby, $is_shop, $is_category );
 		$output_html .= '</div>';
 		ob_start();
 	?>
@@ -113,12 +120,20 @@ class WC_Quick_View_Custom_Template
 				 $show_add_to_cart = false;
 			 }
 		}
-		if ( class_exists( 'WC_Email_Inquiry_Functions' ) ) {
+		if ( class_exists( 'WC_Email_Inquiry_Functions' ) || class_exists( '\A3Rev\WCEmailInquiry\Functions' ) ) {
 			if ( method_exists( 'WC_Email_Inquiry_Functions', 'check_hide_add_cart_button' ) && WC_Email_Inquiry_Functions::check_hide_add_cart_button( $product_id ) ) {
+				$show_add_to_cart = false;
+			}
+
+			if ( method_exists( '\A3Rev\WCEmailInquiry\Functions', 'check_hide_add_cart_button' ) && \A3Rev\WCEmailInquiry\Functions::check_hide_add_cart_button( $product_id ) ) {
 				$show_add_to_cart = false;
 			}
 			
 			if ( method_exists( 'WC_Email_Inquiry_Functions', 'check_hide_price' ) && WC_Email_Inquiry_Functions::check_hide_price( $product_id ) ) {
+				$show_price = false;
+			}
+
+			if ( method_exists( '\A3Rev\WCEmailInquiry\Functions', 'check_hide_price' ) && \A3Rev\WCEmailInquiry\Functions::check_hide_price( $product_id ) ) {
 				$show_price = false;
 			}
 		}
@@ -213,19 +228,19 @@ class WC_Quick_View_Custom_Template
 					switch( $my_product->get_type() ) {
 						case 'variable' :
 						case 'variable-subscription':
-							WC_Quick_View_Custom_Template::variable_add_to_cart( $my_product );
+							self::variable_add_to_cart( $my_product );
 						break;
 						
 						case 'external' :
-							WC_Quick_View_Custom_Template::external_add_to_cart( $my_product );
+							self::external_add_to_cart( $my_product );
 						break;
 						
 						case 'grouped' :
-							WC_Quick_View_Custom_Template::grouped_add_to_cart( $my_product );
+							self::grouped_add_to_cart( $my_product );
 						break;
 						
 						default :
-							WC_Quick_View_Custom_Template::simple_add_to_cart( $my_product );
+							self::simple_add_to_cart( $my_product );
 						break;
 					}
 					?>
@@ -512,4 +527,3 @@ class WC_Quick_View_Custom_Template
     <?php
 	}
 }
-?>
