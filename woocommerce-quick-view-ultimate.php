@@ -2,15 +2,15 @@
 /*
 Plugin Name: Products Quick View for WooCommerce
 Description: This plugin adds the ultimate Quick View feature to your Shop page, Product category and Product tags listings. Opens the full pages content - add to cart and even view cart without leaving the page.
-Version: 1.9.0
-Requires at least: 4.5
-Tested up to: 5.3
+Version: 1.9.1
+Requires at least: 5.0
+Tested up to: 5.4
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Text Domain: woocommerce-products-quick-view
 Domain Path: /languages
-WC requires at least: 2.0.0
-WC tested up to: 3.8.1
+WC requires at least: 3.0.0
+WC tested up to: 4.0.1
 License: This software is under commercial license and copyright to A3 Revolution Software Development team
 
 	WooCommerce Quick View. Plugin for the WooCommerce.
@@ -39,11 +39,28 @@ if (!defined("WC_QUICK_VIEW_ULTIMATE_AUTHOR_URI")) define("WC_QUICK_VIEW_ULTIMAT
 if (!defined("WC_QUICK_VIEW_ULTIMATE_DOCS_URI")) define("WC_QUICK_VIEW_ULTIMATE_DOCS_URI", "http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/");
 
 define( 'WC_QUICK_VIEW_ULTIMATE_KEY', 'wc_quick_view_ultimate' );
-define( 'WC_QUICK_VIEW_ULTIMATE_VERSION', '1.9.0' );
+define( 'WC_QUICK_VIEW_ULTIMATE_PREFIX', 'wc_qv_' );
+define( 'WC_QUICK_VIEW_ULTIMATE_VERSION', '1.9.1' );
 define( 'WC_QUICK_VIEW_ULTIMATE_G_FONTS', true );
+
+use \A3Rev\WCQV\FrameWork;
 
 if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
+
+	/**
+	 * Plugin Framework init
+	 */
+	$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface'] = new FrameWork\Admin_Interface();
+
+	global $wc_qv_admin_page;
+	$wc_qv_admin_page = new FrameWork\Pages\Quick_View();
+
+	$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init'] = new FrameWork\Admin_Init();
+
+	$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less'] = new FrameWork\Less_Sass();
+
+	// End - Plugin Framework init
 
 	global $wc_quick_view_ultimate_style;
 	$wc_quick_view_ultimate_style = new \A3Rev\WCQV\Style();
@@ -74,14 +91,6 @@ function quick_view_ultimate_plugin_textdomain() {
 	load_textdomain( 'woocommerce-products-quick-view', WP_LANG_DIR . '/woocommerce-products-quick-view/woocommerce-products-quick-view-' . $locale . '.mo' );
 	load_plugin_textdomain( 'woocommerce-products-quick-view', false, WC_QUICK_VIEW_ULTIMATE_FOLDER . '/languages/' );
 }
-
-include ('admin/admin-ui.php');
-include ('admin/admin-interface.php');
-
-include ('admin/admin-pages/admin-quick-view-page.php');
-
-include ('admin/admin-init.php');
-include ('admin/less/sass.php');
 
 include 'admin/woocommerce-quick-view-ultimate-init.php';
 

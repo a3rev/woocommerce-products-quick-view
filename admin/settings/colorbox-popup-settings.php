@@ -1,15 +1,19 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\WCQV\FrameWork\Settings {
+
+use A3Rev\WCQV\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 WC Quick View ColorBox Popup Settings
 
 -----------------------------------------------------------------------------------*/
 
-class WC_QV_ColorBox_Popup_Settings
+class ColorBox_Popup
 {
 
 	/**
@@ -121,7 +125,4 @@ class WC_QV_ColorBox_Popup_Settings
 	}
 }
 
-global $wc_qv_colorbox_popup_settings;
-$wc_qv_colorbox_popup_settings = new WC_QV_ColorBox_Popup_Settings();
-
-?>
+}

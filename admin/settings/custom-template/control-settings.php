@@ -1,15 +1,19 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\WCQV\FrameWork\Settings {
+
+use A3Rev\WCQV\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 WC Quick View Custom Template Controls Settings
 
 -----------------------------------------------------------------------------------*/
 
-class WC_QV_Custom_Template_Control_Settings
+class Custom_Template_Control
 {
 
 	/**
@@ -155,7 +159,4 @@ $(document).ready(function() {
 	}
 }
 
-global $wc_qv_custom_template_control_settings;
-$wc_qv_custom_template_control_settings = new WC_QV_Custom_Template_Control_Settings();
-
-?>
+}

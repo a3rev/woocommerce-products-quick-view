@@ -5,19 +5,17 @@
 function wc_quick_view_ultimate_install(){
 
 	// Set Settings Default from Admin Init
-	global $wc_qv_admin_init;
-	$wc_qv_admin_init->set_default_settings();
+	$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->set_default_settings();
 
 	// Build sass
-	global $wc_qv_less;
-	$wc_qv_less->plugin_build_sass();
+	$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->plugin_build_sass();
 
 	update_option('wc_quick_view_ultimate_version', '1.7.1');
 	update_option('wc_quick_view_lite_version', WC_QUICK_VIEW_ULTIMATE_VERSION );
 
-	delete_metadata( 'user', 0, $wc_qv_admin_init->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
+	delete_metadata( 'user', 0, $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
 
-	delete_transient( $wc_qv_admin_init->version_transient );
+	delete_transient( $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->version_transient );
 
 	update_option('wc_quick_view_ultimate_just_installed', true);
 }
@@ -44,11 +42,10 @@ add_action( 'admin_enqueue_scripts', array( $wc_quick_view_ultimate, 'admin_side
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array( $wc_quick_view_ultimate, 'plugin_extra_links'), 10, 2 );
 
-global $wc_qv_admin_init;
-$wc_qv_admin_init->init();
+$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->init();
 
 // Add upgrade notice to Dashboard pages
-add_filter( $wc_qv_admin_init->plugin_name . '_plugin_extension_boxes', array( $wc_quick_view_ultimate, 'plugin_extension_box' ) );
+add_filter( $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->plugin_name . '_plugin_extension_boxes', array( $wc_quick_view_ultimate, 'plugin_extension_box' ) );
 
 // Add extra link on left of Deactivate link on Plugin manager page
 add_action('plugin_action_links_' . WC_QUICK_VIEW_ULTIMATE_NAME, array( $wc_quick_view_ultimate, 'settings_plugin_links' ) );
@@ -63,7 +60,6 @@ add_action('wp_ajax_nopriv_quick_view_prettyphoto_custom_template_load', array( 
 // Check upgrade functions
 add_action('init', 'wc_quick_view_lite_upgrade_plugin');
 function wc_quick_view_lite_upgrade_plugin () {
-	global $wc_qv_admin_init, $wc_qv_less;
 	// Upgrade to 1.0.2
 	if ( version_compare(get_option('wc_quick_view_lite_version'), '1.0.2' ) === -1) {
 		update_option('wc_quick_view_lite_version', '1.0.2');
@@ -82,7 +78,7 @@ function wc_quick_view_lite_upgrade_plugin () {
 		update_option('wc_product_quick_view_style_version', time() );
 
 		// Build sass
-		$wc_qv_less->plugin_build_sass();
+		$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->plugin_build_sass();
 	}
 
 	// Upgrade to 1.5.0
@@ -96,7 +92,7 @@ function wc_quick_view_lite_upgrade_plugin () {
 		$quick_view_template_global_settings = get_option( 'quick_view_template_global_settings', array() );
 		$quick_view_template_global_settings['gallery_container_wide'] = 33;
 		update_option( 'quick_view_template_global_settings', $quick_view_template_global_settings );
-		$wc_qv_less->plugin_build_sass();
+		$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->plugin_build_sass();
 	}
 
 	update_option('wc_quick_view_ultimate_version', '1.7.1');

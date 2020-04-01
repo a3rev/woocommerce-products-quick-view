@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\WCQV\FrameWork\Settings {
+
+use A3Rev\WCQV\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 WC Quick View Custom Template Global Settings
 
@@ -28,7 +32,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
+class Custom_Template_Global extends FrameWork\Admin_UI
 {
 	
 	/**
@@ -104,20 +108,16 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 	/* set_default_settings()
 	/* Set default settings with function called from Admin Interface */
 	/*-----------------------------------------------------------------------------------*/
-	public function set_default_settings() {
-		global $wc_qv_admin_interface;
-		
-		$wc_qv_admin_interface->reset_settings( $this->form_fields, $this->option_name, false );
+	public function set_default_settings() {		
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->reset_settings( $this->form_fields, $this->option_name, false );
 	}
 	
 	/*-----------------------------------------------------------------------------------*/
 	/* get_settings()
 	/* Get settings with function called from Admin Interface */
 	/*-----------------------------------------------------------------------------------*/
-	public function get_settings() {
-		global $wc_qv_admin_interface;
-		
-		$wc_qv_admin_interface->get_settings( $this->form_fields, $this->option_name );
+	public function get_settings() {		
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->get_settings( $this->form_fields, $this->option_name );
 	}
 	
 	/**
@@ -160,11 +160,9 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 	/* settings_form() */
 	/* Call the form from Admin Interface
 	/*-----------------------------------------------------------------------------------*/
-	public function settings_form() {
-		global $wc_qv_admin_interface;
-		
+	public function settings_form() {		
 		$output = '';
-		$output .= $wc_qv_admin_interface->admin_forms( $this->form_fields, $this->form_key, $this->option_name, $this->form_messages );
+		$output .= $GLOBALS[$this->plugin_prefix.'admin_interface']->admin_forms( $this->form_fields, $this->form_key, $this->option_name, $this->form_messages );
 		
 		return $output;
 	}
@@ -235,48 +233,38 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 			),
         );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/control-settings.php' );
-		global $wc_qv_custom_template_control_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_control_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_control_settings'] = new Custom_Template_Control();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_control_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/product-title-settings.php' );
-		global $wc_qv_custom_template_product_title_settings;
+		$wc_qv_custom_template_product_title_settings = new Custom_Template_Product_Title();
 		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_product_title_settings->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/product-rating-settings.php' );
-		global $wc_qv_custom_template_product_rating_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_product_rating_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_product_rating_settings'] = new Custom_Template_Product_Rating();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_product_rating_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/product-description-settings.php' );
-		global $wc_qv_custom_template_product_description_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_product_description_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_product_description_settings'] = new Custom_Template_Product_Description();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_product_description_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/product-meta-settings.php' );
-		global $wc_qv_custom_template_product_meta_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_product_meta_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_product_meta_settings'] = new Custom_Template_Product_Meta();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_product_meta_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/product-price-settings.php' );
-		global $wc_qv_custom_template_product_price_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_product_price_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_product_price_settings'] = new Custom_Template_Product_Price();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_product_price_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/quantity-selector-settings.php' );
-		global $wc_qv_custom_template_quantity_selector_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_quantity_selector_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_quantity_selector_settings'] = new Custom_Template_Quantity_Selector();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_quantity_selector_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/add-to-cart-settings.php' );
-		global $wc_qv_custom_template_addtocart_button_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_addtocart_button_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_addtocart_button_settings'] = new Custom_Template_AddToCart_Button();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_addtocart_button_settings']->form_fields );
 
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/read-more-settings.php' );
-		global $wc_qv_custom_template_readmore_button_settings;
-		$this->form_fields = array_merge( $this->form_fields, $wc_qv_custom_template_readmore_button_settings->form_fields );
+		$GLOBALS['wc_qv_custom_template_readmore_button_settings'] = new Custom_Template_ReadMore_Button();
+		$this->form_fields = array_merge( $this->form_fields, $GLOBALS['wc_qv_custom_template_readmore_button_settings']->form_fields );
 
 		$this->form_fields = apply_filters( $this->option_name . '_settings_fields', $this->form_fields );
 	}
 
 	public function include_script() {
-		global $wc_qv_admin_interface;
-		$wc_qv_admin_interface->reset_settings( $this->form_fields, $this->option_name, true, true );
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->reset_settings( $this->form_fields, $this->option_name, true, true );
 
 		wp_enqueue_script( 'jquery-rwd-image-maps' );
 ?>
@@ -286,30 +274,21 @@ class WC_QV_Custom_Template_Global_Settings extends WC_QV_Admin_UI
 	}
 </style>
 <?php
-		global $wc_qv_custom_template_control_settings;
-
-		$wc_qv_custom_template_control_settings->include_script();
-
-		global $wc_qv_custom_template_product_rating_settings;
-		global $wc_qv_custom_template_product_description_settings;
-		global $wc_qv_custom_template_product_meta_settings;
-		global $wc_qv_custom_template_product_price_settings;
-		global $wc_qv_custom_template_quantity_selector_settings;
-		global $wc_qv_custom_template_addtocart_button_settings;
-		global $wc_qv_custom_template_readmore_button_settings;
-
-		$wc_qv_custom_template_product_rating_settings->include_script();
-		$wc_qv_custom_template_product_description_settings->include_script();
-		$wc_qv_custom_template_product_meta_settings->include_script();
-		$wc_qv_custom_template_product_price_settings->include_script();
-		$wc_qv_custom_template_quantity_selector_settings->include_script();
-		$wc_qv_custom_template_addtocart_button_settings->include_script();
-		$wc_qv_custom_template_readmore_button_settings->include_script();
+		$GLOBALS['wc_qv_custom_template_control_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_product_rating_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_product_description_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_product_meta_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_product_price_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_quantity_selector_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_addtocart_button_settings']->include_script();
+		$GLOBALS['wc_qv_custom_template_readmore_button_settings']->include_script();
 	}
 }
 
-global $wc_qv_custom_template_global_settings;
-$wc_qv_custom_template_global_settings = new WC_QV_Custom_Template_Global_Settings();
+}
+
+// global code
+namespace {
 
 /** 
  * wc_qv_custom_template_global_settings_form()
@@ -320,4 +299,4 @@ function wc_qv_custom_template_global_settings_form() {
 	$wc_qv_custom_template_global_settings->settings_form();
 }
 
-?>
+}

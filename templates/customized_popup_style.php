@@ -1,7 +1,5 @@
 <style>
 <?php
-global $wc_qv_admin_interface, $wc_qv_fonts_face;
-
 // Container Style
 global $quick_view_template_global_settings;
 extract($quick_view_template_global_settings);
@@ -85,14 +83,14 @@ extract($quick_view_template_global_settings);
 	/*Background*/
 	background-color: <?php echo $title_bg_color; ?> !important;
 	/* Shadow */
-	<?php echo $wc_qv_admin_interface->generate_shadow_css( $title_shadow ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_shadow_css( $title_shadow ); ?>
 	/*Border*/
-	<?php echo $wc_qv_admin_interface->generate_border_css( $title_border ); ?> 
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_border_css( $title_border ); ?> 
 }
 .quick_view_product_title {
 	text-transform: <?php echo $title_transformation; ?> !important;
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $title_font ); ?>	
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $title_font ); ?>	
 }
 .quick_view_product_title:hover {
 	color: <?php echo $title_font_hover_color; ?> !important;
@@ -120,12 +118,12 @@ extract($quick_view_template_global_settings);
 	/*Margin*/
 	margin: <?php echo $description_margin_top; ?>px <?php echo $description_margin_right; ?>px <?php echo $description_margin_bottom; ?>px <?php echo $description_margin_left; ?>px !important;
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $description_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $description_font ); ?>
 }
 .quick_view_product_description_container * {
 	text-align: <?php echo $description_alignment; ?> !important;
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $description_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $description_font ); ?>
 }
 
 /* Product Meta Style */
@@ -139,11 +137,11 @@ extract($quick_view_template_global_settings);
 }
 .quick_view_product_meta .quick_view_product_meta_name {
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $meta_name_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $meta_name_font ); ?>
 }
 .quick_view_product_meta .quick_view_product_meta_value, .quick_view_product_meta a {
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $meta_value_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $meta_value_font ); ?>
 }
 .quick_view_product_meta a:hover {
 	color: <?php echo $meta_value_font_hover_color; ?> !important;
@@ -158,11 +156,11 @@ extract($quick_view_template_global_settings);
 .quick_view_product_price_container span, .quick_view_product_price_container .amount  {
 	margin:0 3px;
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $price_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $price_font ); ?>
 }
 .quick_view_product_price_container del, .quick_view_product_price_container del .amount  {
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $old_price_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $old_price_font ); ?>
 }
 
 .quick_view_product_addtocart_container .single_variation {
@@ -170,17 +168,17 @@ extract($quick_view_template_global_settings);
 }
 .quick_view_product_addtocart_container .price, .quick_view_product_addtocart_container .price * {
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $price_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $price_font ); ?>
 }
 .quick_view_product_addtocart_container .price del, .quick_view_product_addtocart_container .price del .amount {
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $old_price_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $old_price_font ); ?>
 }
 
 /* Product Add To Cart Style */
 .quick_view_product_addtocart_container {
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $description_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $description_font ); ?>
 }
 .quick_view_product_addtocart_button_container {
 	display:block;
@@ -220,13 +218,13 @@ extract($quick_view_template_global_settings);
 	
 		
 	/*Border*/
-	<?php echo $wc_qv_admin_interface->generate_border_css( $addtocart_button_border ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_border_css( $addtocart_button_border ); ?>
 	
 	/* Shadow */
-	<?php echo $wc_qv_admin_interface->generate_shadow_css( $addtocart_button_shadow ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_shadow_css( $addtocart_button_shadow ); ?>
 	
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $addtocart_button_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $addtocart_button_font ); ?>
 	
 	text-align: center !important;
 	text-decoration: none !important;
@@ -244,7 +242,7 @@ extract($quick_view_template_global_settings);
 	background:none !important;
 	box-shadow:none !important;
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $addtocart_link_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $addtocart_link_font ); ?>
 }
 .quick_view_product_addtocart_container .quick_view_add_to_cart_link:hover {
 	color: <?php echo $addtocart_link_font_hover_colour; ?> !important;
@@ -294,13 +292,13 @@ extract($quick_view_template_global_settings);
 	
 		
 	/*Border*/
-	<?php echo $wc_qv_admin_interface->generate_border_css( $readmore_button_border ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_border_css( $readmore_button_border ); ?>
 	
 	/* Shadow */
-	<?php echo $wc_qv_admin_interface->generate_shadow_css( $readmore_button_shadow ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_shadow_css( $readmore_button_shadow ); ?>
 	
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $readmore_button_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $readmore_button_font ); ?>
 	
 	text-align: center !important;
 	text-decoration: none !important;
@@ -316,7 +314,7 @@ extract($quick_view_template_global_settings);
 	box-shadow:none !important;
 	float: left;
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $readmore_link_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $readmore_link_font ); ?>
 }
 .quick_view_product_readmore_button_container .quick_view_readmore_link:hover {
 	color: <?php echo $readmore_link_font_hover_colour; ?> !important;
@@ -343,10 +341,10 @@ extract($quick_view_template_global_settings);
 	background-color: <?php echo $quantity_selector_bg_colour; ?> !important;
 		
 	/*Border*/
-	<?php echo $wc_qv_admin_interface->generate_border_css( $quantity_selector_border ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_border_css( $quantity_selector_border ); ?>
 	
 	/* Shadow */
-	<?php echo $wc_qv_admin_interface->generate_shadow_css( $quantity_selector_shadow ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_shadow_css( $quantity_selector_shadow ); ?>
 }
 .quick_view_product_addtocart_container input.qty {
 	width:auto !important;
@@ -364,7 +362,7 @@ extract($quick_view_template_global_settings);
 	padding: <?php echo $quantity_input_padding_top; ?>px <?php echo $quantity_input_padding_right; ?>px <?php echo $quantity_input_padding_bottom; ?>px <?php echo $quantity_input_padding_left; ?>px !important;
 	
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $quantity_input_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $quantity_input_font ); ?>
 }
 .quick_view_product_addtocart_container input.quick_view_plus {
 	top: -1px !important;
@@ -387,7 +385,7 @@ extract($quick_view_template_global_settings);
 	padding: <?php echo $quantity_plus_minus_padding_top; ?>px <?php echo $quantity_plus_minus_padding_right; ?>px <?php echo $quantity_plus_minus_padding_bottom; ?>px <?php echo $quantity_plus_minus_padding_left; ?>px !important;
 	
 	/* Font */
-	<?php echo $wc_qv_fonts_face->generate_font_css( $quantity_plus_minus_font ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $quantity_plus_minus_font ); ?>
 	
 	/*Background*/
 	background-color: <?php echo $quantity_plus_minus_bg_colour; ?> !important;
@@ -405,7 +403,7 @@ extract($quick_view_template_global_settings);
 				) !important;
 				
 	/*Border*/
-	<?php echo $wc_qv_admin_interface->generate_border_css( $quantity_selector_border ); ?>
+	<?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_border_css( $quantity_selector_border ); ?>
 	
 }
 

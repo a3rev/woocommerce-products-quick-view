@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\WCQV\FrameWork\Pages {
+
+use A3Rev\WCQV\FrameWork;
+
 // File Security Check
-if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+if ( ! defined( 'ABSPATH' ) ) exit; 
+
 /*-----------------------------------------------------------------------------------
 WC Quick View Admin Page
 
@@ -21,7 +25,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class WC_QV_Admin_Page extends WC_QV_Admin_UI
+class Quick_View extends FrameWork\Admin_UI
 {	
 	/**
 	 * @var string
@@ -94,11 +98,17 @@ class WC_QV_Admin_Page extends WC_QV_Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 	public function tabs_include() {
 		
-		include_once( $this->admin_plugin_dir() . '/tabs/admin-settings-tab.php' );
-		include_once( $this->admin_plugin_dir() . '/tabs/admin-button-style-tab.php' );
-		include_once( $this->admin_plugin_dir() . '/tabs/admin-popup-style-tab.php' );
+		global $wc_qv_admin_settings_tab;
+		$wc_qv_admin_settings_tab = new FrameWork\Tabs\Admin_Settings();
 
-		include_once( $this->admin_plugin_dir() . '/tabs/custom-template/global-settings-tab.php' );
+		global $wc_qv_admin_button_style_tab;
+		$wc_qv_admin_button_style_tab = new FrameWork\Tabs\Button_Style();
+
+		global $wc_qv_admin_popup_style_tab;
+		$wc_qv_admin_popup_style_tab = new FrameWork\Tabs\Popup_Style();
+
+		global $wc_qv_custom_template_global_settings_tab;
+		$wc_qv_custom_template_global_settings_tab = new FrameWork\Tabs\Custom_Template_Global();
 		
 	}
 	
@@ -106,16 +116,16 @@ class WC_QV_Admin_Page extends WC_QV_Admin_UI
 	/* admin_settings_page() */
 	/* Show Settings Page */
 	/*-----------------------------------------------------------------------------------*/
-	public function admin_settings_page() {
-		global $wc_qv_admin_init;
-		
-		$wc_qv_admin_init->admin_settings_page( $this->page_data() );
+	public function admin_settings_page() {		
+		$GLOBALS[$this->plugin_prefix.'admin_init']->admin_settings_page( $this->page_data() );
 	}
 	
 }
 
-global $wc_qv_admin_page;
-$wc_qv_admin_page = new WC_QV_Admin_Page();
+}
+
+// global code
+namespace {
 
 /** 
  * wc_qv_admin_page_show()
@@ -126,4 +136,4 @@ function wc_qv_admin_page_show() {
 	$wc_qv_admin_page->admin_settings_page();
 }
 
-?>
+}

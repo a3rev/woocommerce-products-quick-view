@@ -44,9 +44,7 @@ update_option( 'quick_view_template_gallery_style_settings', $quick_view_templat
 
 
 // Set Settings Default from Admin Init
-global $wc_qv_admin_init;
-$wc_qv_admin_init->set_default_settings();
+$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->set_default_settings();
 
 // Build sass
-global $wc_qv_less;
-$wc_qv_less->plugin_build_sass();
+$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->plugin_build_sass();

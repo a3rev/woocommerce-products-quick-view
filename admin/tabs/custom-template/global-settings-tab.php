@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\WCQV\FrameWork\Tabs {
+
+use A3Rev\WCQV\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 WC Quick View Custom Template Global Tab
 
@@ -22,7 +26,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class WC_QV_Custom_Template_Global_Settings_Tab extends WC_QV_Admin_UI
+class Custom_Template_Global extends FrameWork\Admin_UI
 {	
 	/**
 	 * @var string
@@ -103,7 +107,8 @@ class WC_QV_Custom_Template_Global_Settings_Tab extends WC_QV_Admin_UI
 	public function settings_include() {
 		
 		// Includes Settings file
-		include_once( $this->admin_plugin_dir() . '/settings/custom-template/global-settings.php' );
+		global $wc_qv_custom_template_global_settings;
+		$wc_qv_custom_template_global_settings = new FrameWork\Settings\Custom_Template_Global();
 		
 	}
 	
@@ -120,8 +125,10 @@ class WC_QV_Custom_Template_Global_Settings_Tab extends WC_QV_Admin_UI
 	}
 }
 
-global $wc_qv_custom_template_global_settings_tab;
-$wc_qv_custom_template_global_settings_tab = new WC_QV_Custom_Template_Global_Settings_Tab();
+}
+
+// global code
+namespace {
 
 /** 
  * wc_admin_ei_email_popup_tab_manager()
@@ -132,4 +139,4 @@ function wc_qv_custom_template_global_settings_tab_manager() {
 	$wc_qv_custom_template_global_settings_tab->tab_manager();
 }
 
-?>
+}

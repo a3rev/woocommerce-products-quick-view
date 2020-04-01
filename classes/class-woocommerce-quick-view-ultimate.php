@@ -109,8 +109,7 @@ class WCQV
 
 			$_upload_dir = wp_upload_dir();
 			if ( file_exists( $_upload_dir['basedir'] . '/sass/wc_product_quick_view.min.css' ) ) {
-				global $wc_qv_less;
-				wp_enqueue_style( 'a3' . $wc_qv_less->css_file_name );
+				wp_enqueue_style( 'a3' . $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->css_file_name );
 			} else {
 				include( WC_QUICK_VIEW_ULTIMATE_DIR . '/templates/customized_popup_style.php' );
 			}
@@ -155,14 +154,13 @@ class WCQV
 	}
 	
 	public function add_google_fonts() {
-		global $wc_qv_fonts_face;
 		$quick_view_ultimate_on_hover_bt_font = get_option( 'quick_view_ultimate_on_hover_bt_font' );
 		$quick_view_ultimate_under_image_link_font = get_option( 'quick_view_ultimate_under_image_link_font' );
 		$quick_view_ultimate_under_image_bt_font = get_option( 'quick_view_ultimate_under_image_bt_font' );
 		
 		$google_fonts = array( $quick_view_ultimate_on_hover_bt_font['face'], $quick_view_ultimate_under_image_link_font['face'], $quick_view_ultimate_under_image_bt_font['face'] );
 		
-		$wc_qv_fonts_face->generate_google_webfonts( $google_fonts );
+		$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_google_webfonts( $google_fonts );
 	}
 	
 	public function fix_style_js_responsi_theme(){
@@ -253,8 +251,7 @@ class WCQV
 
 			$_upload_dir = wp_upload_dir();
 			if ( file_exists( $_upload_dir['basedir'] . '/sass/wc_product_quick_view.min.css' ) ) {
-				global $wc_qv_less;
-				wp_enqueue_style( 'a3' . $wc_qv_less->css_file_name );
+				wp_enqueue_style( 'a3' . $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->css_file_name );
 			} else {
 				include( WC_QUICK_VIEW_ULTIMATE_DIR . '/templates/customized_popup_style.php' );
 			}
@@ -262,7 +259,6 @@ class WCQV
 	}
 	
 	public function quick_view_ultimate_popup(){
-		global $wc_qv_admin_interface;
 				
 		$quick_view_ultimate_enable = get_option('quick_view_ultimate_enable');
 		if ( 'no' == $quick_view_ultimate_enable ) return ;
@@ -440,8 +436,8 @@ class WCQV
 		});	
 		</script>
         <style type="text/css">
-		#cboxOverlay{ <?php echo $wc_qv_admin_interface->generate_background_color_css( $quick_view_ultimate_colorbox_overlay_color ); ?> }
-		body .pp_overlay { <?php echo $wc_qv_admin_interface->generate_background_color_css( $quick_view_ultimate_prettyphoto_overlay_color ); ?> }
+		#cboxOverlay{ <?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_background_color_css( $quick_view_ultimate_colorbox_overlay_color ); ?> }
+		body .pp_overlay { <?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_background_color_css( $quick_view_ultimate_prettyphoto_overlay_color ); ?> }
         </style>
 		<?php
 
@@ -497,9 +493,8 @@ class WCQV
 			return $links;
 		}
 
-		global $wc_qv_admin_init;
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/plugins-extensions/woocommerce-quick-view-ultimate/" target="_blank">'.__('Documentation', 'woocommerce-products-quick-view' ).'</a>';
-		$links[] = '<a href="'.$wc_qv_admin_init->support_url.'" target="_blank">'.__('Support', 'woocommerce-products-quick-view' ).'</a>';
+		$links[] = '<a href="'.$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->support_url.'" target="_blank">'.__('Support', 'woocommerce-products-quick-view' ).'</a>';
 		return $links;
 	}
 
@@ -510,9 +505,8 @@ class WCQV
 	}
 
 	public function plugin_extension_box( $boxes = array() ) {
-		global $wc_qv_admin_init;
 
-		$support_box = '<a href="'.$wc_qv_admin_init->support_url.'" target="_blank" alt="'.__('Go to Support Forum', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/go-to-support-forum.png" /></a>';
+		$support_box = '<a href="'.$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_init']->support_url.'" target="_blank" alt="'.__('Go to Support Forum', 'woocommerce-products-quick-view' ).'"><img src="'.WC_QUICK_VIEW_ULTIMATE_IMAGES_URL.'/go-to-support-forum.png" /></a>';
 
 		$boxes[] = array(
 			'content' => $support_box,

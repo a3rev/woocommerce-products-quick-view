@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\WCQV\FrameWork\Settings {
+
+use A3Rev\WCQV\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 WC Quick View Global Settings
 
@@ -28,7 +32,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class WC_QV_Global_Settings extends WC_QV_Admin_UI
+class Global_Panel extends FrameWork\Admin_UI
 {
 	
 	/**
@@ -108,10 +112,8 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 	/* set_default_settings()
 	/* Set default settings with function called from Admin Interface */
 	/*-----------------------------------------------------------------------------------*/
-	public function set_default_settings() {
-		global $wc_qv_admin_interface;
-		
-		$wc_qv_admin_interface->reset_settings( $this->form_fields, $this->option_name, false );
+	public function set_default_settings() {		
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->reset_settings( $this->form_fields, $this->option_name, false );
 	}
 	
 	/*-----------------------------------------------------------------------------------*/
@@ -130,10 +132,8 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 	/* get_settings()
 	/* Get settings with function called from Admin Interface */
 	/*-----------------------------------------------------------------------------------*/
-	public function get_settings() {
-		global $wc_qv_admin_interface;
-		
-		$wc_qv_admin_interface->get_settings( $this->form_fields, $this->option_name );
+	public function get_settings() {		
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->get_settings( $this->form_fields, $this->option_name );
 	}
 	
 	/**
@@ -176,11 +176,9 @@ class WC_QV_Global_Settings extends WC_QV_Admin_UI
 	/* settings_form() */
 	/* Call the form from Admin Interface
 	/*-----------------------------------------------------------------------------------*/
-	public function settings_form() {
-		global $wc_qv_admin_interface;
-		
+	public function settings_form() {		
 		$output = '';
-		$output .= $wc_qv_admin_interface->admin_forms( $this->form_fields, $this->form_key, $this->option_name, $this->form_messages );
+		$output .= $GLOBALS[$this->plugin_prefix.'admin_interface']->admin_forms( $this->form_fields, $this->form_key, $this->option_name, $this->form_messages );
 		
 		return $output;
 	}
@@ -323,8 +321,10 @@ $(document).ready(function() {
 	}
 }
 
-global $wc_qv_global_settings;
-$wc_qv_global_settings = new WC_QV_Global_Settings();
+}
+
+// global code
+namespace {
 
 /** 
  * wc_qv_global_settings_form()
@@ -335,4 +335,4 @@ function wc_qv_global_settings_form() {
 	$wc_qv_global_settings->settings_form();
 }
 
-?>
+}

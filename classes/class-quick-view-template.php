@@ -184,8 +184,8 @@ class Custom_Template
                 <!-- Product Meta -->
                 <?php if ( $quick_view_template_global_settings['show_product_meta'] == 1 ) { ?>
                 <?php
-					$cat_count = sizeof( get_the_terms( $product_id, 'product_cat' ) );
-					$tag_count = sizeof( get_the_terms( $product_id, 'product_tag' ) );
+					$cat_count = count( wc_get_product_cat_ids( $product_id ) );
+					$tag_count = count( wc_get_product_term_ids( $product_id, 'product_tag' ) );
 				?>
                 <div class="quick_view_product_meta_container">
                 	<?php if ( wc_product_sku_enabled() && ( $my_product->get_sku() || $my_product->is_type( 'variable' ) ) ) : ?>
