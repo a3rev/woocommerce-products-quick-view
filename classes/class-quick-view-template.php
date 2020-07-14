@@ -425,6 +425,10 @@ class Custom_Template
 							} else {
 								$product = wc_get_product( $product_id );
 							}
+							
+							if ( ! is_object( $product ) ) {
+								continue;
+							}
                             ?>
                             <tr>
                             	<?php if ( $product->is_sold_individually() || ! $product->is_purchasable() ) : ?>
