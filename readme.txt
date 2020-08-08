@@ -2,8 +2,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 5.0
-Tested up to: 5.4.2
-Stable tag: 1.9.2
+Tested up to: 5.5
+Stable tag: 1.9.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,11 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.9.3 - 2020/08/08 =
+* This maintenance release is for compatibility with WordPress major version 5.5 and WooCommerce 4.3.1.
+* Tweak - Test for compatibility with WordPress 5.5
+* Tweak - Test for compatibility with WooCommerce 4.3.1
 
 = 1.9.2 - 2020/07/14 =
 * This maintenance release has a fix for Fatal Error when product variations do not have a price entered, plus compatibility with WooCommerce 4.3 and WordPress 5.4.2 
@@ -464,6 +469,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.9.3 =
+This maintenance release is for compatibility with WordPress major version 5.5 and WooCommerce 4.3.1.
 
 = 1.9.2 =
 This maintenance release has a fix for Fatal Error when product variations do not have a price entered, plus compatibility with WooCommerce 4.3 and WordPress 5.4.2
