@@ -85,7 +85,7 @@ class Custom_Template
 		global $wc_quick_view_ultimate;
 		global $quick_view_template_global_settings;
 		
-		if ( version_compare( WC()->version, '2.2.0', '<' ) ) {
+		if ( version_compare( \WC()->version, '2.2.0', '<' ) ) {
 			$my_product = get_product( $product_id );
 		} else {
 			$my_product = wc_get_product( $product_id );
@@ -420,7 +420,7 @@ class Custom_Template
                 <tbody>
                     <?php
                         foreach ( $grouped_products as $product_id ) :
-							if ( version_compare( WC()->version, '2.2.0', '<' ) ) {
+							if ( version_compare( \WC()->version, '2.2.0', '<' ) ) {
 								$product = get_product( $product_id );
 							} else {
 								$product = wc_get_product( $product_id );

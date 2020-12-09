@@ -80,7 +80,7 @@ class WCQV
 			wp_enqueue_style( 'a3_colorbox_style', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/colorbox.css' );
 			wp_enqueue_script( 'colorbox_script', WC_QUICK_VIEW_ULTIMATE_JS_URL . '/colorbox/jquery.colorbox'.$suffix.'.js', array('jquery'), false, false );
 		} else {
-			$wc_assets_path = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
+			$wc_assets_path = str_replace( array( 'http:', 'https:' ), '', \WC()->plugin_url() ) . '/assets/';
 
 			wp_enqueue_style( 'woocommerce_prettyPhoto_css', WC_QUICK_VIEW_ULTIMATE_CSS_URL . '/prettyPhoto.css' );
 
@@ -129,7 +129,7 @@ class WCQV
 
 	public function set_customer_cookie() {
 		if ( ! is_admin() ) {
-			WC()->session->set_customer_session_cookie(true);
+			\WC()->session->set_customer_session_cookie(true);
 		}
 	}
 	
