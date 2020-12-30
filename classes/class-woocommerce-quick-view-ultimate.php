@@ -318,7 +318,7 @@ class WCQV
 				jQuery.colorbox.close();
 			});
 			
-			jQuery(document).bind('cbox_cleanup', function(){
+			jQuery(document).on('cbox_cleanup', function(){
 				jQuery.post( '<?php echo admin_url('admin-ajax.php', 'relative');?>?action=quick_view_ultimate_reload_cart&security=<?php echo wp_create_nonce("reload-cart");?>', '', function(rsHTML){
 					jQuery('.widget_shopping_cart_content').html(rsHTML);
 					

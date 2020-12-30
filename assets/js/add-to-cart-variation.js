@@ -52,7 +52,7 @@
             $product          = $form.closest( '.quick_view_popup_container_inner' ),
             $product_gallery  = $product.find( '.images' ),
             $gallery_nav      = $product.find( '.flex-control-nav' ),
-            $gallery_img      = $gallery_nav.find( 'li:eq(0) img' ),
+            $gallery_img      = $gallery_nav.find( 'li' ).eq(0).find('img'),
             $product_img_wrap = $product_gallery.find( '.woocommerce-product-gallery__image, .woocommerce-product-gallery__image--placeholder' ).eq( 0 ),
             $product_img      = $product_img_wrap.find( '.wp-post-image' ),
             $product_link     = $product_img_wrap.find( 'a' ).eq( 0 );
@@ -332,7 +332,7 @@ jQuery(document).ready(function($) {
         $('.quick_view_single_variation').text('');
 		check_variations( '', false );
 		$(this).blur();
-		if( $().uniform && $.isFunction($.uniform.update) ) {
+		if( $().uniform && typeof $.uniform.update === "function" ) {
 			$.uniform.update();
 		}
 
@@ -344,7 +344,7 @@ jQuery(document).ready(function($) {
 
     $( function() {
         $( '.quick_view_variations_form' ).each( function() {
-            $( this ).find('.quick_view_table_variations select:eq(0)').change();
+            $( this ).find('.quick_view_table_variations select').eq(0).change();
         });
     });
 

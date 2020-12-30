@@ -33,7 +33,7 @@ class Admin_UI
 	 * You must change to correct plugin name that you are working
 	 */
 
-	public $framework_version      = '2.3.0';
+	public $framework_version      = '2.4.0';
 	public $plugin_name            = WC_QUICK_VIEW_ULTIMATE_KEY;
 	public $plugin_path            = WC_QUICK_VIEW_ULTIMATE_NAME;
 	public $google_api_key_option  = '';
