@@ -108,7 +108,7 @@ jQuery(document).ready(function($) {
     
 	// Reset buttons
 	$('.quick_view_reset_variations').on( 'click', function(){
-		$('.quick_view_table_variations select').val('').change();
+		$('.quick_view_table_variations select').val('').trigger('change');
         $(this).css('visibility','hidden');
 		return false;
 	});
@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
             current_attr_select.append( current_attr_select.data( 'attribute_options' ) );
             current_attr_select.find( 'option' + option_gt_filter ).removeClass( 'attached' );
             current_attr_select.find( 'option' + option_gt_filter ).removeClass( 'enabled' );
-            current_attr_select.find( 'option' + option_gt_filter ).removeAttr( 'disabled' );
+            current_attr_select.find( 'option' + option_gt_filter ).prop( 'disabled', false );
 
             // Get name from data-attribute_name, or from input name if it doesn't exist
             if ( typeof( current_attr_select.data( 'attribute_name' ) ) !== 'undefined' ) {
@@ -216,7 +216,7 @@ jQuery(document).ready(function($) {
             current_attr_select.find( 'option' + option_gt_filter + ':not(.attached)' ).remove();
 
             // Grey out disabled
-            current_attr_select.find( 'option' + option_gt_filter + ':not(.enabled)' ).attr( 'disabled', 'disabled' );
+            current_attr_select.find( 'option' + option_gt_filter + ':not(.enabled)' ).prop( 'disabled', true );
 
         });
 
@@ -304,7 +304,7 @@ jQuery(document).ready(function($) {
         if (all_set) {
         	var variation = matching_variations.pop();
         	if (variation) {
-            	$('form input[name=variation_id]').val(variation.variation_id).change();
+            	$('form input[name=variation_id]').val(variation.variation_id).trigger('change');
             	show_variation(variation);
             } else {
             	// Nothing found - reset fields
@@ -327,11 +327,11 @@ jQuery(document).ready(function($) {
 
 	$('.quick_view_table_variations select').on( 'change', function(){
 
-		$('form input[name=variation_id]').val('').change();
+		$('form input[name=variation_id]').val('').trigger('change');
         $('.quick_view_single_variation_wrap').hide();
         $('.quick_view_single_variation').text('');
 		check_variations( '', false );
-		$(this).blur();
+		$(this).trigger('blur');
 		if( $().uniform && typeof $.uniform.update === "function" ) {
 			$.uniform.update();
 		}
@@ -344,7 +344,7 @@ jQuery(document).ready(function($) {
 
     $( function() {
         $( '.quick_view_variations_form' ).each( function() {
-            $( this ).find('.quick_view_table_variations select').eq(0).change();
+            $( this ).find('.quick_view_table_variations select').eq(0).trigger('change');
         });
     });
 

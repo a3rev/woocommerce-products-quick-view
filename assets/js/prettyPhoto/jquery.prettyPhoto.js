@@ -431,7 +431,7 @@
 		*/
 		$.prettyPhoto.startSlideshow = function(){
 			if(typeof pp_slideshow == 'undefined'){
-				$pp_pic_holder.find('.pp_play').off('click').removeClass('pp_play').addClass('pp_pause').click(function(){
+				$pp_pic_holder.find('.pp_play').off('click').removeClass('pp_play').addClass('pp_pause').on('click', function(){
 					$.prettyPhoto.stopSlideshow();
 					return false;
 				});
@@ -446,7 +446,7 @@
 		* Stop the slideshow...
 		*/
 		$.prettyPhoto.stopSlideshow = function(){
-			$pp_pic_holder.find('.pp_pause').off('click').removeClass('pp_pause').addClass('pp_play').click(function(){
+			$pp_pic_holder.find('.pp_pause').off('click').removeClass('pp_pause').addClass('pp_play').on('click', function(){
 				$.prettyPhoto.startSlideshow();
 				return false;
 			});
@@ -776,13 +776,13 @@
 
 				$pp_gallery = $('.pp_pic_holder .pp_gallery'), $pp_gallery_li = $pp_gallery.find('li'); // Set the gallery selectors
 
-				$pp_gallery.find('.pp_arrow_next').click(function(){
+				$pp_gallery.find('.pp_arrow_next').on('click', function(){
 					$.prettyPhoto.changeGalleryPage('next');
 					$.prettyPhoto.stopSlideshow();
 					return false;
 				});
 
-				$pp_gallery.find('.pp_arrow_previous').click(function(){
+				$pp_gallery.find('.pp_arrow_previous').on('click', function(){
 					$.prettyPhoto.changeGalleryPage('previous');
 					$.prettyPhoto.stopSlideshow();
 					return false;
@@ -800,7 +800,7 @@
 				$pp_gallery_li.each(function(i){
 					$(this)
 						.find('a')
-						.click(function(){
+						.on('click', function(){
 							$.prettyPhoto.changePage(i);
 							$.prettyPhoto.stopSlideshow();
 							return false;
@@ -812,7 +812,7 @@
 			// Inject the play/pause if it's a slideshow
 			if(settings.slideshow){
 				$pp_pic_holder.find('.pp_nav').prepend('<a href="#" class="pp_play">Play</a>')
-				$pp_pic_holder.find('.pp_nav .pp_play').click(function(){
+				$pp_pic_holder.find('.pp_nav .pp_play').on('click', function(){
 					$.prettyPhoto.startSlideshow();
 					return false;
 				});

@@ -376,7 +376,7 @@ class Custom_Template
 		jQuery(document).ready(function($) {
 			
 			var cart_page_url = '<?php echo str_replace( array( 'https:', 'http:' ), '' , get_permalink( wc_get_page_id( 'cart' ) ) ) ; ?>';
-			$('.quick_view_single_add_to_cart_button').click(function(){
+			$('.quick_view_single_add_to_cart_button').on('click', function(){
 				
 				var addtocart_object =$(this);
 				
@@ -492,7 +492,7 @@ class Custom_Template
 		jQuery(document).ready(function($) {
 			
 			var cart_page_url = '<?php str_replace( array( 'https:', 'http:' ), '' , get_permalink( wc_get_page_id( 'cart' ) ) ) ; ?>';
-			$('.single_add_to_cart_button').click(function(){
+			$('.single_add_to_cart_button').on('click', function(){
 				
 				var addtocart_object =$(this);
 				
