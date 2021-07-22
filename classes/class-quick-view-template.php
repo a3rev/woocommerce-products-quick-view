@@ -153,7 +153,7 @@ class Custom_Template
             	
                 <!-- Product Title -->
             	<div class="quick_view_product_title_container">
-                	<a class="quick_view_product_title" href="<?php echo $product_url; ?>"><?php echo $product_name; ?></a>
+                	<a class="quick_view_product_title" href="<?php echo esc_url( $product_url ); ?>"><?php echo esc_html( $product_name ); ?></a>
                 </div>
                 
                 <!-- Product Rating -->
@@ -359,7 +359,7 @@ class Custom_Template
                         </div>
                     </div>
         
-                    <input type="hidden" name="add-to-cart" value="<?php echo $product->get_id(); ?>" />
+                    <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" />
                     <input type="hidden" name="product_id" value="<?php echo esc_attr( $product->get_id() ); ?>" />
                     <input type="hidden" name="variation_id" value="" />
         
@@ -448,7 +448,7 @@ class Custom_Template
                                 <?php endif; ?>
         
                                 <td class="label">
-                                    <label for="product-<?php echo $product_id; ?>">
+                                    <label for="product-<?php echo esc_attr( $product_id ); ?>">
                                         <?php echo $product->is_visible() ? '<a href="' . get_permalink( $product_id ) . '">' . get_the_title( $product_id ) . '</a>' : get_the_title( $product_id ); ?>
                                     </label>
                                 </td>
@@ -527,7 +527,7 @@ class Custom_Template
 		$product_url = $product->get_product_url();
 		$button_text = $product->single_add_to_cart_text();
 	?>
-    	<div class="quick_view_product_addtocart_button_container"><a href="<?php echo esc_url( $product_url ); ?>" rel="nofollow" class="single_add_to_cart_button button alt <?php echo $add_to_cart_bt_class; ?>"><?php echo $button_text; ?></a></div>
+    	<div class="quick_view_product_addtocart_button_container"><a href="<?php echo esc_url( $product_url ); ?>" rel="nofollow" class="single_add_to_cart_button button alt <?php echo esc_attr( $add_to_cart_bt_class ); ?>"><?php echo $button_text; ?></a></div>
     <?php
 	}
 }

@@ -204,7 +204,7 @@ class WCQV
 			$class = $quick_view_ultimate_popup_tool.' quick_view_ultimate_under_button quick_view_ultimate_click';
 		}
 		
-		$quick_view_ultimate_button .= '<div style="clear:both;"></div><div class="quick_view_ultimate_container_under"><div class="quick_view_ultimate_content_under"><span class="'.$class.'" id="'.get_the_ID().'" data-link="'.get_permalink().'">'.$link_text.'</span></div></div><div style="clear:both;"></div>';
+		$quick_view_ultimate_button .= '<div style="clear:both;"></div><div class="quick_view_ultimate_container_under"><div class="quick_view_ultimate_content_under"><span class="'. esc_attr( $class ) .'" id="'.get_the_ID().'" data-link="'.get_permalink().'">'.$link_text.'</span></div></div><div style="clear:both;"></div>';
 		
 		echo $quick_view_ultimate_button;
 	}
