@@ -3,7 +3,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 5.0
 Tested up to: 5.8
-Stable tag: 1.9.11
+Stable tag: 1.9.12
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,11 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 1.9.12 - 2021/11/20 =
+* This maintenance release has check for compatibility with PHP version 8.x and WooCommerce 5.9
+* Tweak - Test for compatibility with PHP 8.x
+* Tweak - Test for compatibility with WooCommerce 5.9
 
 = 1.9.11 - 2021/07/22 =
 * This maintenance release has code tweaks for compatibility with WordPress Major version 5.8, WooCommerce version 5.5.1 and some Security Hardening.
@@ -544,6 +549,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 1.9.12 =
+This maintenance release has check for compatibility with PHP version 8.x and WooCommerce 5.9
 
 = 1.9.11 =
 This maintenance release has code tweaks for compatibility with WordPress Major version 5.8, WooCommerce version 5.5.1 and some Security Hardening.
