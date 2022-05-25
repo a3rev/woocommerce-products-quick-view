@@ -3,7 +3,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 5.6
 Tested up to: 6.0
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -113,6 +113,10 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 2.0.1 - 2022/05/25 =
+* This release fixes a bug with the just released version 2.0.0
+* Fix - Do not call update_google_map_api_key from construct of Admin UI
 
 = 2.0.0 - 2022/05/24 =
 * This release is for compatibility with WordPress major version 6.0 and WooCommerce version 6.5.1. It and includes various code tweaks and tweaks to harden security.
@@ -567,6 +571,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+This release fixes a bug with the just released version 2.0.0
 
 = 2.0.0 =
 This release is for compatibility with WordPress major version 6.0 and WooCommerce version 6.5.1. It and includes various code tweaks and tweaks to harden security.

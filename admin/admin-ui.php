@@ -87,8 +87,6 @@ class Admin_UI
 		}
 
 		$this->support_url = 'https://a3rev.com/forums/forum/woocommerce-plugins/quick-view-ultimate/';
-
-		$this->update_google_map_api_key();
 	}
 	
 	
