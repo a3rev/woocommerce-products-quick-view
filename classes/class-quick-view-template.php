@@ -425,7 +425,7 @@ class Custom_Template
 							} else {
 								$product = wc_get_product( $product_id );
 							}
-							
+
 							if ( ! is_object( $product ) ) {
 								continue;
 							}

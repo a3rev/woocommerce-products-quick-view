@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
 			is_category: is_category
 		};
 		$.post( wc_qv_vars.ajax_url, qv_data, function(responsve){
-			$('.quick_view_popup_container').html(responsve);
+			$('.quick_view_popup_container').html(responsve).trigger('qv_popup_content_changed');
 			$('.quick_view_popup_loading').hide();
 			$('.pp_loaderIcon').hide();
 		});
@@ -72,7 +72,7 @@ jQuery(document).ready(function($) {
 			is_category: is_category
 		};
 		$.post( wc_qv_vars.ajax_url, qv_data, function(responsve){
-			$('.quick_view_popup_container').html(responsve);
+			$('.quick_view_popup_container').html(responsve).trigger('qv_popup_content_changed');
 			$('.quick_view_popup_loading').hide();
 			$('.pp_loaderIcon').hide();
 		});

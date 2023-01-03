@@ -57,13 +57,15 @@ extract($quick_view_template_global_settings);
 	position:absolute;
 	top:50%;
 	z-index:100;
-	font-size: <?php echo $popup_nextpre_icons_size; ?>px !important;
-	color: <?php echo $popup_nextpre_icons_color; ?> !important;
 	margin-top: -<?php echo ( $popup_nextpre_icons_size / 2 ) ?>px;
-
-    opacity: <?php echo ( $popup_nextpre_icons_opacity / 100 ); ?> !important;
 }
-.quick_view_previous_control:hover, .quick_view_next_control:hover {
+.quick_view_previous_control svg, .quick_view_next_control svg {
+	width: <?php echo $popup_nextpre_icons_size; ?>px !important;
+	height: <?php echo $popup_nextpre_icons_size; ?>px !important;
+	fill: <?php echo $popup_nextpre_icons_color; ?> !important;
+	opacity: <?php echo ( $popup_nextpre_icons_opacity / 100 ); ?> !important;
+}
+.quick_view_previous_control:hover svg, .quick_view_next_control:hover svg {
 	opacity: 1 !important;
 }
 .quick_view_previous_control {
