@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Custom_Template
 {
 	public static function quick_view_custom_template_load() {
+		check_ajax_referer( 'quick_view_custom_template_load', 'security' );
 		
 		$product_id = absint( $_REQUEST['product_id'] );
 		$orderby = sanitize_text_field( $_REQUEST['orderby'] );
@@ -33,6 +34,7 @@ class Custom_Template
 	}
 
 	public static function quick_view_prettyphoto_custom_template_load() {
+		check_ajax_referer( 'quick_view_prettyphoto_custom_template_load', 'security' );
 		
 		$product_id = absint( $_REQUEST['product_id'] );
 		$orderby = sanitize_text_field( $_REQUEST['orderby'] );

@@ -397,7 +397,8 @@ class WCQV
 						product_id : product_id,
 						orderby: orderby,
 						is_shop: is_shop,
-						is_category: is_category
+						is_category: is_category,
+						security: '<?php echo wp_create_nonce("quick_view_prettyphoto_custom_template_load");?>'
 					};
 					jQuery.post( '<?php echo admin_url('admin-ajax.php', 'relative');?>', qv_data, function(responsve){
 						popup_container.html(responsve);
@@ -476,6 +477,8 @@ class WCQV
 
 	
 	public function quick_view_ultimate_reload_cart() {
+		check_ajax_referer( 'reload-cart', 'security' );
+
 		if(function_exists('woocommerce_mini_cart')) woocommerce_mini_cart() ;
 		die();
 	}
