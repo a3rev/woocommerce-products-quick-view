@@ -87,11 +87,8 @@ class Custom_Template
 		global $wc_quick_view_ultimate;
 		global $quick_view_template_global_settings;
 		
-		if ( version_compare( \WC()->version, '2.2.0', '<' ) ) {
-			$my_product = get_product( $product_id );
-		} else {
-			$my_product = wc_get_product( $product_id );
-		}
+
+		$my_product = wc_get_product( $product_id );
 		$my_post = get_post( $product_id );
 		$product_name = get_the_title( $product_id );
 		$product_url = get_permalink( $product_id );
@@ -196,19 +193,9 @@ class Custom_Template
                 
                     <?php endif; ?>
 
-                    <?php if ( version_compare( WC_VERSION, '3.0.0', '<' ) ) { ?>
-                
-                    <?php echo $my_product->get_categories( ', ', '<div class="quick_view_product_meta quick_view_product_category"><span class="quick_view_product_meta_name">' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
-                
-                    <?php echo $my_product->get_tags( ', ', '<div class="quick_view_product_meta quick_view_product_tag"><span class="quick_view_product_meta_name">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
-
-                    <?php } else { ?>
-
                     <?php echo wc_get_product_category_list( $my_product->get_id(), ', ', '<div class="quick_view_product_meta quick_view_product_category"><span class="quick_view_product_meta_name">' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
                 
                     <?php echo wc_get_product_tag_list( $my_product->get_id(), ', ', '<div class="quick_view_product_meta quick_view_product_tag"><span class="quick_view_product_meta_name">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce-products-quick-view' ) . '</span> ', '.</div>' ); ?>
-
-                    <?php } ?>
 
                 </div>
                 <?php } ?>
@@ -422,11 +409,7 @@ class Custom_Template
                 <tbody>
                     <?php
                         foreach ( $grouped_products as $product_id ) :
-							if ( version_compare( \WC()->version, '2.2.0', '<' ) ) {
-								$product = get_product( $product_id );
-							} else {
-								$product = wc_get_product( $product_id );
-							}
+							$product = wc_get_product( $product_id );
 
 							if ( ! is_object( $product ) ) {
 								continue;
@@ -458,13 +441,7 @@ class Custom_Template
                                 <td class="price">
                                     <?php
                                         echo $product->get_price_html();
-
-										if ( version_compare( WC_VERSION, '3.0.0', '<' ) ) {
-											if ( ( $availability = $product->get_availability() ) && $availability['availability'] )
-												echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
-										} else {
-											echo wc_get_stock_html( $product );
-										}
+										echo wc_get_stock_html( $product );
                                     ?>
                                 </td>
                             </tr>

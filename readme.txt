@@ -2,8 +2,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 6.0
-Tested up to: 6.3
-Stable tag: 2.3.0
+Tested up to: 6.4.1
+Stable tag: 2.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -113,6 +113,14 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 2.3.1 - 2023/11/23 =
+* This maintenance release has plugin framework updates for compatibility with PHP 8.1 onwards, plus compatibility with WordPress 6.4.1 and WooCommerce 8.2
+* Tweak - Remove backward compatibility for WooCommerce versions less than 6.0
+* Tweak - Test for compatibility with WooCommerce 8.2.0
+* Tweak - Test for compatibility with WordPress 6.4.1
+* Framework - Set parameter number of preg_match function from null to 0 for compatibility with PHP 8.1 onwards
+* Framework - Validate empty before call trim for option value
 
 = 2.3.0 - 2023/08/14 =
 * This release is a security hardening tweak plus compatibility with WordPress 6.3 and WooCommerce 8.0
@@ -604,6 +612,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 2.3.1 =
+This maintenance release has plugin framework updates for compatibility with PHP 8.1 onwards, plus compatibility with WordPress 6.4.1 and WooCommerce 8.2
 
 = 2.3.0 =
 This release is a security hardening tweak plus compatibility with WordPress 6.3 and WooCommerce 8.0

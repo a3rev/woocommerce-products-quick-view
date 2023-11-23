@@ -135,11 +135,10 @@ class WCQV
 	
 	public function redirect_to_checkout_page_from_popup() {
 		if ( is_checkout() ) {
-			$woocommerce_db_version = get_option( 'woocommerce_db_version', null );
 	?>
     	<script type="text/javascript">
 		if ( window.self !== window.top ) {
-			self.parent.location.href = '<?php if ( version_compare( $woocommerce_db_version, '2.1', '<' ) ) { echo get_permalink( woocommerce_get_page_id( 'checkout' ) ); } else { echo get_permalink( wc_get_page_id( 'checkout' ) ); } ?>';
+			self.parent.location.href = '<?php echo get_permalink( wc_get_page_id( 'checkout' ) ); ?>';
 		}
 		</script>
     <?php
