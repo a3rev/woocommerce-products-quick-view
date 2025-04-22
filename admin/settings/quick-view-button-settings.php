@@ -213,7 +213,15 @@ class Button extends FrameWork\Admin_UI
                 'id'		=> 'qv_button_hover_box',
                 'is_box'	=> true,
            	),
+			// Card Class Trigger
            	array(  
+				'name' 		=> __( 'Card Class Trigger', 'woocommerce-products-quick-view' ),
+				'id' 		=> 'quick_view_ultimate_card_class_trigger',
+				'desc' 		=> __( 'Enter the class name of the card element if your site has different class name for card product (e.g. card-product). This helps to trigger the hover effect on the correct element.', 'woocommerce-products-quick-view' ),
+				'type' 		=> 'text',
+				'default'	=> '',
+			),
+			array(  
 				'name' 		=> __( 'Button Align', 'woocommerce-products-quick-view' ),
 				'id' 		=> 'quick_view_ultimate_on_hover_bt_alink',
 				'css' 		=> 'width:80px;',

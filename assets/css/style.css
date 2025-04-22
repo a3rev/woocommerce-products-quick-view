@@ -69,6 +69,14 @@ body .main div.box_content div.box_item .entry-item.sticky_product .thumbnail .q
 	left: -9000px;
 	top: -9000px;
 }
+.quick_view_product_gallery_container {
+	position: relative;
+}
+.quick_view_product_gallery_container .quick_view_sale_badge {
+	position: absolute;
+	z-index: 10;
+	text-align: center;
+}
 .quick_view_product_gallery_container .woocommerce-product-gallery {
 	width: 100% !important;
 	margin-right: 0 !important; 

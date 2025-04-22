@@ -2,12 +2,12 @@
 Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce, WooCommerce Quick View, Quick View, WooCommerce Products Quick View.
 Requires at least: 6.0
-Tested up to: 6.6
-Stable tag: 2.3.2
+Tested up to: 6.8
+Stable tag: 2.4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Add Quick View feature to all product cards on shop, category, tag pages. Opens full product page content, add to cart without leaving the page
+Add Quick View feature to all product cards on shop, category, tag pages. Opens full product page content, add to cart without leaving the page.
 
 == DESCRIPTION ==
 
@@ -24,13 +24,14 @@ It is quick easy and incredibly convenient for your customers and will create mo
 
 = QUICK VIEW FEATURES =
 
-* Works on any theme.
+* Works on any legacy or block theme.
 * 2 choices of Quick pop-ups opens - full page content in pop-up or Custom pop-up.
-* Fully mobile responsive - if your theme is responsive it opens in its true responsive dimensions within the pop-up.
+* Fully mobile responsive 
 * Show Quick View as a button or hyperlink text (fully customizable without writing any code)
 * All product page features added by plugins work within the pop-up.
 * Show Quick View on hover over image or show as button or linked text under the image.
 * Mobile device optimized - all tablets and phones
+* NEW! Pop up now shows the On Sale banner over images in the gallery
 
 = BUTTON DISPLAY OPTIONS =
 
@@ -40,6 +41,10 @@ It is quick easy and incredibly convenient for your customers and will create mo
 * a3rev Button style transparency setting.
 * a3rev Hyperlink text creator - Simple point click settings to create an eye catching clickable link.
 * Quick View button has 3 Positional settings Top, Center or bottom of the image.
+
+= *NEW! Quick View Block =
+
+Using a block theme? Use the Quick View Block to add quick view to your product cards.
 
 = ADVANCED POP UP CONTROLS =
 
@@ -59,7 +64,6 @@ It is quick easy and incredibly convenient for your customers and will create mo
 = PREMIUM VERSION =
 
 There is a Premium version of this plugin that offers more advanced features if required.
-
 * [Quick View Ultimate](http://a3rev.com/shop/woocommerce-quick-view-ultimate/)
 
 = CONTRIBUTE =
@@ -113,6 +117,16 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Changelog ==
+
+= 2.4.0 - 2025/04/22 =
+* This feature release adds a Quick View Block, support for showing the Sale Badge on the popup and compatibility WordPress 6.8 and WooCommerce 9.8
+* Feature - Define Quick View block for Gutenberg
+* Feature - Add support for showing the sale badge on Quick View Popup
+* Tweak - Update plugin settings for support 3rd theme with different classname to trigger click Quick View button
+* Tweak - Tested for compatibility with WordPress 6.8
+* Tweak - Tested for compatibility with WooCommerce 9.8
+* Tweak - Update readme file description with the new features.
+* Tweak - Update plugin docs
 
 = 2.3.2 - 2024/07/13 =
 * This release has various tweaks for compatibility with WordPress 6.6 and WooCommerce 8.9.3.
@@ -617,6 +631,9 @@ On any WordPress install that has the WooCommerce plugin installed and activated
 
 
 == Upgrade Notice ==
+
+= 2.4.0 =
+This feature release adds a Quick View Block, support for showing the Sale Badge on the popup and compatibility WordPress 6.8 and WooCommerce 9.8
 
 = 2.3.2 =
 This release has various tweaks for compatibility with WordPress 6.6 and WooCommerce 8.9.3

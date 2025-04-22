@@ -423,6 +423,28 @@ extract($quick_view_template_global_settings);
 	margin:0 0 5px 0 !important;
 }
 
+/* Sale Badge Style */
+.quick_view_sale_badge {
+    <?php echo $sale_badge_vertical; ?>: 0px;
+    <?php echo $sale_badge_horizontal; ?>: 0px;
+    display: <?php echo ($show_sale_badge == 1) ? 'block' : 'none'; ?>;
+    
+    /*Margin*/
+    margin: <?php echo $sale_badge_margin_top; ?>px <?php echo $sale_badge_margin_right; ?>px <?php echo $sale_badge_margin_bottom; ?>px <?php echo $sale_badge_margin_left; ?>px !important;
+    
+    /*Padding*/
+    padding: <?php echo $sale_badge_padding_top; ?>px <?php echo $sale_badge_padding_right; ?>px <?php echo $sale_badge_padding_bottom; ?>px <?php echo $sale_badge_padding_left; ?>px !important;
+    
+    /*Background*/
+    background-color: <?php echo $sale_badge_background; ?> !important;
+    
+    /*Border*/
+    <?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'admin_interface']->generate_border_css( $sale_badge_border ); ?>
+    
+    /* Font */
+    <?php echo $GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'fonts_face']->generate_font_css( $sale_badge_font ); ?>
+}
+
 @media only screen and (max-width: 600px) {
 	.quick_view_product_gallery_container {
 		width: 100% !important;

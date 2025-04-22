@@ -37,12 +37,15 @@ class WCQV
 		//Fix Responsi Theme
 		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'fix_responsi_theme'), 42 );
 		
-		//Add Quick View Hover Each Products
-		//add_action( 'woocommerce_after_shop_loop_item', array( $this, 'add_quick_view_ultimate_hover_each_products'), 10 );
-		add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'add_quick_view_ultimate_hover_each_products'), 11 );
-		
-		//Add Quick View Under Image Each Products
-		add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'add_quick_view_ultimate_under_image_each_products'), 11 );
+		// Only add these hooks if our block isn't being used in the current template
+		if ( ! apply_filters( 'wc_quick_view_block_used', false ) ) {
+			//Add Quick View Hover Each Products
+			//add_action( 'woocommerce_after_shop_loop_item', array( $this, 'add_quick_view_ultimate_hover_each_products'), 10 );
+			add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'add_quick_view_ultimate_hover_each_products'), 11 );
+			
+			//Add Quick View Under Image Each Products
+			add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'add_quick_view_ultimate_under_image_each_products'), 11 );
+		}
 		
 		//Enqueue Script
 		add_action( 'wp_enqueue_scripts', array ( $this, 'frontend_register_scripts'), 11 );
@@ -73,6 +76,11 @@ class WCQV
 		if ( 'hover' == $quick_view_ultimate_type ) {
 			wp_register_script( 'quick-view-hover-script', WC_QUICK_VIEW_ULTIMATE_JS_URL.'/quick_view_hover.js', array('jquery'), WC_QUICK_VIEW_ULTIMATE_VERSION, true );
 			wp_enqueue_script( 'quick-view-hover-script' );
+
+			$quick_view_ultimate_card_class_trigger = get_option('quick_view_ultimate_card_class_trigger');
+			if ( !empty( $quick_view_ultimate_card_class_trigger ) ) {
+				wp_localize_script( 'quick-view-hover-script', 'quick_view_ultimate_card_class_trigger', $quick_view_ultimate_card_class_trigger );
+			}
 		}
 
 		$quick_view_ultimate_popup_tool = get_option('quick_view_ultimate_popup_tool');

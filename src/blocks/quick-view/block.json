@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "wc-quick-view-ultimate/quick-view-button",
+  "version": "1.0.0",
+  "title": "Quick View Button",
+  "category": "a3rev-blocks",
+  "icon": {
+    "src": "visibility",
+    "foreground": "#7f54b3"
+  },
+  "description": "Display a quick view button for WooCommerce products",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "displayType": {
+      "type": "string",
+      "default": "under"
+    }
+  },
+  "textdomain": "woocommerce-products-quick-view",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+} 

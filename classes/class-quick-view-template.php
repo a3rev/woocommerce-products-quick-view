@@ -143,10 +143,13 @@ class Custom_Template
     	<div class="quick_view_popup_container_inner">
         	<!-- Product Gallery -->
         	<div class="quick_view_product_gallery_container">
-            <?php
-				global $wc_quick_view_template_default_gallery_class;
-				$wc_quick_view_template_default_gallery_class->wc_default_gallery_display( $product_id );
-			?>
+				<?php if ( $my_product->is_on_sale() && $quick_view_template_global_settings['show_sale_badge'] == 1 ) : ?>
+					<div class="quick_view_sale_badge"><?php echo esc_html( $quick_view_template_global_settings['sale_badge_text'] ); ?></div>
+				<?php endif; ?>
+				<?php
+					global $wc_quick_view_template_default_gallery_class;
+					$wc_quick_view_template_default_gallery_class->wc_default_gallery_display( $product_id );
+				?>
             </div>
             <div class="quick_view_product_data_container">
             	

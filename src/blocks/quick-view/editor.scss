@@ -1,0 +1,68 @@
+.wc-quick-view-block-preview {
+    border: 1px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    background: #f9f9f9;
+    margin: 10px 0;
+}
+
+.wc-quick-view-placeholder {
+    position: relative;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Hover button styles
+.quick_view_ultimate_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.quick_view_ultimate_content {
+    display: inline-block;
+}
+
+.quick_view_ultimate_button {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #333;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+// Under image button styles
+.quick_view_ultimate_container_under {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.quick_view_ultimate_content_under {
+    display: inline-block;
+}
+
+.quick_view_ultimate_under_link {
+    display: inline-block;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+// Common styles
+.quick_view_ultimate_click {
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+}

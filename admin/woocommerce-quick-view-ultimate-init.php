@@ -95,7 +95,13 @@ function wc_quick_view_lite_upgrade_plugin () {
 		$GLOBALS[WC_QUICK_VIEW_ULTIMATE_PREFIX.'less']->plugin_build_sass();
 	}
 
-	update_option('wc_quick_view_ultimate_version', '1.7.1');
-	update_option('wc_quick_view_lite_version', WC_QUICK_VIEW_ULTIMATE_VERSION );
+	// Upgrade to 2.4.0.
+	if ( version_compare( get_option( 'wc_quick_view_lite_version' ), '2.4.0' ) === -1 ) {
+		update_option( 'wc_quick_view_lite_version', '2.4.0' );
+		$GLOBALS[ WC_QUICK_VIEW_ULTIMATE_PREFIX . 'less' ]->plugin_build_sass();
+	}
+
+	update_option( 'wc_quick_view_ultimate_version', '2.4.0' );
+	update_option( 'wc_quick_view_lite_version', WC_QUICK_VIEW_ULTIMATE_VERSION );
 
 }
